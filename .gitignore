@@ -1,1 +1,3 @@
-.vim/
+venv
+.idea
+__pycache__

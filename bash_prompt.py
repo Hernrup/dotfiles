@@ -2,6 +2,7 @@
 import sys
 import subprocess as sp
 from time import strftime
+from os import path
 
 chars = {
     'arc_down_right': '\u256D',
@@ -71,7 +72,7 @@ def git_info():
         green_check = with_color(' \u2713', 'green')
         red_check = with_color(' \u2718', 'red')
         unmerged_indicator = with_color(' \u26a1', 'blue')
-        return ' ({0}{1}{2})'.format(branch_name,
+        return '{1}{2}{0}'.format(with_color('({})'.format(branch_name), 'green'),
                                      red_check if uncommited else green_check,
                                      unmerged_indicator if unmerged else '')
     except:
@@ -85,11 +86,23 @@ def error_level():
             if e != '0' else '')
 
 
+def venv_path():
+    try:
+        exec_path = sys.base_exec_prefix
+        parts = exec_path.split(path.sep)
+        return parts[len(parts) - 2]
+    except Exception as e:
+        return 'Unresolved'
+
+
 def venv_info():
     has_python = int(sys.argv[2]) if len(sys.argv) > 2 else 0
-    return (" {0}".format(
-        with_color("\U0001F40D", 'yellow', bold=True)) if has_python else "")
-        # with_color("[P]", 'yellow', bold=True)) if has_python else "")
+
+    return ("{1}{0}".format(
+        with_color("({})".format(venv_path()), 'green'),
+        with_color("\U0001F40D", 'yellow', bold=True)
+    )
+            if has_python else "")
 
 
 def currtime():
@@ -97,19 +110,29 @@ def currtime():
 
 
 def prompt():
-    return (
-        with_color(chars['arc_down_right'] +
-                   chars['horizontal'] +
-                   chars['horizontal'], 'blue') +
-        currtime() +
-        cwd() +
-        git_info() +
-        venv_info() +
-        error_level() +
-        '\n' +
-        with_color(chars['arc_up_left'] + chars['horizontal'], 'blue') +
-        '$ '
-    )
+
+    val = [
+            with_color(
+                chars['arc_down_right'] +
+                chars['horizontal'] +
+                chars['horizontal'], 'blue'
+            ),
+
+
+            currtime(),
+            cwd(),
+            # with_color(' (', 'green'),
+            git_info(),
+            with_color(' ', 'green'),
+            venv_info(),
+            # with_color(')', 'green'),
+            '\n',
+            with_color(chars['arc_up_left'] + chars['horizontal'], 'blue'),
+            '$ '
+        ]
+    return "".join(val)
+
+
 
 if __name__ == "__main__":
     sys.stdout.write(prompt())
