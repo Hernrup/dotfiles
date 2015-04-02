@@ -90,7 +90,9 @@ def venv_path():
     try:
         exec_path = sys.base_exec_prefix
         parts = exec_path.split(path.sep)
-        return parts[len(parts) - 2]
+        parts = parts[(len(parts) - 3):(len(parts) - 1)] \
+            if len(parts) > 2 else parts
+        return "/".join(parts)
     except Exception as e:
         return 'Unresolved'
 
