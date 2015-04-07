@@ -18,11 +18,12 @@ alias suptng='cmd //c /c/dev/lime/limetng/setup.bat'
 alias supdev='setup.py develop'
 
 # git
+alias g='git '
 alias gs='git status '
 alias ga='git add '
 alias gb='git branch '
-alias gc='git commit'
-alias gd='git diff'
+alias gc='git commit '
+alias gd='git diff '
 alias go='git checkout '
 alias gk='gitk --all&'
 alias gx='gitx --all'
@@ -36,17 +37,6 @@ alias gr='git remote'
 alias subl='/c/Program\ Files/Sublime\ Text\ 3/sublime_text.exe'
 alias nano='/c/Program\ Files\ \(x86\)/Git/bin/nano/nano.exe'
 alias pycharm='/c/Program\ Files\ \(x86\)/JetBrains/PyCharm\ Community\ Edition\ 4.0.4/bin/pycharm.exe'
-
-# lime
-alias lws='/c/dev/lime/addons/addon-webservice/src/Lundalogik.Tangelo.ConsoleHost/bin/Debug/Lundalogik.Tangelo.ConsoleHost.exe'
-alias lclient='/c/dev/lime/desktop-client/src/debug/lime.exe'
-alias lwebclient='python -mwebbrowser https://1zwlwz1/'
-alias lvenv='source /c/dev/lime/limetng/Python34/Scripts/activate; which python'
-alias lserver='limefu run web'
-
-# devpi
-alias devpi_usedev='devpi use https://lusrvdevweb.lundalogik.local:3443/lime/develop'
-alias devpi_login='devpi login lime'
 
 # python
 alias killpython='cmd //c "taskkill /F /IM python.exe /T"'
@@ -75,3 +65,8 @@ function _update_ps1 {
 }
 
 export PROMPT_COMMAND="_update_ps1"
+
+# include local settings if extists
+if [ -f "${HOME}/.bash_local" ]; then
+  source "${HOME}/.bash_local"
+fi
