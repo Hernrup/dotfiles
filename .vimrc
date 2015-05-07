@@ -38,10 +38,6 @@ let g:ctrlp_cmd = 'CtrlPCurWD'
 " Quick ESC
 imap jk <ESC>
 
-" NERDTree
-map <C-n> :NERDTreeToggle<CR>
-
-
 " Quit with :Q
 #command -nargs=0 Quit :qa!
 
