@@ -6,20 +6,20 @@ import tempfile
 from datetime import datetime
 
 files_to_move = [
-    '.bash_functions',
-    '.bash_profile',
-    '.bashrc',
-    '.gitignore',
-    '.vimrc',
-    '.ideavimrc',
-    'bash_prompt.py'
+    ('.bash_functions', ''),
+    ('.bash_profile', ''),
+    ('.bashrc', ''),
+    ('.gitignore', ''),
+    ('.vimrc', ''),
+    ('.ideavimrc', ''),
+    ('bash_prompt.py', ''),
+    ('pycharm_keymap_custom.xml', '.PyCharm40/config/keymaps')
 ]
 
 base_path = os.path.realpath(os.path.dirname(__file__))
 
 
 def get_user_folder():
-    # return tempfile.gettempdir()
     return expanduser("~")
 
 
@@ -53,8 +53,9 @@ def link(src, dest):
 
 
 def link_files():
-    for f in files_to_move:
-        link(join(base_path, f), join(get_user_folder(), f))
+    for r in files_to_move:
+        f, d = r
+        link(join(base_path, f), join(get_user_folder(), d, f))
 
 if __name__ == '__main__':
     link_files()
