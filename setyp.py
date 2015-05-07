@@ -11,6 +11,7 @@ files_to_move = [
     '.bashrc',
     '.gitignore',
     '.vimrc',
+    '.ideavimrc',
     'bash_prompt.py'
 ]
 
