@@ -11,11 +11,7 @@ alias ll='ls -l --color'
 alias la='ls -lA --color'
 
 # cd
-alias cdtng='cd /c/dev/lime/limetng/'
-alias cdlime='cd /c/dev/lime/'
-alias cddev='cd /c/dev/'
-alias suptng='cmd //c /c/dev/lime/limetng/setup.bat'
-alias supdev='setup.py develop'
+
 
 # git
 alias g='git'
@@ -23,6 +19,7 @@ alias gs='git status'
 alias ga='git add'
 alias gb='git branch'
 alias gc='git commit'
+alias gca='git commit --amend'
 alias gd='git diff'
 alias go='git checkout'
 alias gk='gitk --all&'
@@ -40,6 +37,8 @@ alias pycharm='/c/Program\ Files\ \(x86\)/JetBrains/PyCharm\ Community\ Edition\
 
 # python
 alias killpython='cmd //c "taskkill /F /IM python.exe /T"'
+alias delegg='rm -rf *.egg*'
+
 
 #
 # CERTIFICATES
