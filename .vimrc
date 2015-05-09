@@ -38,6 +38,10 @@ let g:ctrlp_cmd = 'CtrlPCurWD'
 " Quick ESC
 imap jk <ESC>
 
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+vnoremap <leader>p "_dP
+
 " Quit with :Q
 #command -nargs=0 Quit :qa!
 
