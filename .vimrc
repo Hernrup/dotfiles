@@ -43,6 +43,7 @@ vnoremap x "_x
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 vnoremap p "_dP
+map <C-a> <esc>ggVG<CR>
 
 " Quit with :Q
 #command -nargs=0 Quit :qa!
