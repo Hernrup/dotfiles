@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import os
 from os.path import expanduser
-from os.path import join
+from os.path import join, abspath, basename
 import tempfile
 from datetime import datetime
 
@@ -13,14 +13,21 @@ files_to_move = [
     ('.vimrc', ''),
     ('.ideavimrc', ''),
     ('bash_prompt.py', ''),
-    ('pycharm_keymap_custom.xml', '.PyCharm40/config/keymaps')
+    (
+        join('pycharm_settings', 'keymap_custom.xml'),
+        join('.PyCharm40', 'config', 'keymaps')
+    ),
+    (
+        join('pycharm_settings', 'colors_custom.icls'),
+        join('.PyCharm40', 'config', 'colors')
+    )
 ]
 
 base_path = os.path.realpath(os.path.dirname(__file__))
 
 
 def get_user_folder():
-    return expanduser("~")
+    return abspath(expanduser("~"))
 
 
 def get_backup_name(path):
@@ -55,7 +62,7 @@ def link(src, dest):
 def link_files():
     for r in files_to_move:
         f, d = r
-        link(join(base_path, f), join(get_user_folder(), d, f))
+        link(join(base_path, f), join(get_user_folder(), d, basename(f)))
 
 if __name__ == '__main__':
     link_files()

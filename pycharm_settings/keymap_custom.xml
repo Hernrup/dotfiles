@@ -1,0 +1,37 @@
+<keymap version="1" name="keymap_custom" parent="Visual Studio">
+  <action id="MoveEditorToOppositeTabGroup">
+    <keyboard-shortcut first-keystroke="shift control alt RIGHT" />
+    <keyboard-shortcut first-keystroke="shift control alt LEFT" />
+  </action>
+  <action id="PyDebugger.AttachToProcess">
+    <keyboard-shortcut first-keystroke="shift control alt A" />
+  </action>
+  <action id="RerunFailedTests">
+    <keyboard-shortcut first-keystroke="shift control F5" />
+  </action>
+  <action id="SplitVertically">
+    <keyboard-shortcut first-keystroke="shift control alt E" />
+  </action>
+  <action id="SwitchApply">
+    <keyboard-shortcut first-keystroke="shift alt ENTER" />
+  </action>
+  <action id="SwitchDown">
+    <keyboard-shortcut first-keystroke="shift alt DOWN" />
+  </action>
+  <action id="SwitchLeft">
+    <keyboard-shortcut first-keystroke="shift alt LEFT" />
+  </action>
+  <action id="SwitchRight">
+    <keyboard-shortcut first-keystroke="shift alt RIGHT" />
+  </action>
+  <action id="SwitchUp">
+    <keyboard-shortcut first-keystroke="shift alt UP" />
+  </action>
+  <action id="ToggleFullScreen">
+    <keyboard-shortcut first-keystroke="shift control alt F12" />
+  </action>
+  <action id="com.jetbrains.python.console.RunPythonConsoleAction">
+    <keyboard-shortcut first-keystroke="alt F10" />
+    <keyboard-shortcut first-keystroke="alt EQUALS" />
+  </action>
+</keymap>
