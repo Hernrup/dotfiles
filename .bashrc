@@ -10,9 +10,6 @@ alias ls='ls -F --color'
 alias ll='ls -l --color'
 alias la='ls -lA --color'
 
-# cd
-
-
 # git
 alias g='git'
 alias gs='git status'
@@ -29,6 +26,7 @@ alias get='git'
 alias gp='git pull'
 alias gpr='git pull --rebase'
 alias gr='git remote'
+alias ggh="git rev-list --all | xargs git grep"
 
 # apps
 alias subl='/c/Program\ Files/Sublime\ Text\ 3/sublime_text.exe'
@@ -39,6 +37,10 @@ alias pycharm='/c/Program\ Files\ \(x86\)/JetBrains/PyCharm\ Community\ Edition\
 alias killpython='cmd //c "taskkill /F /IM python.exe /T"'
 alias delegg='rm -rf *.egg*'
 
+#
+# ENVIRONMENT
+#
+export PYTHONIOENCODING=UTF-8
 
 #
 # CERTIFICATES
