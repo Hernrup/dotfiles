@@ -27,6 +27,7 @@ alias gp='git pull'
 alias gpr='git pull --rebase'
 alias gr='git remote'
 alias ggh="git rev-list --all | xargs git grep"
+alias gbrm='git branch --merged | grep -v \* | xargs git branch -D'
 
 # apps
 alias subl='/c/Program\ Files/Sublime\ Text\ 3/sublime_text.exe'
