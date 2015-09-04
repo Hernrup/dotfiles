@@ -37,6 +37,9 @@ alias pycharm='/c/Program\ Files\ \(x86\)/JetBrains/PyCharm\ Community\ Edition\
 # python
 alias killpython='cmd //c "taskkill /F /IM python.exe /T"'
 alias delegg='rm -rf *.egg*'
+alias ppu='pip uninstall'
+alias ppi='pip install'
+alias ppie'pip install -e'
 
 #
 # ENVIRONMENT
