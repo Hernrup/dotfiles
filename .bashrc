@@ -40,6 +40,7 @@ alias delegg='rm -rf *.egg*'
 alias ppu='pip uninstall'
 alias ppi='pip install'
 alias ppie='pip install -e'
+alias venv34='/c/python34/scripts/virtualenv venv'
 
 #
 # ENVIRONMENT
