@@ -40,7 +40,9 @@ alias delegg='rm -rf *.egg*'
 alias ppu='pip uninstall'
 alias ppi='pip install'
 alias ppie='pip install -e'
+alias ppclean='pip freeze | xargs pip uninstall -y'
 alias venv34='/c/python34/scripts/virtualenv venv'
+alias rmvenv='mkdir emptyTmpFolder && robocopy emptyTmpFolder venv //MIR && rm -rf emptyTmpFolder && rm -rf venv'
 
 #
 # ENVIRONMENT
