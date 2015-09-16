@@ -19,7 +19,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Better status bar
 NeoBundle "bling/vim-airline"
-let g:airline_powerline_fonts=1
+" let g:airline_powerline_fonts=1
 
 " extended % matching for HTML, LaTeX, and many more languages
 NeoBundle 'vim-scripts/matchit.zip'
@@ -177,7 +177,7 @@ set background=dark
 highlight! link MatchParen StatusLine
 
 set list  " Display special characters (e.g. trailing whitespace)
-set listchars=tab:▷◆,trail:◆
+" set listchars=tab:▷◆,trail:◆
 
 "
 " Only display trailing whitespaces when we're not in insert mode
@@ -192,16 +192,12 @@ augroup END
 "
 " Make vim display colors and fonts properly in terminal windows (conemu)
 "
-if has("win32unix")
-    set term=xterm-256color
-    set t_ut=
-else
-    set term=xterm
-    set t_Co=256
-    let &t_AB="\e[48;5;%dm"
-    let &t_AF="\e[38;5;%dm"
-    let &t_ZH="\e[3m"
-endif
+set term=xterm
+set t_Co=256
+let &t_AB="\e[48;5;%dm"
+let &t_AF="\e[38;5;%dm"
+let &t_ZH="\e[3m"
+
 
 
 set cursorline

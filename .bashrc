@@ -1,3 +1,7 @@
+program_files_x86="/c/Program\ Files\ (x86)"
+program_files="/c/Program\ Files"
+browser="python -m webbrowser -t"
+
 #
 # Alias
 #

@@ -1,6 +1,6 @@
-[user]
-	name = mhe
-	email = mikael.hernrup@lundalogik.se
+
+[include]
+    path = .gitconfig_local
 
 [push]
 	default = simple
@@ -15,8 +15,20 @@
 	excludesfile = ~/.gitignore
 
 [alias]
-	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	ls = log --graph --date=local --pretty=format:"%C(yellow)%h\\ %C(blue)%ad\\ %C(red)%d\\ %C(reset)%s%C(blue)\\ [%cn]"
+    s=status
+	a=add
+	b=branch
+	c=commit
+	ca=commit --amend
+	d=diff
+	o=checkout
+	p=pull
+	pr=pull --rebase
+	r=remote
+	gh=rev-list --all | xargs git grep
+	brm=branch --merged | grep -v \\* | xargs git branch -D
 
 [merge]
 	tool = kdiff3
@@ -25,7 +37,7 @@
 	tool = kdiff3
 
 [difftool "sourcetree"]
-    cmd = opendiff $LOCAL $REMOTE -merge $MERGED
+	cmd = 'C:/Program Files/KDiff3/kdiff3.exe' \"$LOCAL\" \"$REMOTE\"
     path = 
 
 [mergetool "kdiff3"]
@@ -34,8 +46,10 @@
 	trustExitCode = false
 
 [mergetool "sourcetree"]
-    cmd = opendiff $LOCAL $REMOTE -merge $MERGED
-    trustExitCode = true
+	cmd = 'C:/Program Files/KDiff3/kdiff3.exe' \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+	trustExitCode = true
     
 [mergetool]
     keepBackup = false
+[credential]
+	helper = store

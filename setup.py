@@ -4,12 +4,15 @@ from os.path import expanduser
 from os.path import join, abspath, basename
 import tempfile
 from datetime import datetime
+from shutil import copyfile
 
-files_to_move = [
+
+files_to_link = [
     ('.bash_functions', ''),
     ('.bash_profile', ''),
     ('.bashrc', ''),
     ('.gitignore', ''),
+    ('.gitconfig', ''),
     ('.vimrc', ''),
     ('.ideavimrc', ''),
     ('bash_prompt.py', ''),
@@ -20,7 +23,13 @@ files_to_move = [
     (
         join('pycharm_settings', 'colors_custom.icls'),
         join('.PyCharm40', 'config', 'colors')
-    )
+    ),
+    ('.vim', '')
+]
+
+files_to_copy_if_not_existing = [
+    ('.bash_local', ''),
+    ('.gitconfig_local', ''),
 ]
 
 base_path = os.path.realpath(os.path.dirname(__file__))
@@ -59,10 +68,37 @@ def link(src, dest):
         print("{}: ERROR".format(e))
 
 
+def copy(src, dest):
+    if not os.path.exists(src):
+        raise ValueError("{} does not exist".format(src))
+
+    if os.path.islink(dest):
+        print("{}: Exists. No Copy".format(dest))
+        return
+
+    if os.path.exists(dest):
+        print("{}: Exists. No Copy".format(dest))
+        return
+
+    try:
+        copyfile(src, dest)
+        print("{} -> {}: COPIED".format(src, dest))
+    except Exception as e:
+        print("{}: ERROR".format(e))
+
+
+
 def link_files():
-    for r in files_to_move:
+    for r in files_to_link:
         f, d = r
         link(join(base_path, f), join(get_user_folder(), d, basename(f)))
 
+
+def copy_files():
+    for r in files_to_copy_if_not_existing:
+        f, d = r
+        copy(join(base_path, f), join(get_user_folder(), d, basename(f)))
+
 if __name__ == '__main__':
     link_files()
+    copy_files()
