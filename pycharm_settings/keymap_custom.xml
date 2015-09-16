@@ -6,6 +6,9 @@
   <action id="PyDebugger.AttachToProcess">
     <keyboard-shortcut first-keystroke="shift control alt A" />
   </action>
+  <action id="RearrangeCode">
+    <keyboard-shortcut first-keystroke="control alt L" />
+  </action>
   <action id="RerunFailedTests">
     <keyboard-shortcut first-keystroke="shift control F5" />
   </action>
