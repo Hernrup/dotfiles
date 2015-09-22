@@ -16,6 +16,7 @@ alias la='ls -lA --color'
 
 # git
 alias g='git'
+__git_complete g _git
 alias gs='git status'
 alias ga='git add'
 alias gb='git branch'
@@ -23,6 +24,7 @@ alias gc='git commit'
 alias gca='git commit --amend'
 alias gd='git diff'
 alias go='git checkout'
+__git_complete go _git_checkout
 alias gk='gitk --all&'
 alias gx='gitx --all'
 alias got='git'
