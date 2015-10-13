@@ -41,6 +41,7 @@ alias nano='/c/Program\ Files\ \(x86\)/Git/bin/nano/nano.exe'
 alias pycharm='/c/Program\ Files\ \(x86\)/JetBrains/PyCharm\ Community\ Edition\ 4.0.4/bin/pycharm.exe'
 
 # python
+alias killsomething='cmd //c "taskkill /F /IM $1 /T"'
 alias killpython='cmd //c "taskkill /F /IM python.exe /T"'
 alias delegg='rm -rf *.egg*'
 alias ppu='pip uninstall'
@@ -61,11 +62,6 @@ export LC_TIME="en_US.UTF-8"
 export LC_COLLATE="en_US.UTF-8"
 export LC_MONETARY="en_US.UTF-8"
 export LC_MESSAGES="en_US.UTF-8"
-
-#
-# CERTIFICATES
-#
-export REQUESTS_CA_BUNDLE=/c/Program\ Files\ \(x86\)/Git/bin/curl-ca-bundle.crt
 
 #
 # FUNCTIONS
