@@ -1,12 +1,7 @@
-program_files_x86="/cygdrive/c/Program\ Files\ (x86)"
-program_files="/cygdrive/c/Program\ Files"
-
-# apps
-alias subl="$program_files/Sublime\ Text\ 3/sublime_text.exe"
-alias pycharm="$program_files_x86/JetBrains/PyCharm\ Community\ Edition\ 4.0.4/bin/pycharm.exe"
+echo "cygwin aliases"
+c="/cygdrive/c"
 
 # python
 alias killsomething="taskkill /F /IM $1 /T"
 alias killpython="taskkill /F /IM python.exe /T"
-alias venv34='/cygdrive/c/python34/scripts/virtualenv venv'
 alias rmvenv='rm -rf venv'

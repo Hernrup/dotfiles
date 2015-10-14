@@ -1,18 +1,12 @@
-program_files_x86="/c/Program\ Files\ (x86)"
-program_files="/c/Program\ Files"
-
+echo "msys aliases"
+c="/c"
 #
 # Git
 #
 __git_complete g _git
 __git_complete go _git_checkout
 
-# apps
-alias subl='/c/Program\ Files/Sublime\ Text\ 3/sublime_text.exe'
-alias pycharm='/c/Program\ Files\ \(x86\)/JetBrains/PyCharm\ Community\ Edition\ 4.0.4/bin/pycharm.exe'
-
 # python
 alias killsomething='cmd //c "taskkill /F /IM $1 /T"'
 alias killpython='cmd //c "taskkill /F /IM python.exe /T"'
-alias venv34='/c/python34/scripts/virtualenv venv'
 alias rmvenv='mkdir emptyTmpFolder && robocopy emptyTmpFolder venv //MIR && rm -rf emptyTmpFolder && rm -rf venv'

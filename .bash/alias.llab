@@ -1,0 +1,11 @@
+echo "LLAB aliases"
+lime_dir="~/src/lime"
+
+alias cdprogramdata="cd $c/ProgramData/Lundalogik/LIME\ Pro\ Server/"
+alias cddev="cd ~/src/"
+
+alias lisaserver="$lime_dir/world/serveradmin/Server/Lundalogik.Lisa.Service.ConsoleHost/bin/Debug/LisaConsole.exe"
+alias tngserver="$lime_dir/tng/server/run_cherrypy.py"
+alias tngclient="$browser \"https://1zwlwz1/\""
+alias lf="limefu"
+alias desktopclient="$lime_dir/desktop-client/src/Debug/Lime.exe"

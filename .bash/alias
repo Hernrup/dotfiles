@@ -1,18 +1,18 @@
-browser="python -m webbrowser -t"
-
 #
 # IMPORT SYS SPECIFIC VERSIONS
 #
 case "$sys" in
 cygwin)
-     echo "cygwin aliases"
      source "${HOME}/.bash/alias.cygwin";
      ;;
 msys)
-    echo "msys aliases"
     source "${HOME}/.bash/alias.msys"
     ;;
 esac
+
+browser="python -m webbrowser -t"
+program_files_x86="$c/Program\ Files\ (x86)"
+program_files="$c/Program\ Files"
 
 #
 # ALIAS
@@ -51,4 +51,12 @@ alias delegg='rm -rf *.egg*'
 alias ppu='pip uninstall'
 alias ppi='pip install'
 alias ppie='pip install -e'
-alias ppclean='pip freeze | xargs pip uninstall -y'
+alias ppclean="pip freeze | xargs pip uninstall -y"
+alias venv34="$c/python34/scripts/virtualenv venv"
+
+# apps
+alias subl="$program_files/Sublime\ Text\ 3/sublime_text.exe"
+alias pycharm="$program_files_x86/JetBrains/PyCharm\ Community\ Edition\ 4.0.4/bin/pycharm.exe"
+
+# Extras
+[[ -f "${HOME}/.bash/alias.llab" ]] && source "${HOME}/.bash/alias.llab"
