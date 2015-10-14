@@ -1,0 +1,27 @@
+#
+# ENVIRONMENT
+#
+export PYTHONIOENCODING=UTF-8
+export LANG=en_US.UTF-8
+export LC_CTYPE="en_US.UTF-8"
+export LC_NUMERIC="en_US.UTF-8"
+export LC_TIME="en_US.UTF-8"
+export LC_COLLATE="en_US.UTF-8"
+export LC_MONETARY="en_US.UTF-8"
+export LC_MESSAGES="en_US.UTF-8"
+
+local256="$COLORTERM$XTERM_VERSION$ROXTERMID$KONSOLE_DBUS_SESSION"
+if [ -n "$local256" ]; then
+    case "$TERM" in
+        'xterm') TERM="xterm-256color";;
+        'screen') TERM="screen-256color";;
+        'Eterm') TERM="Eterm-256color";;
+    esac
+    export TERM
+
+    if [ -n "$TERMCAP" ] && [ "$TERM" = "screen-256color" ]; then
+        TERMCAP=$(echo "$TERMCAP" | sed -e 's/Co#8/Co#256/g')
+        export TERMCAP
+    fi
+fi
+unset local256

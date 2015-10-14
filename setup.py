@@ -8,28 +8,28 @@ from shutil import copyfile
 
 
 files_to_link = [
-    ('.bash_functions', ''),
     ('.bash_profile', ''),
     ('.bashrc', ''),
+    ('.bash', ''),
     ('.gitignore', ''),
     ('.gitconfig', ''),
     ('.vimrc', ''),
     ('.ideavimrc', ''),
-    ('bash_prompt.py', ''),
-    (
-        join('pycharm_settings', 'keymap_custom.xml'),
-        join('.PyCharm40', 'config', 'keymaps')
-    ),
-    (
-        join('pycharm_settings', 'colors_custom.icls'),
-        join('.PyCharm40', 'config', 'colors')
-    ),
-    ('.vim', '')
+    # (
+    #     join('pycharm_settings', 'keymap_custom.xml'),
+    #     join('.PyCharm40', 'config', 'keymaps')
+    # ),
+    # (
+    #     join('pycharm_settings', 'colors_custom.icls'),
+    #     join('.PyCharm40', 'config', 'colors')
+    # ),
+    ('.vim', ''),
+    ('bin', '')
 ]
 
 files_to_copy_if_not_existing = [
     ('.bash_local', ''),
-    ('.gitconfig_local', ''),
+    ('.gitconfig_local', '')
 ]
 
 base_path = os.path.realpath(os.path.dirname(__file__))
@@ -37,6 +37,14 @@ base_path = os.path.realpath(os.path.dirname(__file__))
 
 def get_user_folder():
     return abspath(expanduser("~"))
+
+
+def get_cygwin_user_folder():
+    return join(get_cygwin_folder(), 'home', basename(get_user_folder()))
+
+
+def get_cygwin_folder():
+    return join('c:/', 'cygwin64')
 
 
 def get_backup_name(path):
@@ -54,7 +62,6 @@ def link(src, dest):
 
     if os.path.islink(dest):
         os.unlink(dest)
-        print("{}: UNLINKED".format(dest))
 
     if os.path.exists(dest):
         backup_name = get_backup_name(dest)
@@ -87,18 +94,24 @@ def copy(src, dest):
         print("{}: ERROR".format(e))
 
 
-
-def link_files():
+def link_files(dest_path):
     for r in files_to_link:
         f, d = r
-        link(join(base_path, f), join(get_user_folder(), d, basename(f)))
+        link(join(base_path, f), join(dest_path, d, basename(f)))
 
 
-def copy_files():
+def copy_files(dest_path):
     for r in files_to_copy_if_not_existing:
         f, d = r
-        copy(join(base_path, f), join(get_user_folder(), d, basename(f)))
+        copy(join(base_path, f), join(dest_path, d, basename(f)))
+
+
+def sync(dest_path):
+    link_files(dest_path)
+    copy_files(dest_path)
 
 if __name__ == '__main__':
-    link_files()
-    copy_files()
+    sync(get_user_folder())
+    sync(get_cygwin_user_folder())
+    link(join(get_user_folder(), 'src'), join(get_cygwin_user_folder(), 'src'))
+    link(join(get_user_folder(), 'src'), join(get_cygwin_folder(), 'src'))

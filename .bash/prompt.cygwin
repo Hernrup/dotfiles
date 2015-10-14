@@ -1,0 +1,11 @@
+#
+# Display a more informational prompt.
+#
+function _update_ps1 {
+    local error_level=$?
+    local has_python=0
+    [[ -n `__active_python` ]] && has_python=1
+    export PS1="$(PYTHONIOENCODING=utf-8 /bin/python3.4 ~/.bash/bash_prompt.py $error_level $has_python 2> /dev/null)"
+}
+
+export PROMPT_COMMAND="_update_ps1"

@@ -1,0 +1,54 @@
+browser="python -m webbrowser -t"
+
+#
+# IMPORT SYS SPECIFIC VERSIONS
+#
+case "$sys" in
+cygwin)
+     echo "cygwin aliases"
+     source "${HOME}/.bash/alias.cygwin";
+     ;;
+msys)
+    echo "msys aliases"
+    source "${HOME}/.bash/alias.msys"
+    ;;
+esac
+
+#
+# ALIAS
+#
+
+# misc
+alias less='less -r'
+
+# list
+alias ls='ls -F --color'
+alias ll='ls -l --color'
+alias la='ls -lA --color'
+
+# git
+alias g='git'
+alias gs='git status'
+alias ga='git add'
+alias gb='git branch'
+alias gc='git commit'
+alias gca='git commit --amend'
+alias gd='git diff'
+alias go='git checkout'
+alias gk='gitk --all&'
+alias gx='gitx --all'
+alias got='git'
+alias get='git'
+alias gp='git pull'
+alias gpr='git pull --rebase'
+alias gr='git remote'
+alias ggh="git rev-list --all | xargs git grep"
+alias gbrm='git branch --merged | grep -v \* | xargs git branch -D'
+
+# python
+alias py='python'
+alias delegg='rm -rf *.egg*'
+alias ppu='pip uninstall'
+alias ppi='pip install'
+alias ppie='pip install -e'
+alias ppclean='pip freeze | xargs pip uninstall -y'
