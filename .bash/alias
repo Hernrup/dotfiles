@@ -11,7 +11,7 @@ msys)
 esac
 
 browser="python -m webbrowser -t"
-program_files_x86="$c/Program\ Files\ (x86)"
+program_files_x86="$c/Program\ Files\ \(x86\)"
 program_files="$c/Program\ Files"
 
 #
@@ -56,7 +56,7 @@ alias venv34="$c/python34/scripts/virtualenv venv"
 
 # apps
 alias subl="$program_files/Sublime\ Text\ 3/sublime_text.exe"
-alias pycharm="$program_files_x86/JetBrains/PyCharm\ Community\ Edition\ 4.0.4/bin/pycharm.exe"
+alias pycharm="$program_files_x86/JetBrains/PyCharm\ 4.5.4/bin/pycharm.exe"
 
 # Extras
 [[ -f "${HOME}/.bash/alias.llab" ]] && source "${HOME}/.bash/alias.llab"
