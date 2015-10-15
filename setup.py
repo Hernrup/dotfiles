@@ -115,3 +115,4 @@ if __name__ == '__main__':
     sync(get_cygwin_user_folder())
     link(join(get_user_folder(), 'src'), join(get_cygwin_user_folder(), 'src'))
     link(join(get_user_folder(), 'src'), join(get_cygwin_folder(), 'src'))
+    link(abspath('c:/'), join(get_cygwin_folder(), 'c'))
