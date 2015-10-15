@@ -88,13 +88,16 @@ def error_level():
 
 def venv_path():
     try:
-        exec_path = sys.base_exec_prefix
+        p = sp.Popen(['which', 'python'], stdout=sp.PIPE)
+        exec_path, _ = p.communicate()
+        exec_path = str(exec_path)
+        # exec_path = sys.base_exec_prefix
         parts = exec_path.split(path.sep)
-        parts = parts[(len(parts) - 3):(len(parts) - 1)] \
+        parts = parts[(len(parts) - 4):(len(parts) - 1)] \
             if len(parts) > 2 else parts
         return "/".join(parts)
     except Exception as e:
-        return 'Unresolved'
+        return 'Unresolved ' + str(e)
 
 
 def venv_info():
