@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 import os
-from os.path import expanduser
-from os.path import join, abspath, basename
-import tempfile
+from os.path import join, abspath, basename, expanduser, isdir
 from datetime import datetime
 from shutil import copyfile
 
@@ -44,7 +42,7 @@ def get_cygwin_user_folder():
 
 
 def get_cygwin_folder():
-    return join('c:/', 'cygwin64')
+    return join('c:/', 'tools', 'cygwin')
 
 
 def get_backup_name(path):
@@ -112,7 +110,10 @@ def sync(dest_path):
 
 if __name__ == '__main__':
     sync(get_user_folder())
-    sync(get_cygwin_user_folder())
-    link(join(get_user_folder(), 'src'), join(get_cygwin_user_folder(), 'src'))
-    link(join(get_user_folder(), 'src'), join(get_cygwin_folder(), 'src'))
-    link(abspath('c:/'), join(get_cygwin_folder(), 'c'))
+    if isdir(get_cygwin_folder()):
+        sync(get_cygwin_user_folder())
+        # link(join(get_user_folder(), 'src'), join(get_cygwin_user_folder(), 'src'))
+        # link(join(get_user_folder(), 'src'), join(get_cygwin_folder(), 'src'))
+        link(abspath('c:/'), join(get_cygwin_folder(), 'c'))
+    else:
+        print('Could not find cygwin folder on {}'.format(get_cygwin_folder()))
