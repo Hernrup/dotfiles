@@ -14,6 +14,8 @@ files_to_link = [
     ('.vimrc', ''),
     ('.ideavimrc', ''),
     ('.minttyrc', ''),
+    ('.tmux.conf', ''),
+    ('.tmuxline.conf', ''),
     # (
     #     join('pycharm_settings', 'keymap_custom.xml'),
     #     join('.PyCharm40', 'config', 'keymaps')
