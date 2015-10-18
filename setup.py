@@ -13,6 +13,7 @@ files_to_link = [
     ('.gitconfig', ''),
     ('.vimrc', ''),
     ('.ideavimrc', ''),
+    ('.minttyrc', ''),
     # (
     #     join('pycharm_settings', 'keymap_custom.xml'),
     #     join('.PyCharm40', 'config', 'keymaps')
