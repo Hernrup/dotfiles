@@ -104,7 +104,8 @@ def venv_info():
     has_python = int(sys.argv[2]) if len(sys.argv) > 2 else 0
 
     return ("{1}{0}".format(
-        with_color("({})".format(venv_path()), 'green'),
+        # with_color("({})".format(venv_path()), 'green'),
+        '',
         with_color("\U0001F40D", 'yellow', bold=True)
     )
             if has_python else "")
