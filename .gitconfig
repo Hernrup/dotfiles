@@ -11,7 +11,7 @@
 	branch = auto
 
 [core]
-	#editor = "C:\\Program Files (x86)\\Git\\bin\\nano\\nano.exe"
+	editor = vim
 	excludesfile = ~/.gitignore
 
 [alias]
@@ -40,7 +40,7 @@
 
 [difftool "sourcetree"]
 	cmd = 'C:/Program Files/KDiff3/kdiff3.exe' \"$LOCAL\" \"$REMOTE\"
-    path = 
+    path =
 
 [mergetool "kdiff3"]
 	path = "C:\\Program Files\\KDiff3\\kdiff3.exe"
@@ -50,7 +50,7 @@
 [mergetool "sourcetree"]
 	cmd = 'C:/Program Files/KDiff3/kdiff3.exe' \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
 	trustExitCode = true
-    
+
 [mergetool]
     keepBackup = false
 [credential]
