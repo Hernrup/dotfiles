@@ -8,19 +8,19 @@
 #
 case "$(uname -s)" in
 Darwin)
-     echo 'Mac OS X'
+     echo 'Detected Mac OS X'
      sys='macosx'
      ;;
 Linux)
-     echo 'Linux'
+     echo 'Detected Linux'
      sys='linux'
      ;;
 CYGWIN*)
-    echo 'Cygwin'
+    echo 'Detected Cygwin'
     sys='cygwin'
     ;;
 MINGW32*|MINGW64*|MSYS*)
-    echo 'MSYS/MinGW'
+    echo 'Detected MSYS/MinGW'
     sys='msys'
     ;;
 *)
@@ -38,7 +38,6 @@ source "${HOME}/.bash/env"
 # ALIAS
 #
 source "${HOME}/.bash/alias"
-
 
 #
 # FUNCTIONS
@@ -58,9 +57,9 @@ fi
 #
 case "$sys" in
 cygwin)
-     source "${HOME}/.bash/prompt.cygwin";
+     source "${HOME}/.bash/env.cygwin";
      ;;
 msys)
-     source "${HOME}/.bash/prompt.msys"
+     source "${HOME}/.bash/env.msys"
      ;;
 esac

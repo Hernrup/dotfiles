@@ -1,5 +1,4 @@
-echo "msys aliases"
-c="/c"
+echo "Loading MSYS aliases"
 #
 # Git
 #

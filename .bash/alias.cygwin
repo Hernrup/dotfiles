@@ -1,5 +1,4 @@
-echo "cygwin aliases"
-c="/cygdrive/c"
+echo "Loading CYGWIN aliases"
 
 # python
 alias killpython="taskkill /F /IM python.exe /T"
@@ -12,21 +11,14 @@ alias rmvenv='rm -rf venv'
 alias tmux='tmux -2'
 
 alias limefu='console.exe limefu'
-alias ipython='console.exe ipython'
 alias ipython3='console.exe ipython3'
 alias node="console.exe node"
-alias python="console.exe /c/Python34/python.exe"
-
-alias lf='console.exe limefu'
 alias ipython='EDITOR=$(cygpath -w /usr/bin/vim) console.exe ipython3'
 alias node="console.exe node"
 alias nt="console.exe nosetests"
 alias devpi="console.exe devpi"
 alias vagrant="console.exe vagrant"
 alias conpy="console.exe python"
+alias venv34="console.exe /c/python34/scripts/virtualenv venv"
 
-alias lall="console.exe limefu test flake && \
-    console.exe limefu test unit --all && \
-    console.exe limefu test functional && \
-    console.exe limefu test e2e"
 

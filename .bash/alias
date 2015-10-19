@@ -11,8 +11,8 @@ msys)
 esac
 
 browser="python -m webbrowser -t"
-program_files_x86="$c/Program\ Files\ \(x86\)"
-program_files="$c/Program\ Files"
+program_files_x86="/c/Program\ Files\ \(x86\)"
+program_files="/c/Program\ Files"
 
 #
 # ALIAS
@@ -46,13 +46,14 @@ alias ggh="git rev-list --all | xargs git grep"
 alias gbrm='git branch --merged | grep -v \* | xargs git branch -D'
 
 # python
+alias python="/c/Python34/python.exe"
 alias py='python'
 alias delegg='rm -rf *.egg*'
 alias ppu='pip uninstall'
 alias ppi='pip install'
 alias ppie='pip install -e'
 alias ppclean="pip freeze | xargs pip uninstall -y"
-alias venv34="$c/python34/scripts/virtualenv venv"
+alias venv34="/c/python34/scripts/virtualenv venv"
 alias wp="which python"
 
 # apps
