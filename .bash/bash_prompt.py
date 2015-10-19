@@ -88,8 +88,7 @@ def error_level():
 
 def venv_path():
     try:
-        p = sp.Popen(['which', 'python'], stdout=sp.PIPE)
-        exec_path, _ = p.communicate()
+        exec_path = sp.check_output(['which', 'python'])
         exec_path = str(exec_path)
         # exec_path = sys.base_exec_prefix
         parts = exec_path.split(path.sep)
@@ -104,8 +103,8 @@ def venv_info():
     has_python = int(sys.argv[2]) if len(sys.argv) > 2 else 0
 
     return ("{1}{0}".format(
-        # with_color("({})".format(venv_path()), 'green'),
-        '',
+        with_color("({})".format(venv_path()), 'green'),
+        # '',
         with_color("\U0001F40D", 'yellow', bold=True)
     )
             if has_python else "")
