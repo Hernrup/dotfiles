@@ -92,8 +92,17 @@ def venv_path():
         exec_path = str(exec_path)
         # exec_path = sys.base_exec_prefix
         parts = exec_path.split(path.sep)
-        parts = parts[(len(parts) - 4):(len(parts) - 1)] \
-            if len(parts) > 2 else parts
+
+        # remove the executable name
+        del parts[-1]
+
+        # remove scripts dir (applicable if venv)
+        if parts[-1] == 'Scripts':
+            del parts[-1]
+
+        # Only include 2 levels of dirs
+        parts = parts[-2:]
+
         return "/".join(parts)
     except Exception as e:
         return 'Unresolved ' + str(e)
