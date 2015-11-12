@@ -7,7 +7,6 @@ Columns=100
 Rows=60
 PgUpDnScroll=yes
 Term=xterm-256color
-
 ForegroundColour=248,248,242
 BackgroundColour=39,40,34
 CursorColour=253,157,79
@@ -27,3 +26,4 @@ Cyan=161,239,228
 BoldCyan=95,227,210
 White=248,248,242
 BoldWhite=249,248,245
+Scrollbar=none
