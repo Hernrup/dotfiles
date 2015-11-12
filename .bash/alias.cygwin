@@ -10,7 +10,7 @@ alias rmvenv='rm -rf venv'
 # Tell tmux to always expect 256 colors
 alias tmux='tmux -2'
 
-alias limefu='console.exe limefu'
+alias conlimefu='console.exe limefu'
 alias ipython3='console.exe ipython3'
 alias node="console.exe node"
 alias ipython='EDITOR=$(cygpath -w /usr/bin/vim) console.exe ipython3'
@@ -22,3 +22,4 @@ alias conpy="console.exe python"
 alias venv34="console.exe /c/python34/scripts/virtualenv venv"
 
 
+alias tms="tmux new-window -n "
