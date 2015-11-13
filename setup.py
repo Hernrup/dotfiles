@@ -16,16 +16,10 @@ files_to_link = [
     ('.minttyrc', ''),
     ('.tmux.conf', ''),
     ('.tmuxline.conf', ''),
-    # (
-    #     join('pycharm_settings', 'keymap_custom.xml'),
-    #     join('.PyCharm40', 'config', 'keymaps')
-    # ),
-    # (
-    #     join('pycharm_settings', 'colors_custom.icls'),
-    #     join('.PyCharm40', 'config', 'colors')
-    # ),
     ('.vim', ''),
-    ('bin', '')
+    ('bin', ''),
+    ('.zshrc', ''),
+    ('.zsh', '')
 ]
 
 files_to_copy_if_not_existing = [
