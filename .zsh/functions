@@ -176,12 +176,11 @@ function cd_venv() {
 function _default_tmux_pane_layout() {
     local WORKDIR=$1
     echo "Setting up default layout. Directory: $WORKDIR"
-
     tmux send-keys -t 0 'av' C-m
 }
 
 
-function tms() {
+function tmsu() {
     local SESSIONNAME="DEF"
     local PROJNAME=$1
 
@@ -193,7 +192,6 @@ function tms() {
         echo "Session $SESSIONNAME not found. Creating it..."
         echo "Project name: $PROJNAME"
         tmux new-session -s $SESSIONNAME -d -n $PROJNAME -c .
-        _default_tmux_pane_layout .
     else
         echo "Session $SESSIONAME is running. Attaching..."
         #
@@ -204,7 +202,6 @@ function tms() {
             echo "$PROJNAME has no current window. Creating..."
             echo "Project name: $PROJNAME"
             tmux new-window -n $PROJNAME -c .
-            _default_tmux_pane_layout .
         else
             echo "$PROJNAME has an open window. Selecting it..."
             tmux select-window -t $PROJNAME
@@ -218,4 +215,41 @@ function tms() {
     tmux attach-session -t $SESSIONNAME &> /dev/null
 }
 
+function tms() {
+    local SESSIONNAME="DEF"
+    local tmp_path=$1
+    local PROJ_PATH=$tmp_path:A
+    local PROJNAME="$PROJ_PATH:t"
+    echo "Project path: $PROJ_PATH"
+    #
+    # See if we already have a seesion. If not, create one
+    #
+    tmux has-session -t $SESSIONNAME &> /dev/null
+    if [ $? != 0 ]; then
+        echo "Session $SESSIONNAME not found. Creating it..."
+        echo "Project name: $PROJNAME"
+        tmux new-session -s $SESSIONNAME -d -n $PROJNAME -c $PROJ_PATH
+        _default_tmux_pane_layout $PROJ_PATH
+    else
+        echo "Session $SESSIONAME is running. Attaching..."
+        #
+        # Check if we already have a window for the project
+        # If not, create a new window. Otherwise, select the exisiting one.
+        tmux list-windows -t DEF | grep "^[[:digit:]]\+: $PROJNAME" &> /dev/null
+        if [ $? != 0 ]; then
+            echo "$PROJNAME has no current window. Creating..."
+            echo "Project name: $PROJNAME"
+            tmux new-window -n $PROJNAME -c $PROJ_PATH
+            _default_tmux_pane_layout $PROJ_PATH
+        else
+            echo "$PROJNAME has an open window. Selecting it..."
+            tmux select-window -t $PROJNAME
+        fi
+    fi
 
+    #
+    # Attach to the session. If this fails because we're already attached,
+    # fail silently.
+    #
+    tmux attach-session -t $SESSIONNAME &> /dev/null
+}

@@ -7,7 +7,7 @@ alias zshrel='echo "Reloading .zshrc..." && source ~/.zshrc'
 
 # cd
 alias cdg='cd_git_root'
-#alias cd='cd_venv'
+alias cd='cd_venv'
 alias cddev="cd ~/src/"
 
 # misc
@@ -63,9 +63,6 @@ alias vagrant="console.exe vagrant"
 alias killpython="taskkill /F /IM python.exe /T"
 alias killw='taskkill /F /PID'
 alias killall='taskkill /F /T /IM'
-
-# TMux
-# alias tms="tmux new-window -n "
 
 # Lime stuff
 lime_dir="~/src/lime"
