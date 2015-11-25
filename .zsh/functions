@@ -175,15 +175,17 @@ function cd_venv() {
 
 function _default_tmux_pane_layout() {
     local WORKDIR=$1
-    echo "Setting up default layout. Directory: $WORKDIR"
-    tmux send-keys -t 0 'av' C-m
-}
+    local PROJNAME=$2
 
+    echo "Setting up default layout. Directory: $WORKDIR"
+
+    tmux split-window -h -c $WORKDIR -t $PROJNAME -p 50
+}
 
 function tmsu() {
     local SESSIONNAME="DEF"
     local PROJNAME=$1
-
+    local PROJ_PATH="`pwd`"
     #
     # See if we already have a seesion. If not, create one
     #
@@ -191,17 +193,19 @@ function tmsu() {
     if [ $? != 0 ]; then
         echo "Session $SESSIONNAME not found. Creating it..."
         echo "Project name: $PROJNAME"
-        tmux new-session -s $SESSIONNAME -d -n $PROJNAME -c .
+        tmux new-session -s $SESSIONNAME -d -n $PROJNAME -c $PROJ_PATH
+        _default_tmux_pane_layout $PROJ_PATH $PROJNAME
     else
         echo "Session $SESSIONAME is running. Attaching..."
         #
         # Check if we already have a window for the project
         # If not, create a new window. Otherwise, select the exisiting one.
-        tmux list-windows -t LIME | grep "^[[:digit:]]\+: $PROJNAME" &> /dev/null
+        tmux list-windows -t DEF | grep "^[[:digit:]]\+: $PROJNAME" &> /dev/null
         if [ $? != 0 ]; then
             echo "$PROJNAME has no current window. Creating..."
             echo "Project name: $PROJNAME"
-            tmux new-window -n $PROJNAME -c .
+            tmux new-window -n $PROJNAME -c $PROJ_PATH
+            _default_tmux_pane_layout $PROJ_PATH $PROJNAME
         else
             echo "$PROJNAME has an open window. Selecting it..."
             tmux select-window -t $PROJNAME
@@ -229,7 +233,7 @@ function tms() {
         echo "Session $SESSIONNAME not found. Creating it..."
         echo "Project name: $PROJNAME"
         tmux new-session -s $SESSIONNAME -d -n $PROJNAME -c $PROJ_PATH
-        _default_tmux_pane_layout $PROJ_PATH
+        _default_tmux_pane_layout $PROJ_PATH $PROJNAME
     else
         echo "Session $SESSIONAME is running. Attaching..."
         #
@@ -240,7 +244,7 @@ function tms() {
             echo "$PROJNAME has no current window. Creating..."
             echo "Project name: $PROJNAME"
             tmux new-window -n $PROJNAME -c $PROJ_PATH
-            _default_tmux_pane_layout $PROJ_PATH
+            _default_tmux_pane_layout $PROJ_PATH $PROJNAME
         else
             echo "$PROJNAME has an open window. Selecting it..."
             tmux select-window -t $PROJNAME
