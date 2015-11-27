@@ -52,6 +52,8 @@ alias ipython='EDITOR=$(cygpath -w /usr/bin/vim) console.exe ipython3'
 alias nt="console.exe nosetests"
 alias devpi="console.exe devpi"
 alias conpy="console.exe python"
+alias rednose="console.exe nosetests --rednose"
+alias nosetests="console.exe nosetests"
 
 # apps
 alias subl="$program_files/Sublime\ Text\ 3/sublime_text.exe"
