@@ -27,3 +27,5 @@ BoldCyan=95,227,210
 White=248,248,242
 BoldWhite=249,248,245
 Scrollbar=none
+Locale=en_US
+Charset=UTF-8
