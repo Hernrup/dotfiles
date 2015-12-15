@@ -43,6 +43,7 @@ alias delegg='rm -rf *.egg*'
 alias ppu='pip uninstall'
 alias ppi='pip install'
 alias ppie='pip install -e'
+alias ppir='pip install -r requirements.txt'
 alias ppunsource="pip freeze | grep "^-e" | sed 's/.*#egg=\(.*\)-.*/\1/' | xargs pip uninstall -y"
 alias ppclean="ppunsource; pip freeze | grep -v "^-e" | xargs pip uninstall -y"
 alias ppf="pip freeze"
