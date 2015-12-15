@@ -43,7 +43,8 @@ alias delegg='rm -rf *.egg*'
 alias ppu='pip uninstall'
 alias ppi='pip install'
 alias ppie='pip install -e'
-alias ppclean="pip freeze | grep -v "^-e" | xargs pip uninstall -y"
+alias ppunsource="pip freeze | grep "^-e" | sed 's/.*#egg=\(.*\)-.*/\1/' | xargs pip uninstall -y"
+alias ppclean="ppunsource; pip freeze | grep -v "^-e" | xargs pip uninstall -y"
 alias ppf="pip freeze"
 alias ppfw="pip freeze | sed 's/^M$//'"
 alias wp="which python"
@@ -56,6 +57,7 @@ alias devpi="console.exe devpi"
 alias conpy="console.exe python"
 alias rednose="console.exe nosetests --rednose"
 alias nosetests="console.exe nosetests"
+
 
 # apps
 alias subl="$program_files/Sublime\ Text\ 3/sublime_text.exe"
@@ -71,7 +73,7 @@ alias killall='taskkill /F /T /IM'
 # Lime stuff
 lime_dir="~/src/lime"
 alias cdlimedata="cd $c/ProgramData/Lundalogik/LIME\ Pro\ Server/"
-alias lisaserver="$lime_dir/world/serveradmin/Server/Lundalogik.Lisa.Service.ConsoleHost/bin/Debug/LisaConsole.exe"
+alias lisaserver="console.exe $lime_dir/world/serveradmin/Server/Lundalogik.Lisa.Service.ConsoleHost/bin/Debug/LisaConsole.exe"
 alias tngserver="$lime_dir/tng/server/run_cherrypy.py"
 alias tngclient="$browser \"https://1zwlwz1/\""
 alias desktopclient="$lime_dir/desktop-client/src/Release/Lime.exe"
