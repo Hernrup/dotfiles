@@ -257,3 +257,13 @@ function tms() {
     #
     tmux attach-session -t $SESSIONNAME &> /dev/null
 }
+
+function windbgl(){
+    # usage windbgl 10.12.133 /path/to/dumpfile
+    local executable="$program_files_x86/Windows\ Kits/10/Debuggers/x64/windbg"
+    local version=$1
+    local dump=$(cygpath -w -m $2)
+    local symbols="$HOME/src/lime/desktop_client_symbols/$version/Lime.exe\;SRV\*https://msdl.microsoft.com/download/symbols"
+    local cmd="$executable -y $symbols -z $dump"
+    eval ${cmd}
+}
