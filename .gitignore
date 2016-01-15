@@ -4,3 +4,4 @@ __pycache__
 .vim/bundle/*
 bin
 obj
+*.stackdump
