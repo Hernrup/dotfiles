@@ -179,7 +179,7 @@ function _default_tmux_pane_layout() {
 
     echo "Setting up default layout. Directory: $WORKDIR"
 
-    tmux split-window -h -c $WORKDIR -t $PROJNAME -p 50
+    #tmux split-window -h -c $WORKDIR -t $PROJNAME -p 50
 }
 
 function tmsu() {
