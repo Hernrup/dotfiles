@@ -263,7 +263,8 @@ function windbgl(){
     local executable="$program_files_x86/Windows\ Kits/10/Debuggers/x64/windbg"
     local version=$1
     local dump=$(cygpath -w -m $2)
-    local symbols="$HOME/src/lime/desktop_client_symbols/$version/Lime.exe\;SRV\*https://msdl.microsoft.com/download/symbols"
+    local lime_symbol_path="$HOME/src/lime/desktop_client_symbols/$version/"
+    local symbols="$(cygpath -w -m $lime_symbol_path)\;SRV\*"
     local cmd="$executable -y $symbols -z $dump"
     eval ${cmd}
 }
