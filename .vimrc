@@ -143,6 +143,16 @@ nnoremap <leader>ex :Explore<cr>
 " Search with ag
 nnoremap <leader>a :Ag ""<left>
 
+" Disable arrow keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
 " }}}
 
 
