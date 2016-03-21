@@ -33,3 +33,7 @@ nnoremap <leader>t :CtrlPTag<cr>
 
 " reload vimrc"
 nnoremap <leader>re :so $MYVIMRC<cr>
+
+" Auto indent pasted text
+nnoremap p p=`]<C-o>
+nnoremap P P=`]<C-o>

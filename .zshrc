@@ -1,5 +1,5 @@
-source ~/.zsh/env
-source ~/.zsh/functions
-source ~/.zsh/tmux
-source ~/.zsh/prompt
-source ~/.zsh/alias
+source ~/.zsh/env.zsh
+source ~/.zsh/functions.zsh
+source ~/.zsh/tmux.zsh
+source ~/.zsh/prompt.zsh
+source ~/.zsh/alias.zsh

@@ -75,3 +75,8 @@ SAVEHIST=1000
 
 # Display env variable for X11 forwarding
 export DISPLAY=:0
+
+# Disable XOFF so that vim does not freeze on ctrl+s
+stty start undef
+stty stop undef
+setopt noflowcontrol

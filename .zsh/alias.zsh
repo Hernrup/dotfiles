@@ -87,3 +87,4 @@ alias lf='console.exe limefu'
 
 # Other
 alias open='cygstart'
+alias cls='clear'
