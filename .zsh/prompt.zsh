@@ -4,7 +4,7 @@ setopt PROMPT_SUBST
 function venv_prompt_info() {
     if is_python_active; then
         local venv_path=`basename "$VIRTUAL_ENV/.."(:A)`
-        echo "%{$fg[blue]%}% with %{$fg_bold[yellow]%} $venv_path%{$reset_color%}"
+        echo "%{$fg[blue]%}% with %{$fg_bold[yellow]%}🐍%{$reset_color%}"
     fi
 }
 
