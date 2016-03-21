@@ -20,5 +20,8 @@ choco install google-chrome-x64 mingw conemu kdiff3 wireshark fiddler4 jre8 subl
 ## Cygwin run command for zsh in tty
 C:\tools\cygwin\bin\mintty.exe -i /Cygwin-Terminal.ico /bin/zsh --login
 
+## Cygwin packages
+cygwininstall.exe --packages cygutils-extra
+
 ## Remove bash completion if using zsh as it couses lag.
 mv /etc/bash_completion.d -v /etc/bash_completion.d_bak
