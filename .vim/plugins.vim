@@ -73,4 +73,7 @@ Plug 'Shougo/vimproc.vim', {
 \    },
 \ }
 
+Plug 'jensgustafsson/jedi-vim'
+Plug 'ervandew/supertab'
+
 call plug#end()

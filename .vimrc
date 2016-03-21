@@ -30,8 +30,14 @@ set shiftwidth=4    " Indent by 4 columns
 set textwidth=120   " Maximum line width
 set whichwrap=<,>,[,],h,l " Allows for left/right keys to wrap across lines
 
+:set nocompatible
+
 " Always show statusline
 set laststatus=2
+
+" Leader
+"let mapleader="\"
+let maplocalleader="\\"
 
 " set history length
 set history=200
@@ -55,16 +61,8 @@ set switchbuf=useopen
 set lazyredraw
 set ttyfast
 
-if filereadable(expand("~/.vim/plugins.vim"))
-  source ~/.vim/plugins.vim
-endif
-
-
-"let mapleader=" "
-"let maplocalleader="\\"
-
-
-
+" Load plugins
+so ~/.vim/plugins.vim
 
 " load settings
 so ~/.vim/settings.vim
