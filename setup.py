@@ -113,4 +113,4 @@ if __name__ == '__main__':
         # link(join(get_user_folder(), 'src'), join(get_cygwin_folder(), 'src'))
         link(abspath('c:/'), join(get_cygwin_folder(), 'c'))
     else:
-        print('Could not find cygwin folder on {}'.formatfget_cygwin_folder())f
+        print('Could not find cygwin folder on {}'.format(get_cygwin_folder()))
