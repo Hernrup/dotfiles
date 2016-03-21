@@ -1,8 +1,8 @@
 
 zstyle :compinstall filename '/home/mhe/.zshrc'
 
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
+autoload -U colors && colors
 
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on

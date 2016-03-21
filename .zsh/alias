@@ -84,3 +84,6 @@ alias lime_testall="console.exe limefu test flake && \
     console.exe limefu test functional && \
     console.exe limefu test e2e"
 alias lf='console.exe limefu'
+
+# Other
+alias open='cygstart'
