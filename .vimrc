@@ -153,7 +153,16 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
+if has("win32unix")
+    " Cygwin specific settings
+    " Use block cursor in normal mode
+    let &t_ti.="\e[1 q"
+    let &t_SI.="\e[5 q"
+    let &t_EI.="\e[1 q"
+    let &t_te.="\e[0 q"
+endif
 " }}}
+
 
 
 " Options {{{
