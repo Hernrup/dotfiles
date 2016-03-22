@@ -6,24 +6,20 @@ from shutil import copyfile
 
 
 files_to_link = [
-    ('.bash_profile', ''),
-    ('.bashrc', ''),
-    ('.bash', ''),
     ('.gitignore', ''),
     ('.gitconfig', ''),
     ('.vimrc', ''),
     ('.ideavimrc', ''),
     ('.minttyrc', ''),
     ('.tmux.conf', ''),
-    ('.tmuxline.conf', ''),
     ('.vim', ''),
     ('bin', ''),
     ('.zshrc', ''),
-    ('.zsh', '')
+    ('.zsh', ''),
+    ('.ctags', ''),
 ]
 
 files_to_copy_if_not_existing = [
-    ('.bash_local', ''),
     ('.gitconfig_local', '')
 ]
 
@@ -105,12 +101,15 @@ def sync(dest_path):
     link_files(dest_path)
     copy_files(dest_path)
 
-if __name__ == '__main__':
+
+def main():
     sync(get_user_folder())
     if isdir(get_cygwin_folder()):
         sync(get_cygwin_user_folder())
-        # link(join(get_user_folder(), 'src'), join(get_cygwin_user_folder(), 'src'))
-        # link(join(get_user_folder(), 'src'), join(get_cygwin_folder(), 'src'))
         link(abspath('c:/'), join(get_cygwin_folder(), 'c'))
     else:
         print('Could not find cygwin folder on {}'.format(get_cygwin_folder()))
+
+
+if __name__ == '__main__':
+    main()
