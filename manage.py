@@ -25,12 +25,13 @@ def dump_cygwin_package_list():
 
 
 def install_cygwin_packages_from_list():
-    build = 'x86_64'
+    build = 'setup-x86_64.exe'
     packagefile = abspath(join(dirname(__file__), 'cygwin_packages'))
-    setupfile = abspath(join(
-        get_cygwin_folder(), "setup-%s.exe".format(build)))
+    setupfile = abspath(join(get_cygwin_folder(), build))
     packages = ','.join([x.strip() for x in open(packagefile).readlines()])
-    r = request.urlopen("http://cygwin.com/%s".format(setupfile))
+    url = "http://cygwin.com/{}".format(build)
+    print(url)
+    r = request.urlopen(url)
     open(setupfile, 'wb').write(r.read())
     subprocess.call([setupfile, '-P', packages])
 
