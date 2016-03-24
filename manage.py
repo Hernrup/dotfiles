@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 from os.path import abspath, dirname, join
 from subprocess import call
 from argh import ArghParser

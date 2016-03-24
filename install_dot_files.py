@@ -27,7 +27,8 @@ base_path = os.path.realpath(os.path.dirname(__file__))
 
 
 def get_user_folder():
-    return abspath(expanduser("~"))
+    # return abspath(expanduser("~"))
+    return abspath('C:/Users/mhe')
 
 
 def get_cygwin_user_folder():
