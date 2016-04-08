@@ -7,3 +7,5 @@ let g:jedi#usages_command = "<leader>n"
 let g:jedi#completion_command = "<C-Space>"
 let g:jedi#use_tabs_not_buffers = 1
 let g:jedi#use_splits_not_buffers = "right"
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"

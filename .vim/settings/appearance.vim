@@ -49,6 +49,7 @@ set listchars=tab:▷◆,trail:◆
 set background=dark
 colorscheme PaperColor
 " colorscheme badwolf
+" colorscheme zenburn
 
 " Highlight matching [{()}]
 set showmatch

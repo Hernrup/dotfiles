@@ -12,6 +12,7 @@ Plug 'vim-scripts/matchit.zip'
 " Colorschemes
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'joshdick/onedark.vim'
+Plug 'jnurmine/Zenburn'
 
 "ctrlp: File navigation
 Plug 'ctrlpvim/ctrlp.vim'
@@ -74,6 +75,7 @@ Plug 'Shougo/vimproc.vim', {
 \ }
 
 Plug 'jensgustafsson/jedi-vim'
-Plug 'ervandew/supertab'
+" Plug 'Valloric/YouCompleteMe'
+" Plug 'ervandew/supertab'
 
 call plug#end()
