@@ -15,7 +15,6 @@ Misc setupfiles needed on multiple devices
 - linkshellextension
 
 ## Chocholate install for others
-#### PS
 @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
 
 choco install google-chrome-x64 mingw conemu kdiff3 wireshark fiddler4 jre8 sublimetext3 ccleaner staruml filezilla putty git 7zip nodejs.install chocolateygui dotnet4.5 procmon procexp sysinternals python virtualbox curl wget baretail silverlight windirstat sourcetree cygwin
