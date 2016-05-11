@@ -28,6 +28,7 @@ set ruler   " Show the line position at the bottom of the window
 set scrolloff=4 " Minimum lines between cursor and window edge
 set textwidth=120   " Maximum line width
 set whichwrap=<,>,[,],h,l " Allows for left/right keys to wrap across lines
+:set relativenumber
 
 :set nocompatible
 
@@ -47,3 +48,13 @@ imap <right> <nop>
 
 " Quick escape
 inoremap jk <esc>
+
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <C-n> :call NumberToggle()<cr>
