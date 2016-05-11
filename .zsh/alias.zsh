@@ -63,7 +63,7 @@ alias nosetests="console.exe nosetests"
 
 # apps
 alias subl="$program_files/Sublime\ Text\ 3/sublime_text.exe"
-alias pycharm="cygstart $program_files_x86/JetBrains/PyCharm\ 2016.1/bin/pycharm.exe $(cygpath -w -m ${$(pwd)}) 2>/dev/null &"
+alias pycharm="cygstart $program_files_x86/JetBrains/PyCharm\ 2016.1.2/bin/pycharm.exe $(cygpath -w -m ${$(pwd)}) 2>/dev/null &"
 alias node="console.exe node"
 alias vagrant="console.exe vagrant"
 
