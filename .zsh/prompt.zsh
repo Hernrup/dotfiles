@@ -4,7 +4,7 @@ setopt PROMPT_SUBST
 function venv_prompt_info() {
     if is_python_active; then
         local venv_path=`basename "$VIRTUAL_ENV/.."(:A)`
-        echo "%{$fg[blue]%}% with %{$fg_bold[yellow]%}🐍%{$reset_color%}"
+        echo "%{$fg[blue]%}% with %{$fg_bold[yellow]%} %{$reset_color%}"
     fi
 }
 
@@ -17,7 +17,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}"
 function git_prompt_info() {
     ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
     ref=$(command git rev-parse --short HEAD 2> /dev/null) || return 0
-    echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_SUFFIX"
+    echo "$ZSH_THEME_GIT_PROMPT_PREFIX ${ref#refs/heads/}$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_SUFFIX"
     #echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$ZSH_THEME_GIT_PROMPT_CLEAN$ZSH_THEME_GIT_PROMPT_SUFFIX"
 }
 
