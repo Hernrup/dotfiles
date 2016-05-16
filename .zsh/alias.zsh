@@ -75,9 +75,9 @@ alias killall='taskkill /F /T /IM'
 # Lime stuff
 lime_dir="~/src/lime"
 alias cdlimedata="cd $c/ProgramData/Lundalogik/LIME\ Pro\ Server/"
-alias lisaserver="console.exe $lime_dir/world/serveradmin/Server/Lundalogik.Lisa.Service.ConsoleHost/bin/Debug/LisaConsole.exe"
+alias lisaserver="console.exe $lime_dir/limeworld/serveradmin/Server/Lundalogik.Lisa.Service.ConsoleHost/bin/Debug/LisaConsole.exe"
 alias tngserver="limefu run webfront &> /dev/null & limefu run search &> /dev/null & lf run server -d"
-alias tngclient="$browser \"https://1zwlwz1/\""
+alias tngclient="$browser \"https://localhost/\""
 alias desktopclient="$lime_dir/desktop-client/src/Release/Lime.exe 2>/dev/null &"
 alias lime_testall="console.exe limefu test flake && \
     console.exe limefu test unit --all && \
