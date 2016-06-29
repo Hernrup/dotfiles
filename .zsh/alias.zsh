@@ -65,7 +65,7 @@ alias nosetests="console.exe nosetests"
 alias subl="$program_files/Sublime\ Text\ 3/sublime_text.exe"
 alias pycharm="cygstart $program_files_x86/JetBrains/PyCharm\ 2016.1.2/bin/pycharm.exe $(cygpath -w -m ${$(pwd)}) 2>/dev/null &"
 alias node="console.exe node"
-alias vagrant="console.exe vagrant"
+alias vagrant="console.exe /c/HashiCorp/Vagrant/bin/vagrant.exe"
 
 # kill stuff
 alias killpython="taskkill /F /IM python.exe /T"
@@ -78,7 +78,7 @@ alias cdlimedata="cd $c/ProgramData/Lundalogik/LIME\ Pro\ Server/"
 alias lisaserver="console.exe $lime_dir/limeworld/serveradmin/Server/Lundalogik.Lisa.Service.ConsoleHost/bin/Debug/LisaConsole.exe"
 alias tngserver="limefu run webfront &> /dev/null & limefu run search &> /dev/null & lf run server -d"
 alias tngclient="$browser \"https://localhost/\""
-alias desktopclient="$lime_dir/desktop-client/src/Release/Lime.exe 2>/dev/null &"
+alias desktopclient="open $lime_dir/desktop-client/src/Debug/Lime.exe"
 alias lime_testall="console.exe limefu test flake && \
     console.exe limefu test unit --all && \
     console.exe limefu test functional && \
