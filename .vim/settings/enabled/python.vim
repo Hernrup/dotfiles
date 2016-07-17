@@ -1,3 +1,5 @@
+let g:Python3Syntax = 1
+
 augroup filetype_python
     autocmd!
     autocmd FileType python setlocal colorcolumn=80
@@ -52,3 +54,6 @@ function! GreenBar()
     echon repeat(" ",&columns - 1)
     echohl None
 endfunction
+
+let python_highlight_all=1
+syntax on

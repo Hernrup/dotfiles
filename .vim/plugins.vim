@@ -1,6 +1,5 @@
 call plug#begin()
 
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'bling/vim-airline'
 
 " Mirror vim status bar theme to tmux
@@ -13,6 +12,7 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'joshdick/onedark.vim'
 Plug 'jnurmine/Zenburn'
+Plug 'NLKNguyen/papercolor-theme'
 
 "ctrlp: File navigation
 Plug 'ctrlpvim/ctrlp.vim'
@@ -57,8 +57,6 @@ Plug 'Rykka/riv.vim', { 'for': 'rst' }
 
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 
-Plug 'hynek/vim-python-pep8-indent',  { 'for': 'python' }
-
 Plug 'scrooloose/nerdtree',  { 'for': 'python' }
 
 Plug 'christoomey/vim-tmux-navigator'
@@ -74,8 +72,13 @@ Plug 'Shougo/vimproc.vim', {
 \    },
 \ }
 
-Plug 'jensgustafsson/jedi-vim'
+" Plug 'jensgustafsson/jedi-vim'
+Plug 'davidhalter/jedi-vim'
+Plug 'Shougo/neocomplete'
 " Plug 'Valloric/YouCompleteMe'
 " Plug 'ervandew/supertab'
+
+Plug 'bkad/CamelCaseMotion'
+Plug 'hdima/python-syntax'
 
 call plug#end()

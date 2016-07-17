@@ -7,7 +7,6 @@ set smartindent
 set autoindent
 set expandtab
 set tabstop=4
-set shiftwidth=4
 set laststatus=2
 set autowrite           " Automatically save buffer
 set number
@@ -45,6 +44,7 @@ set history=200
 
 " Easiear copy paste to system clipboard
 set clipboard=unnamed
+
 
 " Turn off error beeps and flashing
 set noerrorbells visualbell t_vb=

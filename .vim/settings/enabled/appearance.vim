@@ -47,9 +47,9 @@ set list                " Display special characters (e.g. trailing whitespace)
 set listchars=tab:▷◆,trail:◆
 
 set background=dark
-colorscheme PaperColor
+" colorscheme PaperColor
 " colorscheme badwolf
-" colorscheme zenburn
+colorscheme zenburn
 
 " Highlight matching [{()}]
 set showmatch
