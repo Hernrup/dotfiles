@@ -72,8 +72,8 @@ Plug 'Shougo/vimproc.vim', {
 \    },
 \ }
 
-" Plug 'jensgustafsson/jedi-vim'
-Plug 'davidhalter/jedi-vim'
+Plug 'jensgustafsson/jedi-vim'
+" Plug 'davidhalter/jedi-vim'
 Plug 'Shougo/neocomplete'
 " Plug 'Valloric/YouCompleteMe'
 " Plug 'ervandew/supertab'

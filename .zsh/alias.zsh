@@ -53,6 +53,7 @@ alias venv34="/c/python34/scripts/virtualenv venv"
 alias venv34cw="/usr/bin/virtualenv-3.4 venv"
 alias rmvenv='rm -rf venv'
 alias ipython3='console.exe ipython3'
+alias python3='python'
 alias ipython='EDITOR=$(cygpath -w /usr/bin/vim) console.exe ipython3'
 alias nt="console.exe nosetests"
 alias devpi="console.exe devpi"

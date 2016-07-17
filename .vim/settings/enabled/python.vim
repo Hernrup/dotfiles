@@ -1,5 +1,3 @@
-let g:Python3Syntax = 1
-
 augroup filetype_python
     autocmd!
     autocmd FileType python setlocal colorcolumn=80
