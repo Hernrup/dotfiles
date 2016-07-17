@@ -29,6 +29,7 @@ set shiftwidth=4    " Indent by 4 columns
 set textwidth=120   " Maximum line width
 set whichwrap=<,>,[,],h,l " Allows for left/right keys to wrap across lines
 set autochdir
+set relativenumber
 
 :set nocompatible
 
