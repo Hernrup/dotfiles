@@ -34,3 +34,9 @@ python manage.py install-dot-files
 
 ## Remove bash completion if using zsh as it couses lag.
 mv /etc/bash_completion.d -v /etc/bash_completion.d_bak
+
+## install apt-cyg
+lynx -source rawgit.com/transcode-open/apt-cyg/master/apt-cyg > apt-cyg
+install apt-cyg /bin
+
+## Install grip for markdown
