@@ -80,5 +80,4 @@ Plug 'Shougo/neocomplete'
 
 Plug 'bkad/CamelCaseMotion'
 Plug 'hdima/python-syntax'
-
 call plug#end()
