@@ -44,3 +44,6 @@ noremap <Leader>v :<C-u>vsplit<CR>
 
 " Close buffer
 noremap <leader>c :bd<CR>
+
+" Enable pastetoggle
+set pastetoggle=<F2>

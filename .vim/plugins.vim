@@ -57,7 +57,7 @@ Plug 'Rykka/riv.vim', { 'for': 'rst' }
 
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 
-Plug 'scrooloose/nerdtree',  { 'for': 'python' }
+Plug 'scrooloose/nerdtree'
 
 Plug 'christoomey/vim-tmux-navigator'
 
