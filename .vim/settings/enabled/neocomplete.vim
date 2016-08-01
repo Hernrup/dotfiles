@@ -13,10 +13,13 @@ let g:neocomplete#enable_auto_select = 1
 let g:neocomplete#enable_auto_delimiter = 1
 let g:neocomplete#enable_fuzzy_completion = 0
 let g:neocomplete#enable_refresh_always = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
+inoremap <expr><S-e>     neocomplete#complete_common_string()
+
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
@@ -36,3 +39,6 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 " AutoComplPop like behavior.
 "let g:neocomplete#enable_auto_select = 1
+"
+
+let g:neocomplete#use_vimproc = 1
