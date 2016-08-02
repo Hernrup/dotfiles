@@ -219,6 +219,11 @@ function tmsu() {
     tmux attach-session -t $SESSIONNAME &> /dev/null
 }
 
+function tma(){
+    local SESSIONNAME="DEF"
+    tmux new-session -t $SESSIONNAME &> /dev/null
+}
+
 function tms() {
     local SESSIONNAME="DEF"
     local tmp_path=$1
@@ -235,7 +240,12 @@ function tms() {
         tmux new-session -s $SESSIONNAME -d -n $PROJNAME -c $PROJ_PATH
         _default_tmux_pane_layout $PROJ_PATH $PROJNAME
     else
-        echo "Session $SESSIONAME is running. Attaching..."
+        echo "Session $SESSIONNAME is running. Attaching..."
+        #
+        # Attach to the session. If this fails because we're already attached,
+        # fail silently.
+        #
+        tmux attach-session -t $SESSIONNAME &> /dev/null
         #
         # Check if we already have a window for the project
         # If not, create a new window. Otherwise, select the exisiting one.
@@ -251,11 +261,6 @@ function tms() {
         fi
     fi
 
-    #
-    # Attach to the session. If this fails because we're already attached,
-    # fail silently.
-    #
-    tmux attach-session -t $SESSIONNAME &> /dev/null
 }
 
 function windbgl(){
