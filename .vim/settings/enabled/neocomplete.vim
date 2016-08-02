@@ -16,6 +16,19 @@ let g:neocomplete#enable_refresh_always = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+            \ 'default' : '',
+            \ 'vimshell' : $HOME.'/.vimshell_hist',
+            \ 'scheme' : $HOME.'/.gosh_completions'
+            \ }
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplete#undo_completion()
 inoremap <expr><S-e>     neocomplete#complete_common_string()
