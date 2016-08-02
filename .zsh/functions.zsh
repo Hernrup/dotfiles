@@ -200,7 +200,7 @@ function tmsu() {
         #
         # Check if we already have a window for the project
         # If not, create a new window. Otherwise, select the exisiting one.
-        tmux list-windows -t DEF | grep "^[[:digit:]]\+: $PROJNAME" &> /dev/null
+        tmux list-windows -t DEF | grep "^[[:digit:]]\+: $PROJNAME.\? " &> /dev/null
         if [ $? != 0 ]; then
             echo "$PROJNAME has no current window. Creating..."
             echo "Project name: $PROJNAME"
@@ -239,7 +239,7 @@ function tms() {
         #
         # Check if we already have a window for the project
         # If not, create a new window. Otherwise, select the exisiting one.
-        tmux list-windows -t DEF | grep "^[[:digit:]]\+: $PROJNAME" &> /dev/null
+        tmux list-windows -t DEF | grep "^[[:digit:]]\+: $PROJNAME.\? " &> /dev/null
         if [ $? != 0 ]; then
             echo "$PROJNAME has no current window. Creating..."
             echo "Project name: $PROJNAME"
