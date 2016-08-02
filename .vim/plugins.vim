@@ -72,7 +72,7 @@ Plug 'christoomey/vim-tmux-navigator'
 " \    },
 " \ }
 "
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'Shougo/vimproc.vim', {'do' : 'make -f make_cygwin.mak'}
 
 Plug 'jensgustafsson/jedi-vim'
 " Plug 'davidhalter/jedi-vim'

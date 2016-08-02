@@ -6,3 +6,4 @@ bin
 obj
 *.stackdump
 .vim/plugged/*
+tags
