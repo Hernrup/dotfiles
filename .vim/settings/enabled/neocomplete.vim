@@ -8,7 +8,7 @@ let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#auto_completion_start_length = 2
 let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#disable_auto_complete = 0
+let g:neocomplete#disable_auto_complete = 1
 let g:neocomplete#enable_auto_select = 0
 let g:neocomplete#enable_auto_delimiter = 1
 let g:neocomplete#enable_fuzzy_completion = 0
@@ -50,5 +50,7 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 " Close popup by <Space>.
 "inoremap <expr><Space> pumvisible() ? "\<C-h>" : "\<Space>"
 
+inoremap <C-Space> <C-x><C-o>
+inoremap <C-@> <C-Space>
 
 let g:neocomplete#use_vimproc = 1
