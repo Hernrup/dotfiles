@@ -1,6 +1,7 @@
 call plug#begin()
 
-Plug 'bling/vim-airline'
+" Plug 'bling/vim-airline'
+Plug 'itchyny/lightline.vim'
 
 " Mirror vim status bar theme to tmux
 Plug 'edkolev/tmuxline.vim'

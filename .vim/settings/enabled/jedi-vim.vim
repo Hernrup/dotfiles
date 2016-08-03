@@ -1,5 +1,5 @@
 let g:jedi#popup_select_first = 1
-let g:jedi#popup_on_dot = 1
+let g:jedi#popup_on_dot = 0
 let g:jedi#goto_command = "<leader>g"
 let g:jedi#get_definitions_command = "<leader>d"
 let g:jedi#rename_command = "<leader>r"
@@ -11,4 +11,4 @@ let g:jedi#auto_initialization = 1
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#completions_enabled = 0
 let g:jedi#smart_auto_mappings = 0
-let g:jedi#show_call_signatures = 1
+let g:jedi#show_call_signatures = 0

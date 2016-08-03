@@ -6,7 +6,7 @@ let g:neocomplete#force_omni_input_patterns.python =
 
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#auto_completion_start_length = 2
+" let g:neocomplete#auto_completion_start_length = 2
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#disable_auto_complete = 1
 let g:neocomplete#enable_auto_select = 0
@@ -15,6 +15,7 @@ let g:neocomplete#enable_fuzzy_completion = 0
 let g:neocomplete#enable_refresh_always = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+let g:neocomplete#sources#tags#cache_limit_size = 10000000000000000
 
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {
@@ -31,7 +32,7 @@ let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><S-e>     neocomplete#complete_common_string()
+inoremap <expr><C-c>     neocomplete#complete_common_string()
 
 
 " Recommended key-mappings.
@@ -42,15 +43,22 @@ function! s:my_cr_function()
   " For no inserting <CR> key.
   "return pumvisible() ? "\<C-y>" : "\<CR>"
 endfunction
+
 " <TAB>: completion.
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+
 " Close popup by <Space>.
 "inoremap <expr><Space> pumvisible() ? "\<C-h>" : "\<Space>"
 
-inoremap <C-Space> <C-x><C-o>
-inoremap <C-@> <C-Space>
+" Start autocomplete on ctr+space
+inoremap <expr><C-@>        neocomplete#start_manual_complete('omni')
 
+" Use winproc
 let g:neocomplete#use_vimproc = 1
+
+let g:pymode_rope = 0
+let g:pymode_folding=0
