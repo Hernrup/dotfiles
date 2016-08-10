@@ -8,7 +8,8 @@ let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 " let g:neocomplete#auto_completion_start_length = 2
 let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#disable_auto_complete = 1
+let g:neocomplcache_min_syntax_length = 1
+let g:neocomplete#disable_auto_complete = 0
 let g:neocomplete#enable_auto_select = 0
 let g:neocomplete#enable_auto_delimiter = 1
 let g:neocomplete#enable_fuzzy_completion = 0
@@ -55,7 +56,7 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 "inoremap <expr><Space> pumvisible() ? "\<C-h>" : "\<Space>"
 
 " Start autocomplete on ctr+space
-inoremap <expr><C-@>        neocomplete#start_manual_complete('omni')
+inoremap <expr><C-@> neocomplete#start_manual_complete()
 
 " Use winproc
 let g:neocomplete#use_vimproc = 1

@@ -6,6 +6,9 @@ program_files="/c/Program\ Files"
 alias zshrel='echo "Reloading .zshrc..." && source ~/.zshrc'
 
 # cd
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
 alias cdg='cd_git_root'
 alias cd='cd_venv'
 alias cddev="cd ~/src/"
@@ -54,13 +57,21 @@ alias venv34cw="/usr/bin/virtualenv-3.4 venv"
 alias rmvenv='rm -rf venv'
 alias ipython3='console.exe ipython3'
 alias python3='python'
-alias ipython='EDITOR=$(cygpath -w /usr/bin/vim) console.exe ipython3'
+alias ipython='EDITOR=$(cygpath -w /usr/bin/vim) winpty ipython3'
 alias nt="console.exe nosetests"
 alias devpi="console.exe devpi"
-alias conpy="console.exe python"
+alias py="winpty python"
 alias rednose="console.exe nosetests --rednose"
 alias nosetests="console.exe nosetests"
 
+
+function ipy() {
+    VIRTUAL_ENV=$(cygpath -w $VIRTUAL_ENV) EDITOR=$(cygpath -w /usr/bin/vim) winpty.exe ipython3
+}
+
+function manage.py() {
+    VIRTUAL_ENV=$(cygpath -w $VIRTUAL_ENV) winpty.exe python manage.py $*
+}
 
 # apps
 alias subl="$program_files/Sublime\ Text\ 3/sublime_text.exe"
