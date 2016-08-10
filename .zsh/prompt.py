@@ -8,6 +8,7 @@ import subprocess
 import sys
 import re
 import argparse
+import platform
 
 
 encoding = sys.getdefaultencoding()
@@ -90,12 +91,15 @@ class Powerline:
         self.segments.append(segment)
 
     def draw(self):
-        return (''.join((s[0].draw(self, s[1]) for s in zip(self.segments, self.segments[1:] + [None])))
-                + self.reset)
+        return (
+            ''.join((s[0].draw(self, s[1]) for
+                     s in zip(self.segments, self.segments[1:] + [None])))
+            + self.reset)
 
 
 class Segment:
-    def __init__(self, powerline, content, fg, bg, separator=None, separator_fg=None):
+    def __init__(self, powerline, content, fg, bg, separator=None,
+                 separator_fg=None):
         self.powerline = powerline
         self.content = content
         self.fg = fg
@@ -134,21 +138,28 @@ def add_cwd_segment(powerline, cwd, maxdepth, cwd_only=False, hostname=False):
         names = names[:2] + ['⋯ '] + names[2 - maxdepth:]
 
     if hostname:
-        powerline.append(Segment(powerline, ' %m ' , Color.CWD_FG, Color.PATH_BG, powerline.separator_thin, Color.SEPARATOR_FG))
+        powerline.append(
+            Segment(powerline, ' %m ', Color.CWD_FG, Color.PATH_BG,
+                    powerline.separator_thin, Color.SEPARATOR_FG))
 
     if not cwd_only:
         for n in names[:-1]:
-            powerline.append(Segment(powerline, ' %s ' % n, Color.PATH_FG, Color.PATH_BG, powerline.separator_thin, Color.SEPARATOR_FG))
-    powerline.append(Segment(powerline, ' %s ' % names[-1], Color.CWD_FG, Color.PATH_BG))
+            powerline.append(
+                Segment(powerline, ' %s ' % n, Color.PATH_FG, Color.PATH_BG,
+                        powerline.separator_thin, Color.SEPARATOR_FG))
+    powerline.append(Segment(powerline, ' %s ' % names[-1], Color.CWD_FG,
+                             Color.PATH_BG))
 
 
 def get_git_status():
     has_pending_commits = True
     has_untracked_files = False
     origin_position = ""
-    output = subprocess.Popen(['git', 'status', '-unormal'], stdout=subprocess.PIPE).communicate()[0]
+    output = subprocess.Popen(['git', 'status', '-unormal'],
+                              stdout=subprocess.PIPE).communicate()[0]
     for line in output.decode(encoding).split('\n'):
-        origin_status = re.findall("Your branch is (ahead|behind).*?(\d+) comm", line)
+        origin_status = re.findall(
+            "Your branch is (ahead|behind).*?(\d+) comm", line)
         if len(origin_status) > 0:
             origin_position = " %d" % int(origin_status[0][1])
             if origin_status[0][0] == 'behind':
@@ -163,8 +174,16 @@ def get_git_status():
     return has_pending_commits, has_untracked_files, origin_position
 
 
+def add_uname_segment(powerline, cmd):
+    system = platform.system()
+    bg = Color.REPO_CLEAN_BG
+    fg = Color.REPO_CLEAN_FG
+    powerline.append(Segment(powerline, ' %s ' % system, fg, bg))
+
+
 def add_git_segment(powerline, cwd):
-    p = subprocess.Popen(['git', 'symbolic-ref', '-q', 'HEAD'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    p = subprocess.Popen(['git', 'symbolic-ref', '-q', 'HEAD'],
+                         stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out, err = p.communicate()
 
     if 'Not a git repo' in err.decode(encoding):
@@ -176,7 +195,8 @@ def add_git_segment(powerline, cwd):
         branch = b'(Detached)'
 
     branch = branch.decode(encoding)
-    has_pending_commits, has_untracked_files, origin_position = get_git_status()
+    has_pending_commits, has_untracked_files, origin_position = \
+        get_git_status()
     branch += origin_position
     if has_untracked_files:
         branch += ' +'
@@ -211,12 +231,16 @@ def add_svn_segment(powerline, cwd):
     '''
     # TODO: Color segment based on above status codes
     try:
-        p1 = subprocess.Popen(['svn', 'status'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        p2 = subprocess.Popen(['grep', '-c', '^[ACDIMRX\\!\\~]'], stdin=p1.stdout, stdout=subprocess.PIPE)
+        p1 = subprocess.Popen(['svn', 'status'],
+                              stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        p2 = subprocess.Popen(['grep', '-c', '^[ACDIMRX\\!\\~]'],
+                              stdin=p1.stdout, stdout=subprocess.PIPE)
         output = p2.communicate()[0].strip()
         if len(output) > 0 and int(output) > 0:
             changes = output.strip()
-            powerline.append(Segment(powerline, ' %s ' % changes, Color.SVN_CHANGES_FG, Color.SVN_CHANGES_BG))
+            powerline.append(
+                Segment(powerline, ' %s ' % changes,
+                        Color.SVN_CHANGES_FG, Color.SVN_CHANGES_BG))
     except OSError:
         return False
     except subprocess.CalledProcessError:
@@ -239,7 +263,7 @@ def add_virtual_env_segment(powerline, cwd):
     env = os.getenv("VIRTUAL_ENV")
     if env is None:
         return False
-    env_name = os.path.basename(env)
+    # env_name = os.path.basename(env)
     bg = Color.VIRTUAL_ENV_BG
     fg = Color.VIRTUAL_ENV_FG
     powerline.append(Segment(powerline, '  ', fg, bg))
@@ -270,7 +294,8 @@ def get_valid_cwd():
         except:
             warn("Your current directory is invalid.")
             sys.exit(1)
-        warn("Your current directory is invalid. Lowest valid directory: " + up)
+        warn(
+            "Your current directory is invalid. Lowest valid directory: " + up)
     return cwd
 
 if __name__ == '__main__':
@@ -280,6 +305,7 @@ if __name__ == '__main__':
 
     p = Powerline(mode='nerdfont')
     cwd = get_valid_cwd()
+    add_uname_segment(p, cwd)
     add_cwd_segment(p, cwd, 5, cwd_only=False, hostname=True)
     add_repo_segment(p, cwd)
     add_virtual_env_segment(p, cwd)
@@ -290,4 +316,3 @@ if __name__ == '__main__':
         sys.stdout.write(prompt_string.encode('utf-8'))
     else:
         sys.stdout.buffer.write(prompt_string.encode('utf-8'))
-
