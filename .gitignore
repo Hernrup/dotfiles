@@ -7,3 +7,5 @@ obj
 *.stackdump
 .vim/plugged/*
 tags
+*.pyc
+*.old

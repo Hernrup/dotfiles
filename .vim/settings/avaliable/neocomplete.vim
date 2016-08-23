@@ -5,11 +5,11 @@ let g:neocomplete#force_omni_input_patterns.python =
     \ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 
 let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_at_startup = 0
 " let g:neocomplete#auto_completion_start_length = 2
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplcache_min_syntax_length = 1
-let g:neocomplete#disable_auto_complete = 0
+let g:neocomplete#disable_auto_complete = 1
 let g:neocomplete#enable_auto_select = 0
 let g:neocomplete#enable_auto_delimiter = 1
 let g:neocomplete#enable_fuzzy_completion = 0

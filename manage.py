@@ -5,6 +5,8 @@ from argh import ArghParser
 from urllib import request
 import subprocess
 from install_dot_files import main as install_dots
+
+
 def argh_parse():
     parser = ArghParser()
     parser.add_commands(

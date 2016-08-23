@@ -1,3 +1,5 @@
+export TERM=xterm-256color
+export PAGER='less'
 
 zstyle :compinstall filename '/home/mhe/.zshrc'
 
@@ -11,7 +13,7 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 #
 # Load $fg & co with color codes
 #
-autoload -U colors && colors
+# autoload -U colors && colors
 
 #
 # Ensure user binaries are available.

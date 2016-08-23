@@ -75,12 +75,22 @@ Plug 'christoomey/vim-tmux-navigator'
 "
 Plug 'Shougo/vimproc.vim', {'do' : 'make -f make_cygwin.mak'}
 
-Plug 'jensgustafsson/jedi-vim'
+" Plug 'jensgustafsson/jedi-vim'
 " Plug 'davidhalter/jedi-vim'
-Plug 'Shougo/neocomplete'
+" Plug 'Shougo/neocomplete'
 " Plug 'Valloric/YouCompleteMe'
+function! BuildYCM(info)
+    if a:info.status == 'installed' || a:info.force
+        silent !build_dir=$(mktemp -d)
+        silent !pushd $build_dir
+        silent !cmake . ~/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp
+        silent !cmake --build . --target ycm_core
+        silent !popd
+    endif
+endfunction
+Plug 'joakimkarlsson/YouCompleteMe', {'do': function('BuildYCM') }
 " Plug 'ervandew/supertab'
 
-Plug 'bkad/CamelCaseMotion'
+" Plug 'bkad/CamelCaseMotion'
 Plug 'hdima/python-syntax'
 call plug#end()
