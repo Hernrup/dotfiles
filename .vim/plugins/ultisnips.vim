@@ -1,3 +1,5 @@
+Plug 'SirVer/ultisnips'
+
 " let g:UltiSnipsExpandTrigger="<c-."
 " let g:UltiSnipsListSnippets="<c-/>"
 " let g:UltiSnipsJumpForwardTrigger="<c-.>"

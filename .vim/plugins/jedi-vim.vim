@@ -1,3 +1,5 @@
+Plug 'jensgustafsson/jedi-vim'
+Plug 'davidhalter/jedi-vim'
 let g:jedi#popup_select_first = 1
 let g:jedi#popup_on_dot = 0
 let g:jedi#goto_command = "<leader>g"

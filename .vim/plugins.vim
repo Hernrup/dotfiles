@@ -1,6 +1,6 @@
 call plug#begin()
 
-" Plug 'bling/vim-airline'
+" so ~/plugins/airline.vim
 Plug 'itchyny/lightline.vim'
 
 " Mirror vim status bar theme to tmux
@@ -16,15 +16,16 @@ Plug 'jnurmine/Zenburn'
 Plug 'NLKNguyen/papercolor-theme'
 
 "ctrlp: File navigation
-Plug 'ctrlpvim/ctrlp.vim'
+so ~/.vim/plugins/ctrlp.vim
 
+" Directory navigation
 Plug 'tpope/vim-vinegar'
 
 " Surround text
 Plug 'tpope/vim-surround'
 
 " Commenting/uncommenting code
-Plug 'tomtom/tcomment_vim'
+so ~/.vim/plugins/tComment.vim
 
 " Git integration
 Plug 'tpope/vim-fugitive'
@@ -37,14 +38,18 @@ Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'xolox/vim-misc'
 
 "syntastic: Syntax check for several languages
-Plug 'scrooloose/syntastic', { 'for': 'python' }
+so ~/.vim/plugins/syntastic.vim
 
-Plug 'SirVer/ultisnips'
+" snippets
+so ~/.vim/plugins/ultisnips.vim
 
-Plug 'Konfekt/FastFold'
+" folding
+so ~/.vim/plugins/fastfold.vim
 
+" Sercher
 Plug 'rking/ag.vim'
 
+" Salt support
 Plug 'saltstack/salt-vim', { 'for': 'sls' }
 
 " Better indentation for Python
@@ -56,41 +61,34 @@ Plug 'voithos/vim-python-matchit', { 'for': 'python' }
 " Highlighting for restructured text
 Plug 'Rykka/riv.vim', { 'for': 'rst' }
 
+" Javascript syntax
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 
+" File tree
 Plug 'scrooloose/nerdtree'
 
+" Seamless navigation with tmux
 Plug 'christoomey/vim-tmux-navigator'
 
-" vimproc: Make it possible to execute programs within vim (requires compilation)
-" Plug 'Shougo/vimproc.vim', {
-" \ 'build' : {
-" \     'windows' : 'tools\\update-dll-mingw',
-" \     'cygwin' : 'make -f make_cygwin.mak',
-" \     'mac' : 'make -f make_mac.mak',
-" \     'linux' : 'make',
-" \     'unix' : 'gmake',
-" \    },
-" \ }
-"
-Plug 'Shougo/vimproc.vim', {'do' : 'make -f make_cygwin.mak'}
+" vimproc: Make it possible to execute programs within vim
+so ~/.vim/plugins/vimproc.vim
 
-" Plug 'jensgustafsson/jedi-vim'
-" Plug 'davidhalter/jedi-vim'
-" Plug 'Shougo/neocomplete'
-" Plug 'Valloric/YouCompleteMe'
-function! BuildYCM(info)
-    if a:info.status == 'installed' || a:info.force
-        silent !build_dir=$(mktemp -d)
-        silent !pushd $build_dir
-        silent !cmake . ~/.vim/plugged/YouCompleteMe/third_party/ycmd/cpp
-        silent !cmake --build . --target ycm_core
-        silent !popd
-    endif
-endfunction
-Plug 'joakimkarlsson/YouCompleteMe', {'do': function('BuildYCM') }
+" Jedi-vim
+so ~/.vim/plugins/jedi-vim.vim
+
+" autocompleation
+" so ~/.vim/plugins/neocomplete.vim
+
+" Tab completiom
 " Plug 'ervandew/supertab'
 
+" YouCompleteMe
+so ~/.vim/plugins/ycm.vim
+
+" cammel case movement
 " Plug 'bkad/CamelCaseMotion'
+
+" python3 default syntax
 Plug 'hdima/python-syntax'
+
 call plug#end()

@@ -1,3 +1,5 @@
+Plug 'tomtom/tcomment_vim'
+
 " tComment
 " ========================================
 " extensions for tComment plugin. Normally
