@@ -9,9 +9,10 @@ function! BuildYCM(info)
 endfunction
 
 " Plug 'Valloric/YouCompleteMe'
-Plug 'joakimkarlsson/YouCompleteMe', {'do': function('BuildYCM') }
+Plug 'hernrup/YouCompleteMe', {'do': function('BuildYCM'), 'for': ['python', 'javascript']}
 
 let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = 'debug'
 let g:ycm_python_binary_path = 'python'
 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 let g:ycm_auto_trigger = 1
