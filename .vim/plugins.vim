@@ -91,4 +91,8 @@ so ~/.vim/plugins/ycm.vim
 " python3 default syntax
 Plug 'hdima/python-syntax'
 
+" Markdown
+Plug 'godlygeek/tabular', { 'for': 'markdown' }
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+so ~/.vim/plugins/vim_table_mode.vim
 call plug#end()
