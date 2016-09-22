@@ -36,26 +36,22 @@
   praise = blame
 
 [merge]
-	tool = kdiff3
+	tool = vimdiff
 
 [diff]
-	tool = kdiff3
+	tool = vimdiff
 
-[difftool "sourcetree"]
-	cmd = 'C:/Program Files/KDiff3/kdiff3.exe' \"$LOCAL\" \"$REMOTE\"
-    path =
+[difftool "vimdiff"]
+    keepBackup = false
 
-[mergetool "kdiff3"]
+[mergetool "vimdiff"]
 	keepBackup = false
-	trustExitCode = false
-
-[mergetool "sourcetree"]
-	cmd = 'C:/Program Files/KDiff3/kdiff3.exe' \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
-	trustExitCode = true
 
 [mergetool]
     keepBackup = false
+
 [credential]
 	helper = store
+
 [gc]
 	auto = 256
