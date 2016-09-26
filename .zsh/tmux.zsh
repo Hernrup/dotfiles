@@ -53,7 +53,7 @@ function open_tmux_window(){
     echo "Project path: $PROJ_PATH"
     # Check if we already have a window for the project
     # If not, create a new window. Otherwise, select the exisiting one.
-    tmux list-windows -t DEF | grep "^[[:digit:]]\+: $PROJNAME.\? " &> /dev/null
+    tmux list-windows | grep "^[[:digit:]]\+: $PROJNAME.\? " &> /dev/null
     if [ $? != 0 ]; then
         echo "$PROJNAME has no current window. Creating..."
         tmux new-window -n $PROJNAME -c $PROJ_PATH
