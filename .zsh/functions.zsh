@@ -68,7 +68,6 @@ function cd_git_root() {
 }
 
 
-
 #
 # Check if we have an active python.
 #
@@ -165,102 +164,6 @@ function av() {
 #
 function cd_venv() {
     cd $1 && activate_python
-}
-
-
-#
-# Start, or attach to, a tmux sesssion with a window for
-# the desired project.
-#
-
-function _default_tmux_pane_layout() {
-    local WORKDIR=$1
-    local PROJNAME=$2
-
-    echo "Setting up default layout. Directory: $WORKDIR"
-
-    #tmux split-window -h -c $WORKDIR -t $PROJNAME -p 50
-}
-
-function tmsu() {
-    local SESSIONNAME="DEF"
-    local PROJNAME=$1
-    local PROJ_PATH="`pwd`"
-    #
-    # See if we already have a seesion. If not, create one
-    #
-    tmux has-session -t $SESSIONNAME &> /dev/null
-    if [ $? != 0 ]; then
-        echo "Session $SESSIONNAME not found. Creating it..."
-        echo "Project name: $PROJNAME"
-        tmux new-session -s $SESSIONNAME -d -n $PROJNAME -c $PROJ_PATH
-        _default_tmux_pane_layout $PROJ_PATH $PROJNAME
-    else
-        echo "Session $SESSIONAME is running. Attaching..."
-        #
-        # Check if we already have a window for the project
-        # If not, create a new window. Otherwise, select the exisiting one.
-        tmux list-windows -t DEF | grep "^[[:digit:]]\+: $PROJNAME.\? " &> /dev/null
-        if [ $? != 0 ]; then
-            echo "$PROJNAME has no current window. Creating..."
-            echo "Project name: $PROJNAME"
-            tmux new-window -n $PROJNAME -c $PROJ_PATH
-            _default_tmux_pane_layout $PROJ_PATH $PROJNAME
-        else
-            echo "$PROJNAME has an open window. Selecting it..."
-            tmux select-window -t $PROJNAME
-        fi
-    fi
-
-    #
-    # Attach to the session. If this fails because we're already attached,
-    # fail silently.
-    #
-    tmux attach-session -t $SESSIONNAME &> /dev/null
-}
-
-function tma(){
-    local SESSIONNAME="DEF"
-    tmux new-session -t $SESSIONNAME &> /dev/null
-}
-
-function tms() {
-    local SESSIONNAME="DEF"
-    local tmp_path=$1
-    local PROJ_PATH=$tmp_path:A
-    local PROJNAME="$PROJ_PATH:t"
-    echo "Project path: $PROJ_PATH"
-    #
-    # See if we already have a seesion. If not, create one
-    #
-    tmux has-session -t $SESSIONNAME &> /dev/null
-    if [ $? != 0 ]; then
-        echo "Session $SESSIONNAME not found. Creating it..."
-        echo "Project name: $PROJNAME"
-        tmux new-session -s $SESSIONNAME -d -n $PROJNAME -c $PROJ_PATH
-        _default_tmux_pane_layout $PROJ_PATH $PROJNAME
-    else
-        echo "Session $SESSIONNAME is running. Attaching..."
-        #
-        # Attach to the session. If this fails because we're already attached,
-        # fail silently.
-        #
-        tmux attach-session -t $SESSIONNAME &> /dev/null
-        #
-        # Check if we already have a window for the project
-        # If not, create a new window. Otherwise, select the exisiting one.
-        tmux list-windows -t DEF | grep "^[[:digit:]]\+: $PROJNAME.\? " &> /dev/null
-        if [ $? != 0 ]; then
-            echo "$PROJNAME has no current window. Creating..."
-            echo "Project name: $PROJNAME"
-            tmux new-window -n $PROJNAME -c $PROJ_PATH
-            _default_tmux_pane_layout $PROJ_PATH $PROJNAME
-        else
-            echo "$PROJNAME has an open window. Selecting it..."
-            tmux select-window -t $PROJNAME
-        fi
-    fi
-
 }
 
 function install_python_package_as_source_for_windows() {
