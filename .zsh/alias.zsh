@@ -43,9 +43,9 @@ alias gbrm='git branch --merged | grep -v \* | xargs git branch -D'
 # python
 alias py='python'
 alias delegg='rm -rf *.egg*'
-alias ppu='pip uninstall'
+alias ppu='pip uninstall -y'
 alias ppi='pip install'
-alias ppie='pip install -e'
+alias ppie='install_python_package_as_source_for_windows'
 alias ppir='pip install -r requirements.txt'
 alias ppunsource="pip freeze | grep "^-e" | sed 's/.*#egg=\(.*\)-.*/\1/' | xargs pip uninstall -y"
 alias ppclean="ppunsource; pip freeze | grep -v "^-e" | xargs pip uninstall -y"
@@ -63,15 +63,6 @@ alias devpi="console.exe devpi"
 alias py="winpty python"
 alias rednose="console.exe nosetests --rednose"
 alias nosetests="console.exe nosetests"
-
-
-function ipy() {
-    VIRTUAL_ENV=$(cygpath -w $VIRTUAL_ENV) EDITOR=$(cygpath -w /usr/bin/vim) winpty.exe ipython3
-}
-
-function manage.py() {
-    VIRTUAL_ENV=$(cygpath -w $VIRTUAL_ENV) winpty.exe python manage.py $*
-}
 
 # apps
 alias subl="$program_files/Sublime\ Text\ 3/sublime_text.exe"
