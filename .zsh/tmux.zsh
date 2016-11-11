@@ -31,7 +31,7 @@ function open_tmux_session_for_project() {
     # -d create detached
     # -A attach if already existing
     # -P show info
-    tmux new-session -s $PROJNAME -c $PROJ_PATH -n 'editor' -A -d 'vim'
+    tmux new-session -s $PROJNAME -c $PROJ_PATH -n 'editor' -A -d
     tmux new-window -t $PROJNAME -c $PROJ_PATH -n 'console'
     tmux split-window -t $PROJNAME:console -h -d
     tmux attach -t $PROJNAME
