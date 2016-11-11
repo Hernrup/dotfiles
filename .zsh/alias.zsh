@@ -15,6 +15,7 @@ alias cddev="cd ~/src/"
 
 # misc
 alias less='less -r'
+alias cmd='cygstart --action=runas ~/bin/start_cmd.bat'
 
 # list
 alias ls='ls -F --color'
