@@ -6,16 +6,6 @@ alias tmw='open_tmux_window_for_project'
 alias tmsc='tmux_clone_session'
 alias tmsk='kill_tmux_session'
 
-
-function create_tmux_session() {
-    local SESSIONNAME="DEF"
-    tmux has-session -t $SESSIONNAME &> /dev/null
-    if [ $? != 0 ]; then
-        echo "Session $SESSIONNAME not found. Creating it..."
-        tmux new-session -s $SESSIONNAME -d
-    fi
-}
-
 function open_tmux_window_for_project() {
     local PROJ_PATH=$1:A
     local PROJNAME="$PROJ_PATH:t"
