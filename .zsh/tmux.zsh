@@ -25,16 +25,23 @@ function open_tmux_window_for_project() {
 function open_tmux_session_for_project() {
     local PROJ_PATH=$1:A
     local PROJNAME="$PROJ_PATH:t"
-    # -s sessionname
-    # -c path
-    # -n name of created window
-    # -d create detached
-    # -A attach if already existing
-    # -P show info
-    tmux new-session -s $PROJNAME -c $PROJ_PATH -n 'editor' -A -d
-    tmux new-window -t $PROJNAME -c $PROJ_PATH -n 'console'
-    tmux split-window -t $PROJNAME:console -h -d
-    tmux attach -t $PROJNAME
+
+    # Create session if it does not exist
+    tmux has-session -t $PROJNAME
+    if [ $? != 0 ]; then
+        tmux new-session -s $PROJNAME -c $PROJ_PATH -n 'editor'  -d
+
+        # Setup default panes for window
+        tmux new-window -t $PROJNAME -c $PROJ_PATH -n 'console'
+        tmux split-window -t $PROJNAME:console -h -d
+    fi
+
+    # attach if outside tmux, otherwise switch
+    if [ -n "$TMUX" ]; then
+        tmux switch-client -t $PROJNAME
+    else
+        tmux attach -t $PROJNAME
+    fi
 }
 
 function open_tmux_connected_session() {
