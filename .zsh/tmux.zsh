@@ -3,7 +3,7 @@ alias tmux='tmux -2'
 alias tma='tmux attach'
 alias tms='open_tmux_session_for_project'
 alias tmw='open_tmux_window_for_project'
-alias tms2='open_tmux_connected_session'
+alias tmsc='tmux_clone_session'
 alias tmsk='kill_tmux_session'
 
 
@@ -29,7 +29,7 @@ function open_tmux_session_for_project() {
     # Create session if it does not exist
     tmux has-session -t $PROJNAME
     if [ $? != 0 ]; then
-        tmux new-session -s $PROJNAME -c $PROJ_PATH -n 'editor'  -d
+        tmux new-session -s $PROJNAME -c $PROJ_PATH -n 'editor' -d
 
         # Setup default panes for window
         tmux new-window -t $PROJNAME -c $PROJ_PATH -n 'console'
@@ -44,22 +44,17 @@ function open_tmux_session_for_project() {
     fi
 }
 
-function open_tmux_connected_session() {
-    local PROJ_PATH=$1:A
-    local PROJNAME="$PROJ_PATH:t"
-    # -s sessionname
-    # -c path
-    # -n name of created window
-    # -d create detached
-    # -A attach if already existing
-    # -P show info
-    # -t target session
-    tmux new-session -t $PROJNAME -s $PROJNAME_2 -A -d
-    tmux attach -t $PROJNAME_2
+function tmux_clone_session() {
+    local SESSION_NAME=`tmux display-message -p "#S"`
+    local SESSION_NAME_NEW="${SESSION_NAME}_CLONE"
+    tmux new-session -t $SESSION_NAME -s $SESSION_NAME_NEW -d
+    tmux switch-client -t $SESSION_NAME_NEW
 }
 
 function kill_tmux_session(){
-    tmux kill-session -t $1
+    local SESSION_NAME=`tmux display-message -p "#S"`
+    tmux switch-client -n
+    tmux kill-session -t $SESSION_NAME
 }
 
 function open_tmux_window(){
