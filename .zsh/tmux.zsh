@@ -50,8 +50,7 @@ function kill_tmux_session(){
 function open_tmux_window(){
     local PROJ_PATH=$1
     local PROJNAME=$2
-    echo "Project name: $PROJNAME"
-    echo "Project path: $PROJ_PATH"
+    #
     # Check if we already have a window for the project
     # If not, create a new window. Otherwise, select the exisiting one.
     tmux list-windows | grep "^[[:digit:]]\+: $PROJNAME.\? " &> /dev/null
