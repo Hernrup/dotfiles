@@ -18,3 +18,5 @@ so ~/.vim/settings/termfix.vim
 for fpath in split(globpath('~/.vim/settings/auto', '*.vim'), '\n')
   exe 'source' fpath
 endfor
+
+let NERDTreeIgnore = ['\.pyc$', 'tags', 'pycache', '\.egg-info$']
