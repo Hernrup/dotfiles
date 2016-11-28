@@ -10,10 +10,12 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'vim-scripts/matchit.zip'
 
 " Colorschemes
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'joshdick/onedark.vim'
 Plug 'jnurmine/Zenburn'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'morhetz/gruvbox'
+Plug 'reedes/vim-colors-pencil'
+Plug 'nanotech/jellybeans.vim'
 
 "ctrlp: File navigation
 so ~/.vim/plugins/ctrlp.vim

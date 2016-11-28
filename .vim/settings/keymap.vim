@@ -47,3 +47,8 @@ noremap <leader>c :bd<CR>
 
 " Enable pastetoggle
 set pastetoggle=<F2>
+
+" switch background color
+map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+nnoremap <leader>bd :set background=dark<cr>
+nnoremap <leader>bl :set background=light<cr>
