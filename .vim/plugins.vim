@@ -46,6 +46,9 @@ so ~/.vim/plugins/ultisnips.vim
 " folding
 so ~/.vim/plugins/fastfold.vim
 
+" python docstrings
+so ~/.vim/plugins/vim_pydocstring.vim
+
 " Sercher
 Plug 'rking/ag.vim'
 
