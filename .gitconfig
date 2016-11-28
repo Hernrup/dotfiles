@@ -35,20 +35,36 @@
 	dd=difftool --dir-diff
   praise = blame
 
-[merge]
-	tool = vimdiff
-
+# [merge]
+# 	tool = vimdiff
+#
+# [diff]
+# 	tool = vimdiff
+#
+# [difftool "vimdiff"]
+#     keepBackup = false
+#
+# [mergetool "vimdiff"]
+# 	keepBackup = false
+#
+# [mergetool]
+#     keepBackup = false
+#
 [diff]
-	tool = vimdiff
+    tool = kdiff3
 
-[difftool "vimdiff"]
+[merge]
+    tool = kdiff3
+
+[mergetool "kdiff3"]
+    # path = E:/playground/softwares/KDiff3/kdiff3.exe
     keepBackup = false
+    trustExitCode = false
 
-[mergetool "vimdiff"]
-	keepBackup = false
-
-[mergetool]
+[difftool "kdiff3"]
+    # path = E:/playground/softwares/KDiff3/kdiff3.exe
     keepBackup = false
+    trustExitCode = false
 
 [credential]
 	helper = store
