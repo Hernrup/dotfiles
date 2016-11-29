@@ -1,7 +1,7 @@
 call plug#begin()
 
-" so ~/plugins/airline.vim
-Plug 'itchyny/lightline.vim'
+" so ~/.vim/plugins/airline.vim
+so ~/.vim/plugins/lightline.vim
 
 " Mirror vim status bar theme to tmux
 Plug 'edkolev/tmuxline.vim'
@@ -16,6 +16,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
 Plug 'reedes/vim-colors-pencil'
 Plug 'nanotech/jellybeans.vim'
+Plug 'flazz/vim-colorschemes'
 
 "ctrlp: File navigation
 so ~/.vim/plugins/ctrlp.vim
