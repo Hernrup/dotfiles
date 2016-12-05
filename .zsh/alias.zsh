@@ -65,6 +65,10 @@ alias py="winpty python"
 alias rednose="console.exe nosetests --rednose"
 alias nosetests="console.exe nosetests"
 
+# Colors
+alias bgl="/c/python34/scripts/mtc set solarized-light"
+alias bgd="/c/python34/scripts/mtc set solarized-dark"
+
 # apps
 alias subl="$program_files/Sublime\ Text\ 3/sublime_text.exe"
 alias pycharm="cygstart $program_files_x86/JetBrains/PyCharm\ 2016.1.2/bin/pycharm.exe $(cygpath -w -m ${$(pwd)}) 2>/dev/null &"

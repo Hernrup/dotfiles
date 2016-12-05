@@ -32,6 +32,11 @@ python manage.py install-cygwin-packages-from-list
 ## Install dot files
 python manage.py install-dot-files
 
+## Install mintty-colors
+```
+/c/Python34 $pip install mintty-colors
+```
+
 ## Remove bash completion if using zsh as it couses lag.
 mv /etc/bash_completion.d -v /etc/bash_completion.d_bak
 
