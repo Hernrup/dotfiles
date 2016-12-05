@@ -9,7 +9,7 @@ OpaqueWhenFocused=yes
 /* FontIsBold=no */
 /* FontHeight=10 */
 /* FontWeight=400 */
-BellType=0
+/* BellType=0 */
 
 /*********************************/
 /*           FLAT UI             */
