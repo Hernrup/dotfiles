@@ -11,11 +11,6 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 
 #
-# Load $fg & co with color codes
-#
-# autoload -U colors && colors
-
-#
 # Ensure user binaries are available.
 #
 export PATH=$PATH:${HOME}/bin
