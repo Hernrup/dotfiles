@@ -1,6 +1,6 @@
 browser="python -m webbrowser -t"
-program_files_x86="/c/Program\ Files\ \(x86\)"
-program_files="/c/Program\ Files"
+program_files_x86="/cygdrive/c/Program\ Files\ \(x86\)"
+program_files="/cygdrive/c/Program\ Files"
 
 # Reload profile after making changes
 alias zshrel='echo "Reloading .zshrc..." && source ~/.zshrc'
@@ -53,7 +53,7 @@ alias ppclean="ppunsource; pip freeze | grep -v "^-e" | xargs pip uninstall -y"
 alias ppf="pip freeze"
 alias ppfw="pip freeze | sed 's/^M$//'"
 alias wp="which python"
-alias venv34="/c/python34/scripts/virtualenv venv"
+alias venv34="/cygdrive/c/python34/scripts/virtualenv venv"
 alias venv34cw="/usr/bin/virtualenv-3.4 venv"
 alias rmvenv='rm -rf venv'
 alias ipython3='console.exe ipython3'
@@ -66,8 +66,8 @@ alias rednose="console.exe nosetests --rednose"
 alias nosetests="console.exe nosetests"
 
 # Colors
-alias bgl="/c/python34/scripts/mtc set solarized-light"
-alias bgd="/c/python34/scripts/mtc set solarized-dark"
+alias bgl="/cygdrive/c/python34/scripts/mtc set solarized-light"
+alias bgd="/cygdrive/c/python34/scripts/mtc set solarized-dark"
 
 # apps
 alias subl="$program_files/Sublime\ Text\ 3/sublime_text.exe"
