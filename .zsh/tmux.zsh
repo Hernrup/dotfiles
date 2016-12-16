@@ -19,11 +19,7 @@ function open_tmux_session_for_project() {
     # Create session if it does not exist
     tmux has-session -t $PROJNAME
     if [ $? != 0 ]; then
-        tmux new-session -s $PROJNAME -c $PROJ_PATH -n 'editor' -d
-
-        # Setup default panes for window
-        tmux new-window -t $PROJNAME -c $PROJ_PATH -n 'console'
-        tmux split-window -t $PROJNAME:console -h -d
+        tmux new-session -s $PROJNAME -c $PROJ_PATH -n 'def' -d
     fi
 
     # attach if outside tmux, otherwise switch
