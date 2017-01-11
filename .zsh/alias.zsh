@@ -81,12 +81,13 @@ alias killw='taskkill /F /PID'
 alias killall='taskkill /F /T /IM'
 
 # Lime stuff
-lime_dir="/c/src"
+lime_dir="/cygdrive/c/src"
 alias cdlimedata="cd $c/ProgramData/Lundalogik/LIME\ Pro\ Server/"
 alias lisaserver="console.exe $lime_dir/limeworld/serveradmin/Server/Lundalogik.Lisa.Service.ConsoleHost/bin/Debug/LisaConsole.exe"
 alias tngclient="$browser \"https://localhost/\""
 alias desktopclient="open $lime_dir/desktop-client/src/Debug/Lime.exe"
 alias lf='console.exe limefu'
+alias wman='winpty manage.py'
 
 # Other
 alias open='cygstart'
