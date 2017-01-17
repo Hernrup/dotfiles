@@ -77,3 +77,4 @@ export DISPLAY=:0
 stty start undef
 stty stop undef
 setopt noflowcontrol
+
