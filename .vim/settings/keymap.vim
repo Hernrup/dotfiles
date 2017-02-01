@@ -54,4 +54,4 @@ nnoremap <leader>bd :set background=dark<cr>
 nnoremap <leader>bl :set background=light<cr>
 
 " switch between cursorline and columnline
-nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
+nnoremap <Leader>cc :set cursorline! cursorcolumn!<CR>
