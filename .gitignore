@@ -10,3 +10,4 @@ tags
 *.pyc
 *.old
 .config/base-16-shell
+**/.vim/.netrwhist
