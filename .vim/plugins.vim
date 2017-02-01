@@ -6,6 +6,9 @@ so ~/.vim/plugins/lightline.vim
 " Mirror vim status bar theme to tmux
 Plug 'edkolev/tmuxline.vim'
 
+" Base16-colors
+so ~/.vim/plugins/base16.vim
+
 " extended % matching for HTML, LaTeX, and many more languages
 Plug 'vim-scripts/matchit.zip'
 
@@ -17,6 +20,9 @@ Plug 'morhetz/gruvbox'
 Plug 'reedes/vim-colors-pencil'
 Plug 'nanotech/jellybeans.vim'
 Plug 'flazz/vim-colorschemes'
+
+" Color pencil
+so ~/.vim/plugins/pencil.vim
 
 "ctrlp: File navigation
 so ~/.vim/plugins/ctrlp.vim
@@ -101,4 +107,5 @@ Plug 'hdima/python-syntax'
 Plug 'godlygeek/tabular', { 'for': 'markdown' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 so ~/.vim/plugins/vim_table_mode.vim
+
 call plug#end()

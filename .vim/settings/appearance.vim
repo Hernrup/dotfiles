@@ -51,8 +51,12 @@ set background=dark
 " colorscheme PaperColor
 " colorscheme badwolf
 " colorscheme gruvbox
-colorscheme zenburn
+" colorscheme zenburn
 
 " Highlight matching [{()}]
 set showmatch
 
+" Make colors compatible with base16-colors
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
