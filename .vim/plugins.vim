@@ -60,6 +60,9 @@ so ~/.vim/plugins/fastfold.vim
 " python docstrings
 so ~/.vim/plugins/vim_pydocstring.vim
 
+" Indentendation guides
+so ~/.vim/plugins/indent-guides.vim
+
 " Sercher
 Plug 'rking/ag.vim'
 
