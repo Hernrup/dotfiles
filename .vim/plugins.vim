@@ -48,7 +48,8 @@ Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'xolox/vim-misc'
 
 "syntastic: Syntax check for several languages
-so ~/.vim/plugins/syntastic.vim
+" so ~/.vim/plugins/syntastic.vim
+so ~/.vim/plugins/ale.vim
 
 " snippets
 so ~/.vim/plugins/ultisnips.vim

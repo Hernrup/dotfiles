@@ -1,4 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/c/src/lime-search/lime_search'
-let g:netrw_dirhist_2='/cygdrive/c/src/lime-core/lime_database/limefu'
