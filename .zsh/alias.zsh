@@ -1,6 +1,4 @@
 browser="python -m webbrowser -t"
-program_files_x86="/cygdrive/c/Program\ Files\ \(x86\)"
-program_files="/cygdrive/c/Program\ Files"
 
 # Reload profile after making changes
 alias zshrel='echo "Reloading .zshrc..." && source ~/.zshrc'
@@ -15,7 +13,6 @@ alias cddev="cd ~/src/"
 
 # misc
 alias less='less -r'
-alias cmd='cygstart --action=runas ~/bin/start_cmd.bat'
 
 # list
 alias ls='ls -F --color'
@@ -51,45 +48,19 @@ alias ppir='pip install -r requirements.txt'
 alias ppunsource="pip freeze | grep "^-e" | sed 's/.*#egg=\(.*\)-.*/\1/' | xargs pip uninstall -y"
 alias ppclean="ppunsource; pip freeze | grep -v "^-e" | xargs pip uninstall -y"
 alias ppf="pip freeze"
-alias ppfw="pip freeze | sed 's/^M$//'"
 alias wp="which python"
-alias venv34="/cygdrive/c/python34/scripts/virtualenv venv"
-alias venv34cw="/usr/bin/virtualenv-3.4 venv"
+alias venv34="/usr/bin/virtualenv-3.4 venv"
 alias rmvenv='rm -rf venv'
-alias ipython3='console.exe ipython3'
-alias python3='python'
-alias ipython='EDITOR=$(cygpath -w /usr/bin/vim) winpty ipython3'
-alias nt="console.exe nosetests"
-alias devpi="console.exe devpi"
-alias py="winpty python"
-alias rednose="console.exe nosetests --rednose"
-alias nosetests="console.exe nosetests"
+alias rednose="nosetests --rednose"
 
 # Colors
-alias bgl="/cygdrive/c/python34/scripts/mtc set solarized-light"
-alias bgd="/cygdrive/c/python34/scripts/mtc set solarized-dark"
+alias bgl="mtc set solarized-light"
+alias bgd="mtc set solarized-dark"
 
-# apps
-alias subl="$program_files/Sublime\ Text\ 3/sublime_text.exe"
-alias pycharm="cygstart $program_files_x86/JetBrains/PyCharm\ 2016.1.2/bin/pycharm.exe $(cygpath -w -m ${$(pwd)}) 2>/dev/null &"
-alias node="console.exe node"
-alias vagrant="console.exe /c/HashiCorp/Vagrant/bin/vagrant.exe"
+# Apps
+alias lf='limefu'
 alias mdprewiew="grip"
-
-# kill stuff
-alias killpython="taskkill /F /IM python.exe /T"
-alias killw='taskkill /F /PID'
-alias killall='taskkill /F /T /IM'
-
-# Lime stuff
-lime_dir="/cygdrive/c/src"
-alias cdlimedata="cd $c/ProgramData/Lundalogik/LIME\ Pro\ Server/"
-alias lisaserver="console.exe $lime_dir/limeworld/serveradmin/Server/Lundalogik.Lisa.Service.ConsoleHost/bin/Debug/LisaConsole.exe"
-alias tngclient="$browser \"https://localhost/\""
-alias desktopclient="open $lime_dir/desktop-client/src/Debug/Lime.exe"
-alias lf='console.exe limefu'
 alias wman='winpty python manage.py'
 
 # Other
-alias open='cygstart'
 alias cls='clear'
