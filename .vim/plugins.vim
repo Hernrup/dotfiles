@@ -87,7 +87,7 @@ Plug 'christoomey/vim-tmux-navigator'
 so ~/.vim/plugins/vimproc.vim
 
 " Jedi-vim
-so ~/.vim/plugins/jedi-vim.vim
+" so ~/.vim/plugins/jedi-vim.vim
 
 " autocompleation
 " so ~/.vim/plugins/neocomplete.vim
