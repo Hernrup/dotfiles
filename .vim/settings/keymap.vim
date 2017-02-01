@@ -52,3 +52,6 @@ set pastetoggle=<F2>
 map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 nnoremap <leader>bd :set background=dark<cr>
 nnoremap <leader>bl :set background=light<cr>
+
+" switch between cursorline and columnline
+nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
