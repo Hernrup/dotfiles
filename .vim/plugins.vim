@@ -39,6 +39,7 @@ so ~/.vim/plugins/tComment.vim
 " Git integration
 Plug 'tpope/vim-fugitive'
 Plug 'int3/vim-extradite'
+Plug 'airblade/vim-gitgutter'
 
 " LESS Syntax highlighting, indent, and autocompletion
 Plug 'groenewege/vim-less', { 'for': 'less' }
