@@ -9,3 +9,4 @@ obj
 tags
 *.pyc
 *.old
+.config/base-16-shell
