@@ -3,37 +3,38 @@
     path = .gitconfig_local
 
 [push]
-	default = simple
+    default = simple
 
 [color]
-	ui = true
-	status = auto
-	branch = auto
+    ui = true
+    status = auto
+    branch = auto
 
 [core]
-	editor = vim
-	excludesfile = ~/.gitignore
-	preloadindex = true
-	fscache = true
-	filemode = false
+    editor = vim
+    excludesfile = ~/.gitignore
+    preloadindex = true
+    fscache = true
+    filemode = false
 
 [alias]
-	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-	ls = log --graph --date=local --pretty=format:"%C(yellow)%h\\ %C(blue)%ad\\ %C(red)%d\\ %C(reset)%s%C(blue)\\ [%cn]"
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    lg = log --graph --date=local --pretty=format:"%C(yellow)%h\\ %C(blue)%>(24,trunc)%ad\\ %C(red)%d\\ %C(reset)%s%C(blue)\\ [%cn]"
+    ls = log --date=local --pretty=format:"%C(yellow)%h\\ %C(blue)%>(24,trunc)%ad\\ %C(magenta)%>(3,trunc)%cn\\ %C(reset)%s\\%C(red)%d"
     s=status
-	a=add
-	b=branch
-	c=commit
-	ca=commit --amend
-	d=diff
-	o=checkout
-	p=pull
-	pr=pull --rebase
-	r=remote
-	gh=rev-list --all | xargs git grep
-	brm=branch --merged | grep -v \\* | xargs git branch -D
-	dd=difftool --dir-diff
-  praise = blame
+    a=add
+    b=branch
+    c=commit
+    ca=commit --amend
+    d=diff
+    o=checkout
+    p=pull
+    pr=pull --rebase
+    r=remote
+    gh=rev-list --all | xargs git grep
+    brm=branch --merged | grep -v \\* | xargs git branch -D
+    dd=difftool --dir-diff
+    praise = blame
 
 # [merge]
 # 	tool = vimdiff

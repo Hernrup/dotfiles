@@ -21,22 +21,6 @@ alias la='ls -lA --color'
 
 # git
 alias g='git'
-alias gs='git status'
-alias ga='git add'
-alias gb='git branch'
-alias gc='git commit'
-alias gca='git commit --amend'
-alias gd='git diff'
-alias go='git checkout'
-alias gk='gitk --all&'
-alias gx='gitx --all'
-alias got='git'
-alias get='git'
-alias gp='git pull'
-alias gpr='git pull --rebase'
-alias gr='git remote'
-alias ggh="git rev-list --all | xargs git grep"
-alias gbrm='git branch --merged | grep -v \* | xargs git branch -D'
 
 # python
 alias py='python'
