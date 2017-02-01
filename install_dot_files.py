@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import os
-from os.path import join, abspath, basename, expanduser, isdir
+from os.path import join, abspath, basename, expanduser
 from datetime import datetime
 from shutil import copyfile
 
@@ -17,6 +17,7 @@ files_to_link = [
     ('.zshrc', ''),
     ('.zsh', ''),
     ('.ctags', ''),
+    ('.config', ''),
 ]
 
 files_to_copy_if_not_existing = [
@@ -27,16 +28,9 @@ base_path = os.path.realpath(os.path.dirname(__file__))
 
 
 def get_user_folder():
-    return abspath(expanduser("~"))
-    # return abspath('C:/Users/mhe')
-
-
-def get_cygwin_user_folder():
-    return join(get_cygwin_folder(), 'home', basename(get_user_folder()))
-
-
-def get_cygwin_folder():
-    return join('c:/', 'tools', 'cygwin')
+    path = abspath(expanduser("~"))
+    print('Syncing to path: {}'.format(path))
+    return path
 
 
 def get_backup_name(path):
@@ -105,11 +99,6 @@ def sync(dest_path):
 
 def main():
     sync(get_user_folder())
-    if isdir(get_cygwin_folder()):
-        sync(get_cygwin_user_folder())
-        link(abspath('c:/'), join(get_cygwin_folder(), 'c'))
-    else:
-        print('Could not find cygwin folder on {}'.format(get_cygwin_folder()))
 
 
 if __name__ == '__main__':
