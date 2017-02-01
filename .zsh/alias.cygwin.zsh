@@ -31,6 +31,7 @@ alias vagrant="console.exe /c/HashiCorp/Vagrant/bin/vagrant.exe"
 alias killpython="taskkill /F /IM python.exe /T"
 alias killw='taskkill /F /PID'
 alias killall='taskkill /F /T /IM'
+alias killlime='killall java.exe && killpython && killall node.exe'
 
 # Lime stuff
 lime_dir="/c/src"
