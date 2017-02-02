@@ -6,11 +6,18 @@ let g:lightline = {
             \ },
             \ 'active': {
             \   'left': [ [ 'mode', 'paste' ],
-            \             [ 'readonly', 'relativepath', 'modified' ] ]
+            \             [ 'readonly', 'relativepath', 'modified', 'lint'] ]
             \ },
             \ 'inactive': {
             \    'left': [ [ 'relativepath' ] ]
             \ },
+            \ 'component_function': {
+            \   'lint': 'Lightline_lint'
+            \ },
             \ 'separator': { 'left': '', 'right': '' },
             \ 'subseparator': { 'left': '', 'right': '' }
             \ }
+
+function! Lightline_lint()
+    return ALEGetStatusLine()
+endfunction
