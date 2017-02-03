@@ -21,6 +21,7 @@ alias la='ls -lA --color'
 
 # git
 alias g='git'
+alias gs='echo "GTFO"'
 
 # python
 alias py='python'
