@@ -61,7 +61,7 @@ so ~/.vim/plugins/fastfold.vim
 so ~/.vim/plugins/vim_pydocstring.vim
 
 " Indentendation guides
-so ~/.vim/plugins/indent-guides.vim
+" so ~/.vim/plugins/indent-guides.vim
 
 " Sercher
 Plug 'rking/ag.vim'
