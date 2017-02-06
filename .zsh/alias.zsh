@@ -21,7 +21,14 @@ alias la='ls -lA --color'
 
 # git
 alias g='git'
-alias gs='echo "GTFO"'
+alias gs='g s'
+alias ga='g a'
+alias gc='g c'
+alias gca='g ca'
+alias gd='g d'
+alias go='g o'
+alias gp='g p'
+alias gpr='g pr'
 
 # python
 alias py='python'
