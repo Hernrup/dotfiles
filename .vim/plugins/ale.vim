@@ -6,7 +6,7 @@ let g:ale_lint_on_enter = 1
 let g:ale_statusline_format = ['✗ %d', '∆ %d', 'ok']
 let g:ale_sign_column_always = 1
 let g:ale_lint_delay = 200
-let g:ale_open_list = 1
+let g:ale_open_list = 0
 
 " Move in loc list
 nmap <silent> <C-z> <Plug>(ale_previous_wrap)
