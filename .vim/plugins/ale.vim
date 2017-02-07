@@ -9,8 +9,8 @@ let g:ale_lint_delay = 200
 let g:ale_open_list = 0
 
 " Move in loc list
-nmap <silent> <C-z> <Plug>(ale_previous_wrap)
-nmap <silent> <C-x> <Plug>(ale_next_wrap)
+nmap <silent> <C-,> <Plug>(ale_previous_wrap)
+nmap <silent> <C-.> <Plug>(ale_next_wrap)
 
 set statusline+=%#warningmsg#
 set statusline+=%{ALEGetStatusLine()}
