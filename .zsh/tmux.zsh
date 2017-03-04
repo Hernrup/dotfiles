@@ -9,12 +9,14 @@ alias tmsk='kill_tmux_session'
 function open_tmux_window_for_project() {
     local PROJ_PATH=$1:A
     local PROJNAME="$PROJ_PATH:t"
+    PROJNAME="${PROJNAME//[.]/}" # Remove invalid chars from session name
     open_tmux_window $PROJ_PATH $PROJNAME
 }
 
 function open_tmux_session_for_project() {
     local PROJ_PATH=$1:A
     local PROJNAME="$PROJ_PATH:t"
+    PROJNAME="${PROJNAME//[.]/}" # Remove invalid chars from session name
 
     # Create session if it does not exist
     tmux has-session -t $PROJNAME
