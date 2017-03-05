@@ -113,4 +113,7 @@ Plug 'godlygeek/tabular', { 'for': 'markdown' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 so ~/.vim/plugins/vim_table_mode.vim
 
+" Debuger
+Plug 'joonty/vdebug', { 'for': 'php' }
+
 call plug#end()
