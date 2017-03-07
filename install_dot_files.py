@@ -15,6 +15,7 @@ files_to_link = [
     ('.vim', ''),
     ('bin', ''),
     ('.zshrc', ''),
+    ('.pdbrc', ''),
     ('.zsh', ''),
     ('.ctags', ''),
     ('.config', ''),
