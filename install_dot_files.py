@@ -3,6 +3,7 @@ import os
 from os.path import join, abspath, basename, expanduser
 from datetime import datetime
 from shutil import copyfile
+import sys
 
 
 files_to_link = [
@@ -28,9 +29,17 @@ files_to_copy_if_not_existing = [
 base_path = os.path.realpath(os.path.dirname(__file__))
 
 
+def get_install_folder():
+    if len(sys.argv) == 2:
+        return abspath(sys.argv[1])
+    if len(sys.argv) > 2:
+        raise ValueError('To many arguments supplied. '
+                         'Expects 1 containing the install path')
+    return get_user_folder()
+
+
 def get_user_folder():
     path = abspath(expanduser("~"))
-    print('Syncing to path: {}'.format(path))
     return path
 
 
@@ -99,7 +108,9 @@ def sync(dest_path):
 
 
 def main():
-    sync(get_user_folder())
+    path = get_install_folder()
+    print('Syncing to path: {}'.format(path))
+    sync(path)
 
 
 if __name__ == '__main__':
