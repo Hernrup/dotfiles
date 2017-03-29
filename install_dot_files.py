@@ -9,6 +9,7 @@ import sys
 files_to_link = [
     ('.gitignore', ''),
     ('.gitconfig', ''),
+    ('.agignore', ''),
     ('.vimrc', ''),
     ('.ideavimrc', ''),
     ('.minttyrc', ''),
