@@ -34,10 +34,6 @@ nnoremap <leader>t :CtrlPTag<cr>
 " reload vimrc"
 nnoremap <leader>re :so $MYVIMRC<cr>
 
-" Auto indent pasted text
-nnoremap p p=`]<C-o>
-nnoremap P P=`]<C-o>
-
 " Split
 noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
