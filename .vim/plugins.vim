@@ -82,7 +82,7 @@ Plug 'Rykka/riv.vim', { 'for': 'rst' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 
 " File tree
-Plug 'scrooloose/nerdtree'
+so ~/.vim/plugins/nerdtree.vim
 
 " Seamless navigation with tmux
 Plug 'christoomey/vim-tmux-navigator'

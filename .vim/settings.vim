@@ -13,6 +13,3 @@ so ~/.vim/settings/splits.vim
 so ~/.vim/settings/python.vim
 so ~/.vim/settings/block_cursor_fix.vim
 so ~/.vim/settings/termfix.vim
-
-
-let NERDTreeIgnore = ['\.pyc$', 'tags', 'pycache', '\.egg-info$']
