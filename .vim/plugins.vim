@@ -56,6 +56,7 @@ so ~/.vim/plugins/ultisnips.vim
 
 " folding
 so ~/.vim/plugins/fastfold.vim
+so ~/.vim/plugins/simplyfold.vim
 
 " python docstrings
 so ~/.vim/plugins/vim_pydocstring.vim
