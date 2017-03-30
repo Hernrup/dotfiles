@@ -24,13 +24,6 @@ nnoremap <leader>a :Ag<Space>
 nnoremap <leader>ra :wa<cr>:call RunTests("")<cr>:redraw<cr>:call JumpToError()<cr>
 nnoremap <leader>rf :wa<cr>:call RunFlake()<cr>:redraw<cr>:call JumpToError()<cr>
 
-" nerdtree options
-map <C-n> :NERDTreeToggle<CR>
-
-" ctrlp
-nnoremap <leader>p :CtrlP<cr>
-nnoremap <leader>t :CtrlPTag<cr>
-
 " reload vimrc"
 nnoremap <leader>re :so $MYVIMRC<cr>
 
