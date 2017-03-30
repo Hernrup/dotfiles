@@ -44,3 +44,6 @@ nnoremap <leader>bl :set background=light<cr>
 
 " switch between cursorline and columnline
 nnoremap <Leader>cc :set cursorline! cursorcolumn!<CR>
+
+" Browse directory of file in current buffer
+nnoremap <leader>ex :Explore<cr>
