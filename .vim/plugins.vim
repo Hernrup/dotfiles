@@ -51,12 +51,16 @@ Plug 'xolox/vim-misc'
 " so ~/.vim/plugins/syntastic.vim
 so ~/.vim/plugins/ale.vim
 
+" highlightning
+so ~/.vim/plugins/python-syntax.vim
+
 " snippets
 so ~/.vim/plugins/ultisnips.vim
 
 " folding
 so ~/.vim/plugins/fastfold.vim
 so ~/.vim/plugins/simplyfold.vim
+
 
 " python docstrings
 so ~/.vim/plugins/vim_pydocstring.vim
@@ -105,9 +109,6 @@ so ~/.vim/plugins/ycm.vim
 
 " cammel case movement
 " Plug 'bkad/CamelCaseMotion'
-
-" python3 default syntax
-Plug 'hdima/python-syntax'
 
 " Markdown
 Plug 'godlygeek/tabular', { 'for': 'markdown' }

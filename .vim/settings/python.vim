@@ -52,6 +52,3 @@ function! GreenBar()
     echon repeat(" ",&columns - 1)
     echohl None
 endfunction
-
-let python_highlight_all=1
-syntax on
