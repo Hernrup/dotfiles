@@ -9,8 +9,9 @@ let g:ale_lint_delay = 200
 let g:ale_open_list = 0
 
 " Move in loc list
-nmap <silent> <C-,> <Plug>(ale_previous_wrap)
-nmap <silent> <C-.> <Plug>(ale_next_wrap)
+" Dont know why this is not working, but ctrl+shift+j/k works out of the box so never mind
+" nmap <silent> <C-,> <Plug>(ale_previous_wrap)
+" nmap <silent> <C-.> <Plug>(ale_next_wrap)
 
 set statusline+=%#warningmsg#
 set statusline+=%{ALEGetStatusLine()}
