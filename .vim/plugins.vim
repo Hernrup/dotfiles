@@ -118,4 +118,7 @@ so ~/.vim/plugins/vim_table_mode.vim
 " Debuger
 Plug 'joonty/vdebug', { 'for': 'php' }
 
+" Php syntax file
+Plug 'StanAngeloff/php.vim', { 'for': 'php' }
+
 call plug#end()
