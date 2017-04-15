@@ -42,5 +42,5 @@ alias desktopclient="open $lime_dir/desktop-client/src/Debug/Lime.exe"
 alias lf='winpty limefu'
 
 # WSL stuff
-alias wsl_ssh_run="winpty /c/Windows/System32/bash.exe -c 'sudo service ssh --full-restart'"
-alias wsl_ssh="ssh localhost -p 2222"
+alias wsl_ssh_run="winpty /c/Windows/System32/bash.exe -c 'sudo /usr/sbin/sshd -D'"
+alias wsl_ssh="ssh localhost -p 2223"
