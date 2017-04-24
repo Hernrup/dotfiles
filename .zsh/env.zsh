@@ -27,6 +27,16 @@ export LC_MONETARY="en_US.UTF-8"
 export LC_MESSAGES="en_US.UTF-8"
 
 #
+# Enable vim bindings
+#
+bindkey -v
+autoload edit-command-line; zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+# export KEYTIMEOUT=5 # Reduce the timeout when pressing keys to 0.x s
+# bindkey -M viins 'jk' vi-cmd-mode
+
+
+#
 # Fix for cursor at end of line and partial history in history list
 # Also binds home, end and delete that are sometimes unbinded
 #
