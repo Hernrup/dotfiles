@@ -35,7 +35,7 @@ alias killlime='killall java.exe && killpython && killall node.exe'
 
 # Lime stuff
 lime_dir="/cygdrive/c/src"
-alias cdlimedata="cd $c/ProgramData/Lundalogik/LIME\ Pro\ Server/"
+alias cdlimedata="cd /cygdrive/c/ProgramData/Lundalogik/LIME\ Pro\ Server/"
 alias lisaserver="winpty $lime_dir/limeworld/serveradmin/Server/Lundalogik.Lisa.Service.ConsoleHost/bin/Debug/LisaConsole.exe"
 alias tngclient="$browser \"https://localhost/\""
 alias desktopclient="open $lime_dir/desktop-client/src/Debug/Lime.exe"
