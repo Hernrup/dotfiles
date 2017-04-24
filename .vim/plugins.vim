@@ -65,6 +65,9 @@ so ~/.vim/plugins/simplyfold.vim
 " python docstrings
 so ~/.vim/plugins/vim_pydocstring.vim
 
+" Vimux
+so ~/.vim/plugins/vimux.vim
+
 " Indentendation guides
 " so ~/.vim/plugins/indent-guides.vim
 
