@@ -44,7 +44,8 @@ let maplocalleader="\\"
 set history=200
 
 " Easiear copy paste to system clipboard
-set clipboard=unnamed
+" set clipboard=unnamed
+set clipboard=unnamedplus
 
 
 " Turn off error beeps and flashing
