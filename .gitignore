@@ -11,3 +11,5 @@ tags
 *.old
 .config/base-16-shell
 **/.vim/.netrwhist
+.config
+.zsh/cache
