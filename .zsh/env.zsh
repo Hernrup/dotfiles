@@ -29,10 +29,10 @@ export LC_MESSAGES="en_US.UTF-8"
 #
 # Enable vim bindings
 #
-bindkey -v
-autoload edit-command-line; zle -N edit-command-line
-bindkey -M vicmd v edit-command-line
-# export KEYTIMEOUT=5 # Reduce the timeout when pressing keys to 0.x s
+# bindkey -v
+# autoload edit-command-line; zle -N edit-command-line
+# bindkey -M vicmd v edit-command-line
+export KEYTIMEOUT=1 # Reduce the timeout when pressing keys to 0.x s
 # bindkey -M viins 'jk' vi-cmd-mode
 
 
