@@ -41,7 +41,7 @@ alias ppunsource="pip freeze | grep "^-e" | sed 's/.*#egg=\(.*\)-.*/\1/' | xargs
 alias ppclean="ppunsource; pip freeze | grep -v "^-e" | xargs pip uninstall -y"
 alias ppf="pip freeze"
 alias wp="which python"
-alias venv34="/usr/bin/virtualenv-3.4 venv"
+alias venv="python3 -m venv venv"
 alias rmvenv='rm -rf venv'
 alias rednose="nosetests --rednose"
 

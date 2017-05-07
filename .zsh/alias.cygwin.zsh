@@ -8,8 +8,8 @@ alias open='cygstart'
 #
 # python
 alias ppfw="pip freeze | sed 's/^M$//'"
-alias venv34="/cygdrive/c/python34/scripts/virtualenv venv"
-alias venv34cw="/usr/bin/virtualenv-3.4 venv"
+alias venv="/cygdrive/c/python34/scripts/virtualenv venv"
+alias venvcw="/usr/bin/virtualenv-3.4 venv"
 alias devpi="winpty devpi"
 alias py="winpty python"
 alias rednose="winpty nosetests --rednose"
