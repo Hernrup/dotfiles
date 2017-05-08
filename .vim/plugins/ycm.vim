@@ -8,8 +8,18 @@ function! BuildYCM(info)
     endif
 endfunction
 
-" Plug 'Valloric/YouCompleteMe'
-Plug 'hernrup/YouCompleteMe', {'do': function('BuildYCM'), 'for': ['python', 'javascript']}
+
+function! BuildYCMUnix(info)
+    if a:info.status == 'installed' || a:info.force
+        !./install.py
+    endif
+endfunction
+
+if has("unix")
+    Plug 'Valloric/YouCompleteMe', {'do': function('BuildYCMUnix'), 'for': ['python', 'javascript', 'php', 'ts']}
+else
+    Plug 'hernrup/YouCompleteMe', {'do': function('BuildYCM'), 'for': ['python', 'javascript', 'php', 'ts']}
+endif
 
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
