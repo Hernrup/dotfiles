@@ -54,5 +54,9 @@ alias lf='limefu'
 alias mdprewiew="grip"
 alias wman='winpty python manage.py'
 
+# Docker
+alias d='docker'
+alias dc='docker-compose'
+
 # Other
 alias cls='clear'
