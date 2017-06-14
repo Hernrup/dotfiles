@@ -35,7 +35,7 @@ alias py='python'
 alias delegg='rm -rf *.egg*'
 alias ppu='pip uninstall -y'
 alias ppi='pip install'
-alias ppie='install_python_package_as_source_for_windows'
+alias ppie='install_python_package_as_source'
 alias ppir='pip install -r requirements.txt'
 alias ppunsource="pip freeze | grep "^-e" | sed 's/.*#egg=\(.*\)-.*/\1/' | xargs pip uninstall -y"
 alias ppclean="ppunsource; pip freeze | grep -v "^-e" | xargs pip uninstall -y"
@@ -52,7 +52,7 @@ alias bgd="mtc set solarized-dark"
 # Apps
 alias lf='limefu'
 alias mdprewiew="grip"
-alias wman='winpty python manage.py'
+alias wman='python3 manage.py'
 
 # Docker
 alias d='docker'

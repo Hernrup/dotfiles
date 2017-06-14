@@ -16,6 +16,7 @@ alias rednose="winpty nosetests --rednose"
 alias nosetests="winpty nosetests"
 alias ipython3='winpty ipython3'
 alias python3='python'
+alias ppie='install_python_package_as_source_for_windows'
 
 # Colors
 alias bgl="/cygdrive/c/python34/scripts/mtc set solarized-light"
@@ -26,6 +27,7 @@ alias subl="$program_files/Sublime\ Text\ 3/sublime_text.exe"
 alias pycharm="cygstart $program_files_x86/JetBrains/PyCharm\ 2016.1.2/bin/pycharm.exe $(cygpath -w -m ${$(pwd)}) 2>/dev/null &"
 alias node="winpty node"
 alias vagrant="winpty /cygdrive/c/HashiCorp/Vagrant/bin/vagrant.exe"
+alias wman='winpty python manage.py'
 
 # kill stuff
 alias killpython="taskkill /F /IM python.exe /T"

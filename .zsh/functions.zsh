@@ -166,6 +166,14 @@ function cd_venv() {
     cd $1 && activate_python
 }
 
+function install_python_package_as_source() {
+    local tmp_path=$1
+    local PROJ_PATH=$tmp_path:A
+    local PROJNAME="$PROJ_PATH:t"
+    pip uninstall $PROJNAME -y
+    pip install -e $PROJ_PATH
+}
+
 function install_python_package_as_source_for_windows() {
     local tmp_path=$1
     local PROJ_PATH=$tmp_path:A
