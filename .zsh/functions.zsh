@@ -174,14 +174,6 @@ function install_python_package_as_source_for_windows() {
     pip install -e $(cygpath -w $PROJ_PATH)
 }
 
-function ipy() {
-    VIRTUAL_ENV=$(cygpath -w $VIRTUAL_ENV) EDITOR=$(cygpath -w /usr/bin/vim) winpty.exe ipython3
-}
-
-function manage.py() {
-    VIRTUAL_ENV=$(cygpath -w $VIRTUAL_ENV) winpty.exe python manage.py $*
-}
-
 function windbgl(){
     # usage windbgl 10.12.133 /path/to/dumpfile
     local executable="$program_files_x86/Windows\ Kits/10/Debuggers/x64/windbg"
