@@ -45,7 +45,7 @@ set history=200
 
 " Easiear copy paste to system clipboard
 " set clipboard=unnamed
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 
 " Turn off error beeps and flashing
