@@ -45,7 +45,7 @@ endif
 highlight! link MatchParen StatusLine
 
 set list                " Display special characters (e.g. trailing whitespace)
-set listchars=tab:▷◆,trail:◆
+set listchars=tab:▷-,trail:◆
 
 set background=dark
 " colorscheme PaperColor
