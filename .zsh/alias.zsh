@@ -57,6 +57,7 @@ alias wman='python3 manage.py'
 # Docker
 alias d='docker'
 alias dc='docker-compose'
+alias dce='docker-compose exec'
 
 # Other
 alias cls='clear'
