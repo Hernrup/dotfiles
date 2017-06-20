@@ -19,6 +19,7 @@ files_to_link = [
     ('.zshrc', ''),
     ('.pdbrc', ''),
     ('.zsh', ''),
+    ('.i3', ''),
     ('.ctags', ''),
     ('.config', ''),
 ]
