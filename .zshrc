@@ -8,3 +8,5 @@ source ~/.zsh/alias.zsh
 if [[ -n $(uname | egrep -i 'cygwin') ]]; then
     source ~/.zsh/alias.cygwin.zsh
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
