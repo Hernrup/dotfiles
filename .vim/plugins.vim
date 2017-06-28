@@ -86,6 +86,9 @@ Plug 'voithos/vim-python-matchit', { 'for': 'python' }
 " Highlighting for restructured text
 Plug 'Rykka/riv.vim', { 'for': 'rst' }
 
+" Highlighting for json5
+Plug 'gutenye/json5.vim', { 'for': 'json5' }
+
 " Javascript syntax
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 
