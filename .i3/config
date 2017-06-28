@@ -127,8 +127,19 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+client.focused          #3F8AC2 #096BAA #00BAA7 #00DA8E
+client.focused_inactive #333333 #5F676A #ffffff #484e50
+client.unfocused        #333333 #424242 #888888 #292d2e
+client.urgent           #C10004 #900000 #ffffff #900000
+
 bar {
-        status_command i3status
+    position top
+    status_command i3status
+    # tray_output LVDS
+    colors{
+        background #232323
+        statusline #DCDCDC
+    }
 }
 
 # volume control
@@ -145,11 +156,11 @@ bindsym XF86Battery exec gnome-power-statistics
 
 # keyboard switch
 exec "setxkbmap -layout us,sv"
-exec "setxkbmap -option 'grp:alt_shift_toggle'"
 exec "setxkbmap us"
+bindsym Ctrl+Mod1+e exec "setxkbmap us"
+bindsym Ctrl+Mod1+s exec "setxkbmap sv"
 
-# Remove title bar from windows
-new_window pixel 5
+new_window pixel 1
 
 # lock screen
 bindsym Ctrl+Mod1+l exec gnome-screensaver-command --lock
@@ -161,7 +172,7 @@ exec --no-startup-id nm-applet
 # exec --no-startup-id feh --bg-fill /home/mhe/images/wallpaper.png
 
 exec_always --no-startup-id nitrogen --restore
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # exec_always --no-startup-id albert
 
 # Explicitly tell gnome that the desktop application is up and running

@@ -45,10 +45,6 @@ alias venv="python3 -m venv venv"
 alias rmvenv='rm -rf venv'
 alias rednose="nosetests --rednose"
 
-# Colors
-alias bgl="mtc set solarized-light"
-alias bgd="mtc set solarized-dark"
-
 # Apps
 alias lf='limefu'
 alias mdprewiew="grip"
