@@ -127,4 +127,9 @@ Plug 'joonty/vdebug', { 'for': 'php' }
 " Php syntax file
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 
+" Typescript
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
+
+
 call plug#end()
