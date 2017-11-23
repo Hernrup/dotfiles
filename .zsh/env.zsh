@@ -14,6 +14,7 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 # Ensure user binaries are available.
 #
 export PATH=$PATH:${HOME}/bin
+export PATH=$PATH:${HOME}/.local/bin
 
 #
 # Set language in shell
