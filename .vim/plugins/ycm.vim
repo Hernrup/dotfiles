@@ -11,7 +11,7 @@ endfunction
 
 function! BuildYCMUnix(info)
     if a:info.status == 'installed' || a:info.force
-        !./install.py
+        !python3 ./install.py
     endif
 endfunction
 
