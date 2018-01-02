@@ -57,7 +57,7 @@ alias dce='docker-compose exec'
 
 # AWS
 function aws_instances(){
-    aws ec2 describe-instances --query 'Reservations[].Instances[].[PrivateIpAddress,Tags[?Key==`Name`].Value[]]' --output text | sed 's/None$/None\n/' | sed '$!N;s/\n/ /'
+    aws ec2 describe-instances --query 'Reservations[].Instances[].[PrivateIpAddress,Tags[?Key==`Name`].Value[]]' --output text --profile $1 | sed 's/None$/None\n/' | sed '$!N;s/\n/ /'
 }
 
 # Other
