@@ -1,0 +1,12 @@
+#!/bin/bash
+MOUNT_USER=$1
+if [ -z "$MOUNT_USER" ]; then
+    echo "Usage: $0 <user-name>"
+    exit 1
+fi
+echo -n "Password for share to mount: "
+read -s MOUNT_PASS
+
+mount -t cifs -o domain=LUNDALOGIK,username=$MOUNT_USER,password=$MOUNT_PASS,iocharset=utf8,vers=3.0 //lusrvfile2/disks/Lundalogik /mnt/lundalogik
+mount -t cifs -o domain=LUNDALOGIK,username=$MOUNT_USER,password=$MOUNT_PASS,iocharset=utf8,vers=3.0 //lusrvfile2/disks/Utvecklingsverktyg /mnt/devtools
+mount -t cifs -o domain=LUNDALOGIK,username=$MOUNT_USER,password=$MOUNT_PASS,iocharset=utf8,vers=3.0 //lusrvfile2/Shared /mnt/shared
