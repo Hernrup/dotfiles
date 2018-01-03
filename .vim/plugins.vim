@@ -39,7 +39,8 @@ so ~/.vim/plugins/tComment.vim
 " Git integration
 Plug 'tpope/vim-fugitive'
 Plug 'int3/vim-extradite'
-" Plug 'airblade/vim-gitgutter'
+so ~/.vim/plugins/gitgutter.vim
+" Plug 'mhinz/vim-signify'
 
 " LESS Syntax highlighting, indent, and autocompletion
 Plug 'groenewege/vim-less', { 'for': 'less' }
@@ -131,5 +132,8 @@ Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
 
+" Fussy lookup
+" Plug 'junegunn/fzf'
+set rtp+=~/.build/fzf
 
 call plug#end()
