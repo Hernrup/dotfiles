@@ -16,7 +16,8 @@ Plug 'vim-scripts/matchit.zip'
 so ~/.vim/plugins/ctrlp.vim
 
 " Fussy lookup
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.build/fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Directory navigation
 Plug 'tpope/vim-vinegar'
@@ -58,9 +59,6 @@ so ~/.vim/plugins/vim_pydocstring.vim
 
 " Vimux
 so ~/.vim/plugins/vimux.vim
-
-" Sercher
-Plug 'rking/ag.vim'
 
 " Salt support
 Plug 'saltstack/salt-vim', { 'for': 'sls' }
