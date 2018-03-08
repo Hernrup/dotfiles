@@ -86,3 +86,5 @@ stty start undef
 stty stop undef
 setopt noflowcontrol
 
+# Disable capslock
+setxkbmap -option caps:none
