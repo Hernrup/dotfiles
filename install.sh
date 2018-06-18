@@ -24,3 +24,7 @@ if [ ! -f ~/.gitconfig_local ]; then
     echo "Local gitconfig missing, creating"
     cp $SCRIPTPATH/.gitconfig_local ~/.gitconfig_local
 fi
+
+if [ ! -d ~/.config/base16-shell ]; then
+    git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+fi
