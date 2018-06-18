@@ -4,11 +4,11 @@ __pycache__
 .vim/bundle/*
 obj
 *.stackdump
-.vim/plugged/*
+vim/plugged/*
 tags
 *.pyc
 *.old
 .config/base-16-shell
-**/.vim/.netrwhist
+**/vim/.netrwhist
 .config
 .zsh/cache
