@@ -46,9 +46,6 @@ so ~/.vim/plugins/ale.vim
 " highlightning
 so ~/.vim/plugins/python-syntax.vim
 
-" snippets
-" so ~/.vim/plugins/ultisnips.vim
-
 " folding
 so ~/.vim/plugins/fastfold.vim
 so ~/.vim/plugins/simplyfold.vim

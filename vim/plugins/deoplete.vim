@@ -93,15 +93,16 @@ let g:deoplete#omni#input_patterns.javascript = ''
 " Undo completion
 " inoremap <expr><C-g> deoplete#undo_completion()
 
-inoremap <expr><C-Space> deoplete#complete_common_string()
+" inoremap <expr><C-Space> deoplete#complete_common_string()
 
 imap <expr><TAB> pumvisible() ? "\<C-n>" : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>")
 
-imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
+imap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 inoremap <expr><S-Tab>  pumvisible() ? "\<Up>" : "\<C-h>"
 
-function! s:is_whitespace() "{{{
-	let col = col('.') - 1
-	return ! col || getline('.')[col - 1] =~? '\s'
-endfunction
+imap <C-e>     <Plug>(neosnippet_expand_or_jump)
+smap <C-e>     <Plug>(neosnippet_expand_or_jump)
+
