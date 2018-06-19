@@ -47,7 +47,7 @@ so ~/.vim/plugins/ale.vim
 so ~/.vim/plugins/python-syntax.vim
 
 " snippets
-so ~/.vim/plugins/ultisnips.vim
+" so ~/.vim/plugins/ultisnips.vim
 
 " folding
 so ~/.vim/plugins/fastfold.vim
@@ -88,7 +88,11 @@ Plug 'christoomey/vim-tmux-navigator'
 so ~/.vim/plugins/vimproc.vim
 "
 " YouCompleteMe
-so ~/.vim/plugins/ycm.vim
+if has('nvim')
+    so ~/.vim/plugins/deoplete.vim
+else
+    so ~/.vim/plugins/ycm.vim
+endif
 
 " cammel case movement
 " Plug 'bkad/CamelCaseMotion'
