@@ -19,6 +19,10 @@ Plug 'Shougo/neosnippet-snippets'
 let g:deoplete#enable_at_startup = 1
 let g:pytho3_host_prog = '/usr/bin/python3'
 
+" Logging
+" set runtimepath+=~/.config/nvim/plugged/deoplete.nvim/
+" call deoplete#enable_logging('DEBUG', 'deoplete.log')
+
 " General settings "
 " let g:deoplete#auto_complete_delay = 50  " Default is 50
 " let g:deoplete#auto_refresh_delay = 500  " Default is 500
@@ -81,6 +85,9 @@ let g:deoplete#omni#input_patterns.scss = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
 let g:deoplete#omni#input_patterns.sass = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
 let g:deoplete#omni#input_patterns.python = ''
 let g:deoplete#omni#input_patterns.javascript = ''
+
+" jedi
+let g:deoplete#sources#jedi#debug_server = 0
 
 " Key-mappings and Events "
 
