@@ -8,7 +8,7 @@ alias ..='cd ../'
 alias ...='cd ../../'
 alias ....='cd ../../../'
 alias cdg='cd_git_root'
-alias cd='cd_venv'
+alias cd_venv='cd_venv'
 alias cddev="cd ~/src/"
 
 # misc

@@ -86,3 +86,5 @@ stty start undef
 stty stop undef
 setopt noflowcontrol
 
+# Set env to fix git prompt
+export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
