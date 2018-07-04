@@ -49,6 +49,7 @@ alias rednose="nosetests --rednose"
 alias lf='limefu'
 alias mdprewiew="grip"
 alias wman='python3 manage.py'
+alias vim='nvim'
 
 # Docker
 alias d='docker'
