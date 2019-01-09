@@ -13,6 +13,9 @@ ln -sbfv $SCRIPTPATH/.vimrc ~/.vimrc
 ln -sbfvn $SCRIPTPATH/vim ~/.vim
 ln -sbfvn $SCRIPTPATH/vim ~/.config/nvim
 
+ln -sbfvn $SCRIPTPATH/emacs ~/.emacs.d
+ln -sbfvn $SCRIPTPATH/.spacemacs ~/.spacemacs
+
 ln -sbfvn $SCRIPTPATH/bin ~/bin
 
 ln -sbfv $SCRIPTPATH/.zshrc ~/.zshrc
