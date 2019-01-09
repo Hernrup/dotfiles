@@ -2,6 +2,7 @@
 
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
+ln -sbfv $SCRIPTPATH/.profile ~/.profile
 ln -sbfv $SCRIPTPATH/.gitignore ~/.gitignore
 ln -sbfv $SCRIPTPATH/.gitconfig ~/.gitconfig
 ln -sbfv $SCRIPTPATH/.agignore ~/.agignore
