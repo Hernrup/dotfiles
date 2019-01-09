@@ -16,6 +16,23 @@ Plug 'mhartington/nvim-typescript'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+"
+" " Required for operations modifying multiple buffers like rename.
+" set hidden
+"
+" let g:LanguageClient_serverCommands = {'python': ['pyls']}
+
+
+" nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" " Or map each action separately
+" nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+" nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+" nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
 let g:deoplete#enable_at_startup = 1
 let g:pytho3_host_prog = '/usr/bin/python3'
 
