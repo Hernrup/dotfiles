@@ -50,6 +50,7 @@ alias lf='limefu'
 alias mdprewiew="grip"
 alias wman='python3 manage.py'
 alias vim='nvim'
+alias edit='emacs -nw'
 
 # Docker
 alias d='docker'
