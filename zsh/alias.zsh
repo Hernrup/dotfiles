@@ -56,6 +56,7 @@ alias edit='emacs -nw'
 alias d='docker'
 alias dc='docker-compose'
 alias dce='docker-compose exec'
+alias dcl='docker-compose logs -f --tail 1000'
 
 # AWS
 function aws_instances(){
