@@ -53,10 +53,18 @@ alias vim='nvim'
 alias edit='emacs -nw'
 
 # Docker
+alias current_base_dir='basename $PWD'
 alias d='docker'
 alias dc='docker-compose'
 alias dce='docker-compose exec'
 alias dcl='docker-compose logs -f --tail 1000'
+d-stop(){docker stop $(docker ps -a -q);}
+d-purge(){
+    docker kill $(docker ps -q);
+    docker rm $(docker ps -a -q);
+}
+dsd(){docker stack deploy $(current_base_dir);}
+
 
 # AWS
 function aws_instances(){
