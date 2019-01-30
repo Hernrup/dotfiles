@@ -12,3 +12,5 @@ tags
 **/vim/.netrwhist
 .config
 .zsh/cache
+.#*
+*.log
