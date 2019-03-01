@@ -14,3 +14,4 @@ tags
 .zsh/cache
 .#*
 *.log
+TAGS
