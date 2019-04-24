@@ -59,6 +59,7 @@ values."
             )
      syntax-checking
      themes-megapack
+     spell-checking
      docker
      html
      shell
@@ -346,8 +347,9 @@ you should place your code here."
   ;; (define-key evil-normal-state-map (kbd "C-j") 'evil-window-down)
   ;; (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
   ;; (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
-  (define-key evil-normal-state-map (kbd "C-p") 'helm-projectile-find-file)
-  (global-set-key (kbd "C-s") 'save-buffer)
+
+  ;; (define-key evil-normal-state-map (kbd "C-p") 'helm-projectile-find-file)
+  ;; (global-set-key (kbd "C-s") 'save-buffer)
   (global-set-key (kbd "C-i") 'spacemacs/toggle-line-numbers-off)
 
   (defun copy-to-clipboard ()
