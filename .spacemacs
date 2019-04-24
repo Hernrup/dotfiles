@@ -288,7 +288,7 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers 'relative
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -338,8 +338,10 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (setq display-line-numbers 'relative) 
-  (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+
+  ;; (setq display-line-numbers 'relative) 
+  ;; (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+  (setq linum-relative-backend 'display-line-numbers-mode)
   (spacemacs/set-leader-keys "bc" 'spacemacs/kill-this-buffer)
   (setq-default evil-escape-key-sequence "jk")
   (setq-default flycheck-python-flake8-executable "python3")
@@ -350,7 +352,7 @@ you should place your code here."
 
   ;; (define-key evil-normal-state-map (kbd "C-p") 'helm-projectile-find-file)
   ;; (global-set-key (kbd "C-s") 'save-buffer)
-  (global-set-key (kbd "C-i") 'spacemacs/toggle-line-numbers-off)
+  ;; (global-set-key (kbd "C-i") 'spacemacs/toggle-line-numbers-off)
 
   (defun copy-to-clipboard ()
     "Copies selection to x-clipboard."
