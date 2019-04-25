@@ -10,9 +10,10 @@ ln -sbfv $SCRIPTPATH/.minttyrc ~/.minttyrc
 ln -sbfv $SCRIPTPATH/.tmux.conf ~/.tmux.conf
 ln -sbfv $SCRIPTPATH/.pdbrc ~/.pdbrc
 
-ln -sbfv $SCRIPTPATH/.vimrc ~/.vimrc
-ln -sbfvn $SCRIPTPATH/vim ~/.vim
-ln -sbfvn $SCRIPTPATH/vim ~/.config/nvim
+# ln -sbfv $SCRIPTPATH/.vimrc ~/.vimrc
+# ln -sbfvn $SCRIPTPATH/vim ~/.vim
+# ln -sbfvn $SCRIPTPATH/vim ~/.config/nvim
+ln -sbfvn $SCRIPTPATH/spacevim ~/.SpaceVim.d
 
 ln -sbfvn $SCRIPTPATH/emacs ~/.emacs.d
 ln -sbfvn $SCRIPTPATH/.spacemacs ~/.spacemacs
