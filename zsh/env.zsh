@@ -89,6 +89,8 @@ setopt noflowcontrol
 # Set env to fix git prompt
 export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
 
+export FZF_DEFAULT_COMMAND='ag -g ""'
+
 export WORKON_HOME=~/envs
 export VIRTUALENVWRAPPER_PYTHON=python3
 mkdir -p $WORKON_HOME
