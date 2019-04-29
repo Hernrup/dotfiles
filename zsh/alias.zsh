@@ -50,7 +50,7 @@ alias lf='limefu'
 alias mdprewiew="grip"
 alias wman='python3 manage.py'
 alias vim='nvim'
-alias edit='emacs -nw'
+alias emacs='emacs -nw'
 alias svim="docker run -it -v ~/.SpaceVim.d:/home/spacevim/.SpaceVim.d -v /src:/src --rm spacevim/spacevim nvim"
 
 # Docker
