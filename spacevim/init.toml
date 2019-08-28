@@ -67,6 +67,9 @@ name = "tmux"
 [[layers]]
 name = "lang#dockerfile"
 
+[[layers]]
+name = "colorscheme"
+
 [[custom_plugins]]
 name = 'kalekundert/vim-coiled-snake'
 merged = 0
