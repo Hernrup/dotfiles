@@ -2,28 +2,31 @@
 
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
-ln -sbfv $SCRIPTPATH/.profile ~/.profile
-ln -sbfv $SCRIPTPATH/.gitignore ~/.gitignore
-ln -sbfv $SCRIPTPATH/.gitconfig ~/.gitconfig
-ln -sbfv $SCRIPTPATH/.agignore ~/.agignore
-ln -sbfv $SCRIPTPATH/.minttyrc ~/.minttyrc
-ln -sbfv $SCRIPTPATH/.tmux.conf ~/.tmux.conf
-ln -sbfv $SCRIPTPATH/.pdbrc ~/.pdbrc
+ln -sfv $SCRIPTPATH/.profile ~/.profile
+ln -sfv $SCRIPTPATH/.gitignore ~/.gitignore
+ln -sfv $SCRIPTPATH/.gitconfig ~/.gitconfig
+ln -sfv $SCRIPTPATH/.agignore ~/.agignore
+ln -sfv $SCRIPTPATH/.minttyrc ~/.minttyrc
+ln -sfv $SCRIPTPATH/.tmux.conf ~/.tmux.conf
+ln -sfv $SCRIPTPATH/.pdbrc ~/.pdbrc
+
+ln -sfv $SCRIPTPATH/vscode/settings.json ~/.config/Code/User/settings.json
+ln -sfv $SCRIPTPATH/vscode/keybindings.json ~/.config/Code/User/keybindings.json
 
 # ln -sbfv $SCRIPTPATH/.vimrc ~/.vimrc
 # ln -sbfvn $SCRIPTPATH/vim ~/.vim
 # ln -sbfvn $SCRIPTPATH/vim ~/.config/nvim
-ln -sbfvn $SCRIPTPATH/spacevim ~/.SpaceVim.d
+ln -sfvn $SCRIPTPATH/spacevim ~/.SpaceVim.d
 
-ln -sbfvn $SCRIPTPATH/emacs ~/.emacs.d
-ln -sbfvn $SCRIPTPATH/.spacemacs ~/.spacemacs
+ln -sfvn $SCRIPTPATH/emacs ~/.emacs.d
+ln -sfvn $SCRIPTPATH/.spacemacs ~/.spacemacs
 
-ln -sbfvn $SCRIPTPATH/bin ~/bin
+ln -sfvn $SCRIPTPATH/bin ~/bin
 
-ln -sbfv $SCRIPTPATH/.zshrc ~/.zshrc
-ln -sbfvn $SCRIPTPATH/zsh ~/.zsh
+ln -sfv $SCRIPTPATH/.zshrc ~/.zshrc
+ln -sfvn $SCRIPTPATH/zsh ~/.zsh
 
-ln -sbfv $SCRIPTPATH/.ctags ~/.ctags
+ln -sfv $SCRIPTPATH/.ctags ~/.ctags
 
 if [ ! -f ~/.gitconfig_local ]; then
     echo "Local gitconfig missing, creating"
