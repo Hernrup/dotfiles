@@ -94,4 +94,4 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 export WORKON_HOME=~/envs
 export VIRTUALENVWRAPPER_PYTHON=python3
 mkdir -p $WORKON_HOME
-source ~/.local/bin/virtualenvwrapper.sh
+# source ~/.local/bin/virtualenvwrapper.sh
