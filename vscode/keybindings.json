@@ -41,5 +41,5 @@
       "key": "ctrl+k",
       "command": "list.focusUp",
       "when": "listFocus && !inputFocus"
-    }
-  ]
+    },
+]

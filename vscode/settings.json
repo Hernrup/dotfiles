@@ -1495,4 +1495,5 @@
       }
     ],
     "vim.easymotion": true,
+    "explorer.confirmDelete": false,
   }
