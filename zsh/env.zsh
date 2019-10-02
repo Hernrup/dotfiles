@@ -95,3 +95,6 @@ export WORKON_HOME=~/envs
 export VIRTUALENVWRAPPER_PYTHON=python3
 mkdir -p $WORKON_HOME
 # source ~/.local/bin/virtualenvwrapper.sh
+
+export KUBECONFIG=.kubeconfig:~/.kube/config:~/.kube/mdc.conf:~/.kube/impact-ap.conf
+source <(kubectl completion zsh)

@@ -16,3 +16,4 @@ tags
 *.log
 TAGS
 zsh/cache
+.kubeconfig
