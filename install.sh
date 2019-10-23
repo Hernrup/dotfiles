@@ -17,6 +17,8 @@ ln -sfvn $SCRIPTPATH/spacevim ~/.SpaceVim.d
 
 ln -sfvn $SCRIPTPATH/.spacemacs ~/.spacemacs
 
+ln -sfvn $SCRIPTPATH/bin ~/bin
+
 ln -sfv $SCRIPTPATH/.zshrc ~/.zshrc
 ln -sfvn $SCRIPTPATH/zsh ~/.zsh
 
