@@ -13,15 +13,9 @@ ln -sfv $SCRIPTPATH/.pdbrc ~/.pdbrc
 ln -sfv $SCRIPTPATH/vscode/settings.json ~/.config/Code/User/settings.json
 ln -sfv $SCRIPTPATH/vscode/keybindings.json ~/.config/Code/User/keybindings.json
 
-# ln -sbfv $SCRIPTPATH/.vimrc ~/.vimrc
-# ln -sbfvn $SCRIPTPATH/vim ~/.vim
-# ln -sbfvn $SCRIPTPATH/vim ~/.config/nvim
 ln -sfvn $SCRIPTPATH/spacevim ~/.SpaceVim.d
 
-ln -sfvn $SCRIPTPATH/emacs ~/.emacs.d
 ln -sfvn $SCRIPTPATH/.spacemacs ~/.spacemacs
-
-ln -sfvn $SCRIPTPATH/bin ~/bin
 
 ln -sfv $SCRIPTPATH/.zshrc ~/.zshrc
 ln -sfvn $SCRIPTPATH/zsh ~/.zsh
