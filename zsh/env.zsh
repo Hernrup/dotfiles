@@ -3,13 +3,14 @@ export PAGER='less'
 
 zstyle :compinstall filename '/home/mhe/.zshrc'
 
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -i
 autoload -U colors && colors
 
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 
+fpath=(~/.zsh/completion $fpath)
 #
 # Ensure user binaries are available.
 #
@@ -96,5 +97,5 @@ export VIRTUALENVWRAPPER_PYTHON=python3
 mkdir -p $WORKON_HOME
 # source ~/.local/bin/virtualenvwrapper.sh
 
-export KUBECONFIG=.kubeconfig:~/.kube/config:~/.kube/mdc.conf:~/.kube/impact-ap.conf
+export KUBECONFIG=.kubeconfig:~/.kube/config:~/.kube/mdc.conf:~/.kube/impact-ap.conf:~/.kube/local.conf
 source <(kubectl completion zsh)
