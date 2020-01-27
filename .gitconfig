@@ -30,7 +30,6 @@
     d=diff
     o=checkout
     p=pull
-    pr=pull --rebase
     r=remote
     gh=rev-list --all | xargs git grep
     brm=branch --merged | grep -v \\* | xargs git branch -D

@@ -29,3 +29,5 @@ fi
 
 export WORKON_HOME=~/envs
 export VIRTUALENVWRAPPER_PYTHON=python3
+
+export PATH="$HOME/.poetry/bin:$PATH"
