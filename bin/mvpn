@@ -1,0 +1,22 @@
+#!/bin/bash
+COMMAND=$1
+if [ -z "$COMMAND" ]; then
+    echo "Usage: $0 <up/down>"
+    exit 1
+fi
+
+case $COMMAND in
+up)
+echo connecting
+echo 'password: '
+read -s PASS
+printf "n\nmikael.hernrup\n$PASS\n" | /usr/local/bin/vpn/vpn -s connect vpn.modelon.com
+;;
+down)
+echo disconnecting
+/usr/local/bin/vpn/vpn disconnect
+;;
+*)
+echo "Usage: $0 <up/down>"
+;;
+esac

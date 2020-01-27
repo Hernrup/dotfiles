@@ -7,6 +7,5 @@ fi
 echo -n "Password for share to mount: "
 read -s MOUNT_PASS
 
-mount -t cifs -o domain=LUNDALOGIK,username=$MOUNT_USER,password=$MOUNT_PASS,iocharset=utf8,vers=3.0 //lusrvfile2/disks/Lundalogik /mnt/lundalogik
-mount -t cifs -o domain=LUNDALOGIK,username=$MOUNT_USER,password=$MOUNT_PASS,iocharset=utf8,vers=3.0 //lusrvfile2/disks/Utvecklingsverktyg /mnt/devtools
-mount -t cifs -o domain=LUNDALOGIK,username=$MOUNT_USER,password=$MOUNT_PASS,iocharset=utf8,vers=3.0 //lusrvfile2/Shared /mnt/shared
+mkdir -p /mnt/staff
+mount -t cifs -o domain=MODELON,username=$MOUNT_USER,password=$MOUNT_PASS,iocharset=utf8,vers=3.0 //​storage.modelon.com/staff /mnt/staff
