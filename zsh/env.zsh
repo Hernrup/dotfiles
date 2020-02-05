@@ -99,3 +99,5 @@ mkdir -p $WORKON_HOME
 
 export KUBECONFIG=.kubeconfig:~/.kube/config:~/.kube/mdc.conf:~/.kube/impact-ap.conf:~/.kube/local.conf
 source <(kubectl completion zsh)
+
+export GTAGSLABEL=ctags

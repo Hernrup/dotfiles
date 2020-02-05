@@ -25,6 +25,8 @@
     enable_statusline_display_mode = false
     bootstrap_before = "myspacevim#before"
     bootstrap_before = "myspacevim#after"
+    enable_neomake = false
+    enable_ale = true
 
 # Enable autocomplete layer
 [[layers]]
@@ -45,6 +47,10 @@ name = "fzf"
 
 [[layers]]
 name = "git"
+
+[[layers]]
+name = "gtags"
+gtagslabel = "ctags"
 
 [[layers]]
 name = "lang#html"
@@ -73,3 +79,7 @@ name = "colorscheme"
 [[custom_plugins]]
 name = 'kalekundert/vim-coiled-snake'
 merged = 0
+
+[[layers]]
+name = "checkers"
+show_cursor_error = false
