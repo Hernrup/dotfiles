@@ -18,3 +18,4 @@ TAGS
 zsh/cache
 .kubeconfig
 .vscode
+bin/set*

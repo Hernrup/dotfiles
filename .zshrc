@@ -8,6 +8,7 @@ plugins=(
     python
     fzf
     kubectl
+    nvm
     )
 source $ZSH/oh-my-zsh.sh
 
