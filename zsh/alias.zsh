@@ -52,6 +52,8 @@ alias wman='python3 manage.py'
 alias vim='nvim'
 alias emacs='emacs -nw'
 alias svim="docker run -it -v ~/.SpaceVim.d:/home/spacevim/.SpaceVim.d -v /src:/src --rm spacevim/spacevim nvim"
+alias mvpn="sudo openconnect vpn.modelon.com"
+alias plantuml_bin='docker run --rm -i think/plantuml -tpng'
 
 # Docker
 alias current_base_dir='basename $PWD'
@@ -74,3 +76,4 @@ function aws_instances(){
 
 # Other
 alias cls='clear'
+alias open='xdg-open'
