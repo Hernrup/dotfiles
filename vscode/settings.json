@@ -1193,4 +1193,6 @@
   "python.analysis.disabled": [
     "unresolved-import"
   ],
+  "plantuml.render": "PlantUMLServer",
+  "plantuml.server": "http://localhost:8001",
 }
