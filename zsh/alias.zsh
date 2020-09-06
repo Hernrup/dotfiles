@@ -53,7 +53,8 @@ alias vim='nvim'
 alias emacs='emacs -nw'
 alias svim="docker run -it -v ~/.SpaceVim.d:/home/spacevim/.SpaceVim.d -v /src:/src --rm spacevim/spacevim nvim"
 alias mvpn="sudo openconnect vpn.modelon.com"
-alias plantuml_bin='docker run --rm -i think/plantuml -tpng'
+alias plantuml='docker run --rm -i think/plantuml -tpng'
+alias plantuml_server='docker run -d -p 8001:8080 plantuml/plantuml-server:jetty'
 
 # Docker
 alias current_base_dir='basename $PWD'
