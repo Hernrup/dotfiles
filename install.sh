@@ -13,6 +13,9 @@ ln -sfv $SCRIPTPATH/.pdbrc ~/.pdbrc
 ln -sfv $SCRIPTPATH/vscode/settings.json ~/.config/Code/User/settings.json
 ln -sfv $SCRIPTPATH/vscode/keybindings.json ~/.config/Code/User/keybindings.json
 
+ln -sfvn $SCRIPTPATH/regolith/i3 ~/.config/regolith/i3
+ln -sfv $SCRIPTPATH/regolith/Xresources ~/.config/regolith/Xresources
+
 ln -sfvn $SCRIPTPATH/spacevim ~/.SpaceVim.d
 
 ln -sfvn $SCRIPTPATH/.spacemacs ~/.spacemacs
