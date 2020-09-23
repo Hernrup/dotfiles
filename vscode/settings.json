@@ -467,3 +467,5 @@
 "python.jediEnabled": false,
 "python.languageServer": "Microsoft"
 }
+  "vim.useSystemClipboard": true,
+}
