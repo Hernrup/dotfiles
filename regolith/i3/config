@@ -164,7 +164,8 @@ bindsym $mod+$alt+Left workspace prev
 ## Navigate // Scratchpad // <><Ctrl> a ##
 bindsym $mod+Ctrl+a scratchpad show
 
-bindsym $Mod1+Tab workspace back_and_forth
+## Navigate // Back and forth // alt+tab ##
+bindsym Mod1+Tab workspace back_and_forth
 
 ###############################################################################
 # Window and Workspace Configuration
