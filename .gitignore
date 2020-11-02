@@ -19,3 +19,4 @@ zsh/cache
 .kubeconfig
 .vscode
 bin/set*
+.gitconfig_local
