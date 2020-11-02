@@ -72,3 +72,6 @@
 
 [gc]
 	auto = 256
+
+[commit]
+    gpgsign = true
