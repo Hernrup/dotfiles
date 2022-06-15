@@ -452,20 +452,65 @@
     "statusBar.noFolderBackground": "#005f5f",
     "statusBar.debuggingBackground": "#005f5f"
   },
-  "window.zoomLevel": 0,
   "python.analysis.disabled": [
     "unresolved-import"
   ],
-  "plantuml.render": "PlantUMLServer",
+  "plantuml.render": "Local",
   "plantuml.server": "http://localhost:8001",
   "editor.renderWhitespace": "none",
   "editor.renderControlCharacters": false,
   "window.menuBarVisibility": "toggle",
   "workbench.activityBar.visible": true,
-  "workbench.colorTheme": "Gruvbox Dark Hard",
-  "python.formatting.provider": "black",
 "python.jediEnabled": false,
-"python.languageServer": "Microsoft"
-}
-  "vim.useSystemClipboard": true,
+"workbench.editorAssociations": {
+  "*.ipynb": "jupyter.notebook.ipynb"
+},
+"editor.suggestSelection": "first",
+"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+"vsnotes.additionalNoteTitles": [
+  "{d}_{title}.{ext}",
+  "{title}.{ext}"
+],
+"vsnotes.defaultNotePath": "/src/notes",
+"vsnotes.tokens": [
+    {
+        "type": "datetime",
+        "token": "{dt}",
+        "format": "YYYY-MM-DD_HH-mm",
+        "description": "Insert formatted datetime."
+    },
+    {
+        "type": "datetime",
+        "token": "{d}",
+        "format": "YYMMDD",
+        "description": "Insert formatted datetime."
+    },
+    {
+        "type": "title",
+        "token": "{title}",
+        "description": "Insert note title from input box.",
+        "format": "Untitled"
+    },
+    {
+        "type": "extension",
+        "token": "{ext}",
+        "description": "Insert file vsnotes.",
+        "format": "md"
+    }
+],
+"redhat.telemetry.enabled": false,
+"python.languageServer": "Default",
+"gitlens.codeLens.enabled": false,
+"gitlens.currentLine.enabled": false,
+"gitlens.hovers.currentLine.over": "line",
+"workbench.colorTheme": "Material Dark Theme",
+"rest-client.enableTelemetry": false,
+"rest-client.previewOption": "exchange",
+"workbench.startupEditor": "none",
+"files.exclude": {
+  "**/.classpath": true,
+  "**/.project": true,
+  "**/.settings": true,
+  "**/.factorypath": true
+},
 }

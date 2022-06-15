@@ -193,7 +193,11 @@ function windbgl(){
     eval ${cmd}
 }
 
-pyclean () {
+function pyclean () {
         find . -type f -name "*.py[co]" -delete
         find . -type d -name "__pycache__" -delete
+}
+
+function azk8s(){
+    az aks get-credentials --resource-group saas-$1-west-eu --name saas-$1-west-eu
 }

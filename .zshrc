@@ -9,6 +9,7 @@ plugins=(
     fzf
     kubectl
     nvm
+    zoxide
     )
 source $ZSH/oh-my-zsh.sh
 
@@ -19,3 +20,9 @@ source ~/.zsh/tmux.zsh
 # source ~/.zsh/base16-shell.zsh
 source ~/.zsh/alias.zsh
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="$HOME/.poetry/bin:$PATH"
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+

@@ -74,8 +74,10 @@ set_from_resource $ws19 i3-wm.workspace.19.name "19"
 assign [class="Code"] $ws1
 assign [class="Gnome-terminal"] $ws2
 assign [class="Microsoft Teams - Preview"] $ws3
+assign [class="Teams"] $ws3
 assign [class="Firefox"] $ws4
 assign [class="Chromium"] $ws4
+assign [class="Google-chrome"] $ws4
 assign [class="Brave"] $ws4
 assign [class="Google-chrome-beta"] $ws4
 
@@ -254,6 +256,7 @@ bindsym $mod+$alt+Ctrl+9 move container to workspace number $ws19; workspace num
 
 # Moving workspaces between screens 
 bindsym $mod+p move workspace to output right
+bindsym $mod+o move workspace to output up
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

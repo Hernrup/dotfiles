@@ -78,3 +78,6 @@ function aws_instances(){
 # Other
 alias cls='clear'
 alias open='xdg-open'
+
+source /usr/local/bin/cap-tools-bash-extensions || :
+set-kube-config local || :
