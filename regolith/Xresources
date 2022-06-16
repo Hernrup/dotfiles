@@ -1,8 +1,0 @@
-i3-wm.gaps.inner.size: 0
-i3-wm.workspace.01.name: 1:1 Code
-i3-wm.workspace.02.name: 2:2 Terminal
-i3-wm.workspace.03.name: 3:3 Social
-i3-wm.workspace.04.name: 4:4 Browser
-
-i3-wm.bar.trayoutput:	primary
-i3-wm.program.1: /usr/bin/nm-applet
