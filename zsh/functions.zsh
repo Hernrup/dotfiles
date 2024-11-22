@@ -201,3 +201,14 @@ function pyclean () {
 function azk8s(){
     az aks get-credentials --resource-group saas-$1-west-eu --name saas-$1-west-eu
 }
+
+function k8s_add_config(){
+    KUBECONFIG=~/.kube/config:$1 kubectl config view --flatten > /tmp/config && mv /tmp/config ~/.kube/config
+}
+
+function bw-login(){
+    if [[ -z $BW_SESSION ]] ; then
+        >&2 echo 'bw locked - unlocking into a new session'
+        export BW_SESSION="$(bw login mikael@hernrup.se --raw)"
+    fi
+}

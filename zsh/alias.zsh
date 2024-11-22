@@ -59,9 +59,9 @@ alias plantuml_server='docker run -d -p 8001:8080 plantuml/plantuml-server:jetty
 # Docker
 alias current_base_dir='basename $PWD'
 alias d='docker'
-alias dc='docker-compose'
-alias dce='docker-compose exec'
-alias dcl='docker-compose logs -f --tail 1000'
+alias dc='docker compose'
+alias dce='docker compose exec'
+alias dcl='docker compose logs -f --tail 1000'
 d-stop(){docker stop $(docker ps -a -q);}
 d-purge(){
     docker kill $(docker ps -q);
@@ -81,3 +81,7 @@ alias open='xdg-open'
 
 # source /usr/local/bin/cap-tools-bash-extensions || :
 # set-kube-config local || :
+
+function point-n-kill(){
+    kill -9 $(xprop _NET_WM_PID | sed 's/_NET_WM_PID(CARDINAL) = //')
+}

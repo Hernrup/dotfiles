@@ -6,7 +6,6 @@ obj
 *.stackdump
 vim/plugged/*
 tags
-*.pyc
 *.old
 .config/base-16-shell
 **/vim/.netrwhist

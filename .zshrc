@@ -9,7 +9,7 @@ plugins=(
     fzf
     kubectl
     nvm
-    zoxide
+    vi-mode
     )
 source $ZSH/oh-my-zsh.sh
 

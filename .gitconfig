@@ -35,6 +35,7 @@
     brm=branch --merged | grep -v \\* | xargs git branch -D
     dd=difftool --dir-diff
     praise = blame
+	hidden = !git ls-files -v | grep \"^[[:lower:]]\"
 
 # [merge]
 # 	tool = vimdiff
@@ -75,3 +76,7 @@
 
 [commit]
     gpgsign = true
+[safe]
+	directory = /usr/lib/vmware/modules/source/vmware-host-modules
+[init]
+	defaultBranch = main
