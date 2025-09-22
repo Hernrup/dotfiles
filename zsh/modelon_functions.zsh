@@ -1,0 +1,1 @@
+function mass() { mkdir -p $HOME/.cache/grype && docker run --rm --pull always -v ${PWD}:/data -w /data -v /var/run/docker.sock:/var/run/docker.sock -e=GRYPE_DB_CACHE_DIR=/grype/db -v $HOME/.cache/grype:/grype -u $(id -u):$(getent group docker | cut -d: -f3) artifactory.modelon.com/cap.docker.dev/impact/mass:latest "$@" ; }
