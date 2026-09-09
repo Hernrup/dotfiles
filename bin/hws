@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Open a herdr workspace preloaded with a claude tab and a terminal tab.
+# config.toml has no workspace template; herdr only restores tabs that already
+# exist, so a new project otherwise comes up as bare numbered tabs.
+set -euo pipefail
+
+cwd=$(realpath "${1:-$PWD}")
+[ -d "$cwd" ] || { echo "hws: not a directory: $cwd" >&2; exit 1; }
+
+label=${cwd##*/}
+old=$(herdr workspace list | jq -r --arg l "$label" 'first(.result.workspaces[]|select(.label==$l)|.workspace_id) // empty')
+if [ -n "$old" ]; then
+    [ -t 0 ] || { echo "hws: workspace $label already exists" >&2; exit 1; }
+    read -r -p "hws: workspace $label exists. Reset it? Its panes and agents die. [y/N] " reply
+    case $reply in
+        [yY]*) herdr workspace close "$old" >/dev/null ;;
+        *) herdr workspace focus "$old" >/dev/null; exit 0 ;;
+    esac
+fi
+
+ws=$(herdr workspace create --cwd "$cwd" --label "$label" --focus)
+read -r wsid tabid paneid < <(jq -r '.result|"\(.workspace.workspace_id) \(.tab.tab_id) \(.root_pane.pane_id)"' <<<"$ws")
+
+herdr tab rename "$tabid" claude >/dev/null
+herdr pane run "$paneid" claude >/dev/null
+herdr tab create --workspace "$wsid" --cwd "$cwd" --label terminal --no-focus >/dev/null
