@@ -51,7 +51,7 @@ export VIRTUALENVWRAPPER_PYTHON=python3
 mkdir -p $WORKON_HOME
 # source ~/.local/bin/virtualenvwrapper.sh
 
-export KUBECONFIG=~/.kube/config
+# export KUBECONFIG=~/.kube/config
 # export KUBECONFIG=~/.kube/config:~/.kube/configs/mdc.conf:~/.kube/configs/local.conf:~/.kube/configs/minikube.conf
 source <(kubectl completion zsh)
 
