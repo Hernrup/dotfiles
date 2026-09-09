@@ -1,0 +1,16 @@
+# Default for every file nvim lints; a .markdownlint*.yaml in a project still
+# wins (it replaces this file wholesale rather than merging).
+config:
+  MD004: false # unordered list marker style
+  MD007: false # unordered list indent width
+  MD012: false # consecutive blank lines
+  MD013: false # line length
+  MD024: false # duplicate headings
+  MD026: false # trailing punctuation in heading
+  MD029: false # ordered list numbering style
+  MD033: false # inline HTML
+  MD034: false # bare URL
+  MD036: false # emphasis used as heading
+  MD040: false # language on fenced code
+  MD041: false # first line must be h1
+  MD046: false # code block style
