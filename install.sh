@@ -23,6 +23,9 @@ mkdir -p ~/.claude
 ln -sfv $SCRIPTPATH/claude/CLAUDE.md ~/.claude/CLAUDE.md
 ln -sfv $SCRIPTPATH/claude/RTK.md ~/.claude/RTK.md
 
+mkdir -p ~/.config/fontconfig/conf.d
+ln -sfv $SCRIPTPATH/fontconfig/10-reject-hack-nerd-v2.conf ~/.config/fontconfig/conf.d/10-reject-hack-nerd-v2.conf
+
 ln -sfvn $SCRIPTPATH/bin ~/bin
 
 ln -sfv $SCRIPTPATH/.zshrc ~/.zshrc
@@ -91,3 +94,20 @@ fetch_bin lazygit "https://github.com/jesseduffield/lazygit/releases/download/$L
 GLOW_VER=$(curl -sL https://api.github.com/repos/charmbracelet/glow/releases/latest | grep '"tag_name"' | cut -d'"' -f4)
 fetch_bin glow "https://github.com/charmbracelet/glow/releases/download/$GLOW_VER/glow_${GLOW_VER#v}_Linux_x86_64.tar.gz" \
     "glow_${GLOW_VER#v}_Linux_x86_64/glow"
+
+# Distro-packaged Nerd Fonts predate the Material Design range (U+F0000+) that
+# LazyVim and render-markdown use, so their icons render as tofu. v3+ required.
+if [ ! -d ~/.local/share/fonts/HackNerdFont ]; then
+    echo "installing Hack Nerd Font"
+    mkdir -p ~/.local/share/fonts/HackNerdFont
+    curl -fsSL https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Hack.tar.xz \
+        | tar -xJ -C ~/.local/share/fonts/HackNerdFont
+    fc-cache -f ~/.local/share/fonts >/dev/null
+fi
+
+TERM_PROFILE=$(gsettings get org.gnome.Terminal.ProfilesList default 2>/dev/null | tr -d "'")
+if [ -n "$TERM_PROFILE" ]; then
+    TERM_BASE="org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$TERM_PROFILE/"
+    gsettings set "$TERM_BASE" use-system-font false
+    gsettings set "$TERM_BASE" font 'Hack Nerd Font Mono 12'
+fi
