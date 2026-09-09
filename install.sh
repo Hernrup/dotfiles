@@ -86,3 +86,8 @@ fetch_bin tree-sitter "https://github.com/tree-sitter/tree-sitter/releases/downl
 LG_VER=$(curl -sL https://api.github.com/repos/jesseduffield/lazygit/releases/latest | grep '"tag_name"' | cut -d'"' -f4)
 fetch_bin lazygit "https://github.com/jesseduffield/lazygit/releases/download/$LG_VER/lazygit_${LG_VER#v}_linux_x86_64.tar.gz" \
     "lazygit"
+
+# rendered markdown in a herdr pane, via bin/mdpane
+GLOW_VER=$(curl -sL https://api.github.com/repos/charmbracelet/glow/releases/latest | grep '"tag_name"' | cut -d'"' -f4)
+fetch_bin glow "https://github.com/charmbracelet/glow/releases/download/$GLOW_VER/glow_${GLOW_VER#v}_Linux_x86_64.tar.gz" \
+    "glow_${GLOW_VER#v}_Linux_x86_64/glow"

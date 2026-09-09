@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Render a markdown file in a herdr pane beside the current one, so an agent's
+# plan stays readable while nvim keeps the code. Replaces splitting a pane by
+# hand, cd-ing, and remembering glow's pager flag every time.
+# Outside herdr it just renders in place.
+set -euo pipefail
+
+command -v glow >/dev/null || { echo "mdpane: glow not installed" >&2; exit 1; }
+
+file=${1:?usage: mdpane <file.md> [ratio]}
+[ -r "$file" ] || { echo "mdpane: cannot read $file" >&2; exit 1; }
+file=$(realpath "$file")
+
+if [ "${HERDR_ENV:-}" != 1 ]; then
+    exec glow -p "$file"
+fi
+
+# exec replaces the pane's shell, so q quits glow and closes the pane in one key
+pane=$(herdr pane split --current --direction right --ratio "${2:-0.4}" \
+    --cwd "$PWD" --no-focus | jq -r '.result.pane.pane_id')
+herdr pane run "$pane" "exec glow -p $(printf '%q' "$file")" >/dev/null
+echo "$pane"
