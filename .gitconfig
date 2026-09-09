@@ -75,7 +75,7 @@
 	auto = 256
 
 [commit]
-    gpgsign = true
+    gpgsign = false
 [safe]
 	directory = /usr/lib/vmware/modules/source/vmware-host-modules
 [init]
