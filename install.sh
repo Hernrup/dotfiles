@@ -22,7 +22,7 @@ ln -sfvn $SCRIPTPATH/bin ~/bin
 ln -sfv $SCRIPTPATH/.zshrc ~/.zshrc
 ln -sfvn $SCRIPTPATH/zsh ~/.zsh
 
-ln -sfv $SCRIPTPATH/.ctags ~/.ctags
+# ln -sfv $SCRIPTPATH/.ctags ~/.ctags
 
 if [ ! -f ~/.gitconfig_local ]; then
     echo "Local gitconfig missing, creating"
