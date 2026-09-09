@@ -56,8 +56,8 @@ mkdir -p $WORKON_HOME
 source <(kubectl completion zsh)
 
 export GTAGSLABEL=ctags 
-source ~/.cimp-complete.bash
+[ -f ~/.cimp-complete.bash ] && source ~/.cimp-complete.bash
 
 # CAP tools
-source /usr/local/bin/cap-tools-bash-extensions
+[ -f /usr/local/bin/cap-tools-bash-extensions ] && source /usr/local/bin/cap-tools-bash-extensions
 export PATH=$PATH:${HOME}/repos/modelon/cap-tools/linux/package/usr/local/bin

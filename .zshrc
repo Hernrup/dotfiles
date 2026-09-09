@@ -36,7 +36,7 @@ export PATH="$HOME/.poetry/bin:$PATH"
 
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - bash)"
+command -v pyenv >/dev/null && eval "$(pyenv init - zsh)"
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uv generate-shell-completion zsh)"
 alias kubectl="microk8s kubectl"
