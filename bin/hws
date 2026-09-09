@@ -1,26 +1,62 @@
 #!/usr/bin/env bash
-# Open a herdr workspace preloaded with a claude tab and a terminal tab.
+# Open a herdr workspace preloaded with claude, terminal, and vim tabs.
 # config.toml has no workspace template; herdr only restores tabs that already
-# exist, so a new project otherwise comes up as bare numbered tabs.
+# exist, so a new project otherwise comes up as bare numbered tabs. Retargeting
+# an existing project's workspace focuses it and relaunches whichever of those
+# programs isn't currently running, rather than resetting it.
 set -euo pipefail
 
 cwd=$(realpath "${1:-$PWD}")
 [ -d "$cwd" ] || { echo "hws: not a directory: $cwd" >&2; exit 1; }
 
 label=${cwd##*/}
-old=$(herdr workspace list | jq -r --arg l "$label" 'first(.result.workspaces[]|select(.label==$l)|.workspace_id) // empty')
-if [ -n "$old" ]; then
-    [ -t 0 ] || { echo "hws: workspace $label already exists" >&2; exit 1; }
-    read -r -p "hws: workspace $label exists. Reset it? Its panes and agents die. [y/N] " reply
-    case $reply in
-        [yY]*) herdr workspace close "$old" >/dev/null ;;
-        *) herdr workspace focus "$old" >/dev/null; exit 0 ;;
-    esac
+wsid=$(herdr workspace list | jq -r --arg l "$label" 'first(.result.workspaces[]|select(.label==$l)|.workspace_id) // empty')
+
+if [ -n "$wsid" ]; then
+    herdr workspace focus "$wsid" >/dev/null
+
+    # A tab surviving from a previous run just means the label exists; the
+    # program inside may have exited back to a shell. Only relaunch it when
+    # the pane's title (set by the running program) doesn't already look
+    # like a match — "nvim" contains "vim", "Claude Code" contains "claude".
+    tabs=$(herdr tab list --workspace "$wsid")
+    panes=$(herdr pane list --workspace "$wsid")
+
+    ensure_tab() {
+        local tab_label=$1
+        shift
+        local tab_id
+        tab_id=$(jq -r --arg l "$tab_label" '.result.tabs[]|select(.label==$l)|.tab_id // empty' <<<"$tabs")
+
+        if [ -z "$tab_id" ]; then
+            local pane_id
+            pane_id=$(herdr tab create --workspace "$wsid" --cwd "$cwd" --label "$tab_label" --no-focus | jq -r '.result.root_pane.pane_id')
+            if [ "$#" -gt 0 ]; then
+                herdr pane run "$pane_id" "$@" >/dev/null
+            fi
+            return
+        fi
+
+        [ "$#" -eq 0 ] && return
+
+        local pane_id title
+        pane_id=$(jq -r --arg t "$tab_id" '.result.panes[]|select(.tab_id==$t)|.pane_id' <<<"$panes")
+        title=$(jq -r --arg t "$tab_id" '.result.panes[]|select(.tab_id==$t)|.terminal_title_stripped // empty' <<<"$panes")
+        if [[ "${title,,}" != *"${1,,}"* ]]; then
+            herdr pane run "$pane_id" "$@" >/dev/null
+        fi
+    }
+
+    ensure_tab claude claude
+    ensure_tab terminal
+    ensure_tab vim vim .
+else
+    ws=$(herdr workspace create --cwd "$cwd" --label "$label" --focus)
+    read -r wsid tabid paneid < <(jq -r '.result|"\(.workspace.workspace_id) \(.tab.tab_id) \(.root_pane.pane_id)"' <<<"$ws")
+    herdr tab rename "$tabid" claude >/dev/null
+    herdr pane run "$paneid" claude >/dev/null
+    herdr tab create --workspace "$wsid" --cwd "$cwd" --label terminal --no-focus >/dev/null
+
+    vim_pane=$(herdr tab create --workspace "$wsid" --cwd "$cwd" --label vim --no-focus | jq -r '.result.root_pane.pane_id')
+    herdr pane run "$vim_pane" vim . >/dev/null
 fi
-
-ws=$(herdr workspace create --cwd "$cwd" --label "$label" --focus)
-read -r wsid tabid paneid < <(jq -r '.result|"\(.workspace.workspace_id) \(.tab.tab_id) \(.root_pane.pane_id)"' <<<"$ws")
-
-herdr tab rename "$tabid" claude >/dev/null
-herdr pane run "$paneid" claude >/dev/null
-herdr tab create --workspace "$wsid" --cwd "$cwd" --label terminal --no-focus >/dev/null
