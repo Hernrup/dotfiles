@@ -1,0 +1,11 @@
+! Named workspaces. Included from ~/.config/regolith3/Xresources rather than
+! symlinked over it: `regolith-look set` runs sed -i on that file, which would
+! replace the symlink with a regular file and silently detach this one.
+!
+! The N: prefix drives ordering and the mod+N binding; the bar strips it
+! (wm.bar.stripworkspacenumbers). No icons here -- gtk.font_name is not a
+! Nerd Font, so glyphs would render as tofu.
+
+wm.workspace.01.name: 1: Term
+wm.workspace.04.name: 4: Web
+wm.workspace.05.name: 5: Teams

@@ -10,8 +10,15 @@ ln -sfv $SCRIPTPATH/.agignore ~/.agignore
 # ln -sfv $SCRIPTPATH/vscode/settings.json ~/.config/Code/User/settings.json
 # ln -sfv $SCRIPTPATH/vscode/keybindings.json ~/.config/Code/User/keybindings.json
 
-# ln -sfvn $SCRIPTPATH/regolith/i3 ~/.config/regolith/i3
-# ln -sfv $SCRIPTPATH/regolith/Xresources ~/.config/regolith/Xresources
+mkdir -p ~/.config/regolith3/i3/config.d
+ln -sfv $SCRIPTPATH/regolith3/i3/config.d/50_workspaces ~/.config/regolith3/i3/config.d/50_workspaces
+
+# `regolith-look set` rewrites this file with sed -i, which would replace a
+# symlink with a regular file, so leave it real and pull the repo in by include.
+XRES=~/.config/regolith3/Xresources
+touch $XRES
+grep -qF "$SCRIPTPATH/regolith3/Xresources" $XRES \
+    || sed -i "1i #include \"$SCRIPTPATH/regolith3/Xresources\"" $XRES
 
 # ln -sfvn $SCRIPTPATH/spacevim ~/.SpaceVim.d
 

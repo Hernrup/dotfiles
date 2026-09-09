@@ -1,0 +1,12 @@
+# Edge and its Teams PWA share WM_CLASS "Microsoft-edge", so match on instance:
+# regular windows are "microsoft-edge", the PWA is "crx__<app-id>".
+assign [instance="microsoft-edge"] $ws4
+assign [instance="crx__cifhbcnohmdccbgoicgdjpfamggdegmo"] $ws5
+
+# herdr is a TUI, so it inherits Gnome-terminal's class and cannot be assigned
+# without dragging every other terminal to $ws1. i3 starts focused here, so it
+# lands correctly with no rule -- and later terminals stay where they are.
+exec --no-startup-id gnome-terminal -- $HOME/.local/bin/herdr
+
+exec --no-startup-id microsoft-edge
+exec --no-startup-id gtk-launch msedge-cifhbcnohmdccbgoicgdjpfamggdegmo-Default
