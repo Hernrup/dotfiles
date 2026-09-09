@@ -17,6 +17,10 @@ ln -sfv $SCRIPTPATH/.agignore ~/.agignore
 
 # ln -sfvn $SCRIPTPATH/.spacemacs ~/.spacemacs
 
+mkdir -p ~/.claude
+ln -sfv $SCRIPTPATH/claude/CLAUDE.md ~/.claude/CLAUDE.md
+ln -sfv $SCRIPTPATH/claude/RTK.md ~/.claude/RTK.md
+
 ln -sfvn $SCRIPTPATH/bin ~/bin
 
 ln -sfv $SCRIPTPATH/.zshrc ~/.zshrc
