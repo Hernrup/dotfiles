@@ -212,3 +212,20 @@ function bw-login(){
         export BW_SESSION="$(bw login mikael@hernrup.se --raw)"
     fi
 }
+
+#
+# Create a new scratch project
+#
+function sc() {
+    local PROJNAME=$1
+
+    local UMBRELLA_DIR=/src/scratch
+    local PROJDIR=$UMBRELLA_DIR/$PROJNAME
+
+    mkdir -p $PROJDIR
+    cd $PROJDIR
+    git init
+    code .
+  
+}
+
