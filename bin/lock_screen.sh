@@ -13,6 +13,8 @@ TEXT='#335066'
 WRONG='#880000bb'
 VERIFYING='#bb00bbbb'
 
+# FOR USE WITH I3Lock-color
+##########################
 i3lock \
 --insidever-color=$CLEAR     \
 --ringver-color=$VERIFYING   \
@@ -39,3 +41,4 @@ i3lock \
 --indicator                  \
 --time-str="%H:%M:%S"        \
 --date-str="%A, %Y-%m-%d"       \
+
